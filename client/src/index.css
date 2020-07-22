@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+
+/* NAV-BAR SECTION */
+.nav-right {
+  display: flex;
+  width: 52%;
+}
+
+.nav-text {
+  color: #0c0c0c;
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+.nav-text:hover {
+  color: blue;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.nav-left {
+  width: 48%;
+}
+
+
+/* HEADING WEB SECTION */
+
+.heading-web {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #144d8a;
+}
+
+/* MEDIA QUERIES HEADER SECTION */
+/* SMALL AND TAB SCREENS */
+@media (min-width: 577px) {
+  /* HEADER SECTION */
+  .header-home-button {
+    border-bottom: orange 0.5rem solid;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-signup-button {
+    background: orange;
+    border-radius: 0.5rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .header-signup-text {
+    color: #ffffff;
+  }
 }
