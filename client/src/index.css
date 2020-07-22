@@ -8,6 +8,7 @@ body {
   margin: 0;
 }
 
+/************************************************ HEADER SECTION *************************************************/
 
 /* NAV-BAR SECTION */
 .nav-right {
@@ -48,10 +49,47 @@ body {
   color: #144d8a;
 }
 
+
+
+
+/*********************************************** FOOTER SECTION ******************************************/
+.footer {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.21607rem;
+  line-height: 1.8rem;
+  color: #0c0c0c;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+.footer-web-left {
+  margin-left: 10rem;
+}
+
+.footer-web-middle {
+  margin-left: 6rem;
+}
+
+.footer-footer-text-mobile {
+  line-height: 0.5rem;
+}
+
+.footer-footer-text-web {
+  line-height: 2rem;
+}
+
+
+
 /* MEDIA QUERIES HEADER SECTION */
 /* SMALL AND TAB SCREENS */
 @media (min-width: 577px) {
+
   /* HEADER SECTION */
+
   .header-home-button {
     border-bottom: orange 0.5rem solid;
     width: 5rem;
@@ -71,4 +109,37 @@ body {
   .header-signup-text {
     color: #ffffff;
   }
+
+  
+  /* FOOTER SECTION */
+
+  .footer-web-left {
+    margin-left: 5rem;
+    width: 6rem;
+  }
+
+  .footer-web-middle{
+    width: 6rem;
+  }
+  .copyright {
+    line-height: 2.2rem;
+    margin-top: 5rem;
+  }
+
+  .footer-web-left,
+  .footer-web-middle,
+  .footer-web-right {
+    margin-top: 1rem;
+  }
 }
+
+/* LARGER TAB AND LARGE SCREENS */
+@media (min-width: 967px) { 
+
+  /* fOOTER SECTION */
+
+  .copyright {
+    line-height: 2rem;
+  }
+}
+
