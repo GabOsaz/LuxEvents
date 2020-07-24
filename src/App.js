@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './scss/landingPage.scss';
+import Navbar from './components/Navbar';
+import Jumbo from './components/Jumbo';
+import Services from './components/Services';
+import HowItWWorks from './components/HowItWorks';
+import SelectLocation from './components/SelectLocation';
+import Partners from './components/Partners'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      < Navbar />
+      < Jumbo />
+      < Services />
+      < HowItWWorks />
+      < SelectLocation />
+      < Partners />
     </div>
   );
 }
