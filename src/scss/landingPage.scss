@@ -349,11 +349,12 @@ body {
         z-index: 10;
 
         @media (max-width : $tablet) {
-            margin-top: -22rem
+            margin-top: -22rem;
         }
 
         @media (max-width : $mobile) {
             margin-left: -5rem
+           
         }
     }
 
@@ -547,9 +548,11 @@ body {
     line-height: 53px;
     //border: 2px solid green;
     transform: translate(0px, 37vh);
+    
 
     @media (max-width : $mobile) {
         margin-top: -5rem;
+        margin-bottom: 16rem;
     }
 
     @media (max-width : $tablet) {
@@ -611,11 +614,10 @@ body {
 
     @media (max-width : $mobile) {
         display: none
+        
     }
 
-    @media (max-width : $tablet) {
-        transform: translate(0px, 26vh);
-    }
+    
 
     .case {
         display: grid;
@@ -658,6 +660,169 @@ body {
 }
 
 
+// HEADER AND FOOTER SECTION DAMILOLA
+/************************************************ HEADER SECTION *************************************************/
 
 
+/* NAV-BAR SECTION */
+.nav-right {
+    display: flex;
+    width: 52%;
+  }
+  
+  .nav-text {
+    color: #0c0c0c;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+  
+  .nav-text:hover {
+    color: blue;
+  }
+  
+  .navbar-nav {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  
+  .nav-left {
+    width: 48%;
+  }
+  
+  
+  /* HEADING WEB SECTION */
+  
+  .heading-web {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #144d8a;
+  }
+  
+  
+  
+  
+  /*********************************************** FOOTER SECTION ******************************************/
+  .footer {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.21607rem;
+    line-height: 1.8rem;
+    color: #0c0c0c; 
+    // border-top: 5px solid $primaryColor;
+    background-color: white;
+  }
+  
+  .footer-list {
+    list-style: none;
+  }
+  
+  .footer-web-left {
+    margin-left: 10rem;
+  }
+  
+  .footer-web-middle {
+    margin-left: 6rem;
+  }
+  
+  .footer-footer-text-mobile {
+    line-height: 0.5rem;
+  }
+  
+  .footer-footer-text-web {
+    line-height: 2rem;
+  }
+  
+  
+  
+  /* MEDIA QUERIES HEADER SECTION */
+  /* SMALL AND TAB SCREENS */
+  @media (min-width: 577px) {
+  
+    /* HEADER SECTION */
+   
+
+    .header-home-button {
+      border-bottom: orange 0.5rem solid;
+      width: 5rem;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .header-signup-button {
+      background: orange;
+      border-radius: 0.5rem;
+      width: 8rem;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
+  
+    .header-signup-text {
+      color: #ffffff;
+    }
+  
+    
+    /* FOOTER SECTION */
+  
+    .footer-web-left {
+      margin-left: 5rem;
+      width: 6rem;
+    }
+  
+    .footer-web-middle{
+      width: 6rem;
+    }
+    .copyright {
+      line-height: 2.2rem;
+      margin-top: 5rem;
+    }
+  
+    .footer-web-left,
+    .footer-web-middle,
+    .footer-web-right {
+      margin-top: 1rem;
+    }
+  }
+  
+  /* LARGER TAB AND LARGE SCREENS */
+  @media (min-width: 967px) { 
+  
+    /* fOOTER SECTION */
+  
+    .copyright {
+      line-height: 2rem;
+    }
+
+  }
+  
+
+@media (max-width : $mobile) {
+    .footer{
+        border: red 1px solid;
+        margin: 2rem 0rem 0rem 2rem;
+        line-height: 2rem;
+    }
+
+    .footer-load{
+        margin-top: 4rem ;
+    }
+    
+}
+
+// @media (max-width : $tablet) {
+//     .footer{
+//         border: red 1px solid;
+//         margin-top: 12rem;
+//         line-height: 2rem;
+//     }
+// }
+
+// @media (min-width : $miniLaptop) {
+    
 
