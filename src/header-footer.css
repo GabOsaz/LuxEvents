@@ -1,4 +1,4 @@
-html {
+/* html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -6,7 +6,7 @@ html {
 body {
   height: 100vh;
   margin: 0;
-}
+} */
 
 /************************************************ HEADER SECTION *************************************************/
 
@@ -60,6 +60,7 @@ body {
   font-size: 1.21607rem;
   line-height: 1.8rem;
   color: #0c0c0c;
+  transform: translate(0px, 40vh);
 }
 
 .footer-list {

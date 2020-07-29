@@ -84,7 +84,7 @@ const Footer = () => {
           <div className="card border-0 mr-5 ">
             <div className="card-body ">
               <ul className="footer-list footer-footer-text-web ">
-                <li className="font-weight-bold footer-web-right">Terms &#38; condittion</li>
+                <li className="font-weight-bold footer-web-right">Terms &#38; condition</li>
                 <li className="footer-web-right">Privacy policy</li>
                 <li className="footer-web-right">Contact us</li>
                 <li className="footer-web-right">FAQ</li>
