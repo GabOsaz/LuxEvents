@@ -348,11 +348,12 @@ body {
         z-index: 10;
 
         @media (max-width : $tablet) {
-            margin-top: -22rem
+            margin-top: -22rem;
         }
 
         @media (max-width : $mobile) {
             margin-left: -5rem
+           
         }
     }
 
@@ -546,9 +547,11 @@ body {
     line-height: 53px;
     //border: 2px solid green;
     transform: translate(0px, 37vh);
+    
 
     @media (max-width : $mobile) {
         margin-top: -5rem;
+        margin-bottom: 16rem;
     }
 
     @media (max-width : $tablet) {
@@ -611,11 +614,10 @@ body {
 
     @media (max-width : $mobile) {
         display: none
+        
     }
 
-    @media (max-width : $tablet) {
-        transform: translate(0px, 26vh);
-    }
+    
 
     .case {
         display: grid;
