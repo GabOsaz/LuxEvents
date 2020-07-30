@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="footer ">
+    <div className="footer">
       <div className="d-block d-sm-none footer-load">
         <ul className="footer-list">
           <li className="font-weight-bold">Lux event</li>

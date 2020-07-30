@@ -1,8 +1,8 @@
 import React from 'react';
-import services1 from '../img/services1.jpg';
-import services2 from '../img/services2.jpg';
-import services3 from '../img/services3.jpg';
-import services4 from '../img/services4.jpg';
+import services1 from '../../img/services1.jpg';
+import services2 from '../../img/services2.jpg';
+import services3 from '../../img/services3.jpg';
+import services4 from '../../img/services4.jpg';
 
 export default function Services() {
     return (

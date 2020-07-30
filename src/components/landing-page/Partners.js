@@ -1,9 +1,9 @@
 import React from 'react';
-import partners1 from '../img/partners1.png';
-import partners2 from '../img/partners2.jpg';
-import partners3 from '../img/partners3.png';
-import partners4 from '../img/partners4.png';
-import partners5 from '../img/partners5.png';
+import partners1 from '../../img/partners1.png';
+import partners2 from '../../img/partners2.jpg';
+import partners3 from '../../img/partners3.png';
+import partners4 from '../../img/partners4.png';
+import partners5 from '../../img/partners5.png';
 
 export default function Partners() {
     return (

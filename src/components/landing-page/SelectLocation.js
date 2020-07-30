@@ -1,10 +1,10 @@
 import React from 'react';
-import location1 from '../img/location1.jpg';
-import location2 from '../img/location2.jpg';
-import services1 from '../img/services1.jpg';
-import carousel_img_1 from '../img/carousel_img_1.jpg';
-import location3 from '../img/location3.jpg';
-import location4 from '../img/location4.jpg';
+import location1 from '../../img/location1.jpg';
+import location2 from '../../img/location2.jpg';
+import services1 from '../../img/services1.jpg';
+import carousel_img_1 from '../../img/carousel_img_1.jpg';
+import location3 from '../../img/location3.jpg';
+import location4 from '../../img/location4.jpg';
 
 export default function SelectLocation() {
     return (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Collapse,
   Navbar,
@@ -59,10 +60,10 @@ const Header = () => {
         <Collapse ref={wrapper} isOpen={isOpen} className="nav-right .d-none .d-sm-block" navbar>
           <Nav className="ml-auto" navbar>
             <NavItem className="header-home-button">
-              <NavLink href="/Home/" className="nav-text" >Home</NavLink>
+              <NavLink href="/" className="nav-text" >Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Gallery/" className="nav-text">Gallery</NavLink>
+              <NavLink href="/gallery" className="nav-text">Gallery</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/Contact/" className="nav-text">Contact</NavLink>

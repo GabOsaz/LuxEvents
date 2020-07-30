@@ -1,12 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import successGif from '../img/successGif.gif';
 
 export default function Success() {
     return (
         <>
-        < Header />
         <div className="container">
             <div className="row align-items-center justify-items-center">
                 <div className="card">
@@ -17,7 +14,6 @@ export default function Success() {
                 </div>
             </div>
         </div>
-        < Footer />
         </>
     )
 }

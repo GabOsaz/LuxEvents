@@ -1,7 +1,7 @@
 import React from 'react';
-import account from '../svg/account.svg';
-import book from '../svg/book.svg';
-import reserve from '../svg/reserve.svg';
+import account from '../../svg/account.svg';
+import book from '../../svg/book.svg';
+import reserve from '../../svg/reserve.svg';
 
 export default function HowItWorks() {
     return (

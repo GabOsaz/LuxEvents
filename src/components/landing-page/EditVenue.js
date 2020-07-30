@@ -1,11 +1,10 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+
 
 export default function EditVenue() {
     return (
         <>
-        < Header />
+       
         <div id='editVenue' className="container-fluid">
             <div className='editVenue row justify-items-center'> Edit Venue </div>
             <div className="d-flex align-items-center justify-items-center">
@@ -32,7 +31,7 @@ export default function EditVenue() {
                 </form>
             </div>
         </div>
-        < Footer />
+        
         </>
     )
 }

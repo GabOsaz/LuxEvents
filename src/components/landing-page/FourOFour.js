@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import FourOFour from '../img/FourOFour.gif';
 
 export default function FourOFour() {
     return (
         <>
-        < Header />
+      
         <div id='FourOFour' className="container">
             <div className="row align-items-center justify-items-center">
                 <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
@@ -26,7 +24,7 @@ export default function FourOFour() {
                 </div>
             </div>
         </div>
-        < Footer />
+        
         </>
     )
 }

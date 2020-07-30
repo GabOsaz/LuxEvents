@@ -14,6 +14,8 @@ $mobile: 550px;
 $tablet: 768px;
 $miniLaptop: 1024px;
 
+
+
 @mixin transform($property) {
     -webkit-transform: $property;
     -ms-transform: $property;
@@ -37,7 +39,10 @@ html {
 body {
     margin: 0;
     font-family: sans-serif;
-    background: $background
+    background: $background;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 //  Navbar Styles
@@ -551,8 +556,9 @@ body {
 
     @media (max-width : $mobile) {
         margin-top: -5rem;
-        margin-bottom: 16rem;
+        margin-bottom: 20rem;
     }
+    
 
     @media (max-width : $tablet) {
         transform: translate(0px, 26vh);
@@ -702,8 +708,7 @@ body {
     }
 }
 
-.footer-load{
-    margin-top: -26rem;
-    padding: 2rem;
-}
+
+
+
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import SearchBar from './SearchBar'
-import carousel_img_1 from '../img/carousel_img_1.jpg';
-import carousel_img_2 from '../img/carousel_img_2.jpg';
-import carousel_img_3 from '../img/carousel_img_3.jpg'
+import carousel_img_1 from '../../img/carousel_img_1.jpg';
+import carousel_img_2 from '../../img/carousel_img_2.jpg';
+import carousel_img_3 from '../../img/carousel_img_3.jpg'
 
 export default function Jumbo() {
     return (
