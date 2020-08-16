@@ -49,6 +49,10 @@ body {
   color: #144d8a;
 }
 
+.gallery-header{
+  box-shadow: .1rem 1rem 1rem -1.2rem rgba(0,0,0,0.57);
+}
+
 
 
 

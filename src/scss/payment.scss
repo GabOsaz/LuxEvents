@@ -1,0 +1,373 @@
+$primaryColor : #EF9B38;
+$skyBlue : #7C9BBD;
+$skyBlue2 : #5B82AD;
+$background: #F8F8F8;
+$HeadingFont: Playfair;
+$pFont: Poppins;
+$ratio-16-9: 56.25%;
+$cols: 4;
+$colsTab: 2;
+$cols2: 1;
+$cols6: 3;
+$cols5: 5;
+$mobile: 550px;
+$tablet: 768px;
+$miniLaptop: 1024px;
+
+
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -moz-transform: $property;
+    -o-transform: $property;
+    -webkit-backface-visibility: $property;
+    backface-visibility: $property;
+    transform: $property
+  }
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: $background;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+/* PAYMENT SECTION */
+
+.main-payment-container {
+background-color: rgb(231, 231, 231);
+padding: 2rem 0rem;
+color: #144d8a;
+}
+
+
+
+#amount, #amount-input, #percentage, .percentage-container,
+.calculator-details, .payment-method-radio-container,.form-group,
+#card-name, #card-number, #expire-date, #CVV, .bank-transfer-text {
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 1.8rem;
+line-height: 2.7rem;
+border-radius: 0.5rem;
+}
+
+@media (min-width: 900px) {
+.main-payment-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.payment-calculator-container {
+    width: 30%;
+    height: 100%;
+}
+
+.payment-method-container {
+    width: 30%;
+    height: 100%;
+}
+}
+
+@media (min-width: 750px) {
+.main-payment-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.payment-calculator-container {
+    width: 40%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment-method-container {
+    width: 40%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-payment-container-wrapper{
+    display: flex;
+}
+
+.main-payment-header{
+    font-family: Playfair Display;
+font-style: normal;
+font-weight: bold;
+font-size: 2.4rem;
+line-height: 3.2rem;
+display: flex;
+justify-content: center;
+
+}
+
+
+}
+
+@media(max-width: 767px){
+#amount, #amount-input, #percentage, .percentage-container,
+.calculator-details, .payment-method-radio-container,.form-group,
+#card-name, #card-number, #expire-date, #CVV, .bank-transfer-text {
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 1.5rem;
+line-height: 1.8rem;
+border-radius: 0.5rem;
+}
+
+.main-payment-header{
+/* font-family: Playfair Display;
+font-style: normal;
+font-weight: bold;
+font-size: 2rem;
+line-height: 3.2rem;
+display: flex;
+justify-content: center; */
+display: none;
+}
+}
+
+/* PAYMENT CALCULATOR */
+
+.payment-calculator {
+margin: 0rem 2rem;
+background-color: rgb(255, 255, 255);
+padding: 2rem 3rem;
+border-radius: 2rem;
+}
+
+.payment-header-1 {
+text-align: center;
+margin: 1rem 0rem;
+font-family: Playfair Display;
+font-style: normal;
+font-weight: bold;
+font-size: 2.4rem;
+line-height: 3.2rem;
+}
+
+.payment-header-2 {
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 1.4rem;
+line-height: 2rem;
+padding: 2rem 0rem;
+}
+
+
+
+
+#amount-input {
+
+height: 4rem;
+}
+
+#amount::placeholder {
+color: #144d8a;
+opacity: 0.5;
+}
+
+#amount:focus,
+input:focus,
+input[type]:focus,
+.uneditable-input:focus {
+border-color: #144d8a;
+box-shadow: 0 1px 1px rgba(28, 153, 24, 0.075) inset,
+    0 0 8px rgba(20, 37, 187, 0.6);
+outline: 0 none;
+height: 8rem;
+}
+
+.payment-header-2 {
+text-align: center;
+margin: 1rem 0rem;
+color: black;
+}
+
+.calculator-details-container {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+margin: 1rem 0rem;
+}
+
+.list-group-percentage {
+width: 100%;
+}
+
+
+
+
+.percentage-container {
+list-style: none;
+display: flex;
+width: 100%;
+justify-content: space-evenly;
+}
+
+.different-percentage {
+border: #144d8a 1px solid;
+height: 4rem;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+
+
+.calculator-details {
+display: flex;
+justify-content: space-between;
+width: 15rem;
+margin: 0.5rem 0rem;
+
+}
+
+.calculator-details-subtotal {
+display: flex;
+justify-content: flex-end;
+width: 6rem;
+}
+
+.total-hr {
+border-top: #144d8a solid 1px;
+}
+
+
+
+/* PAYMENT METHOD */
+
+.payment-method {
+padding: 2rem 0rem;
+height: 100%;
+
+
+}
+
+.payment-method-header {
+margin: 1rem 0 0rem 2rem;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 2.1rem;
+line-height: 3.6rem;
+}
+
+
+
+.payment-method-radio-container {
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin-top: 1.5rem;
+}
+
+
+
+/* CARD DETAILS */
+.card-details {
+margin: 2rem 2rem;
+background-color: rgb(255, 255, 255);
+border-radius: 0.5rem;
+padding: 2rem 2rem;
+
+}
+
+.card-details-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.card-details-header-1{ 
+font-family: Playfair Display;
+font-style: normal;
+font-weight: bold;
+font-size: 2.5rem;
+line-height: 3.3rem
+}
+
+
+.card-details-header-2{
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 1.2rem;
+line-height: 2.7rem;
+}
+
+
+
+
+
+#card-name, #card-number, #expire-date, #CVV{
+height: 4rem;
+}
+
+.card-details-expiry-cvv {
+display: flex;
+justify-content: space-between;
+}
+
+.col1,
+.col2 {
+width: 7rem;
+}
+
+.submit {
+background-color: orange;
+color: white;
+border: 0px solid;
+height: 4rem;
+border-radius: 0.5rem;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 2.4rem;
+line-height: 3.6rem;
+}
+
+/* BANK TRANSFER */
+.bank-transfer-container {
+padding: 2rem 0rem;
+background-color: white;
+margin: 1rem 2rem;
+border-radius: .5rem;
+}
+
+
+
+.bank-transfer-text {
+padding: 2rem 0rem;
+background-color: white;
+margin: 0rem 4rem;
+}

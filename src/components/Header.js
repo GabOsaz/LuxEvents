@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import {
+
   Collapse,
   Navbar,
   NavbarBrand,
@@ -69,10 +70,10 @@ const Header = () => {
               <NavLink href="/Contact/" className="nav-text">Contact</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Sign Up/" className="nav-text">Sign in</NavLink>
+              <NavLink href="/SignIn" className="nav-text">Sign in</NavLink>
             </NavItem>
             <NavItem className="header-signup-button">
-              <NavLink href="/Sign up/" className="header-signup-text nav-text">Sign up</NavLink>
+              <NavLink href="/SignIn" className="header-signup-text nav-text">Sign up</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
