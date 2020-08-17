@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const jwtDecode = require('jwt-decode');
 
 const User = require('../../models/User');
 const { createToken, verifyPassword } = require('./util')
@@ -24,7 +25,14 @@ router.post('/', async (req, res) => {
       );
   
       if (passwordValid) {
-        const token = createToken(user);
+        const { password, ...rest } = user;
+        const userInfo = Object.assign({}, { ...rest });
+
+        const token = createToken(userInfo);
+
+        const decodedToken = jwtDecode(token);
+        console.log(decodedToken);
+        const expiresAt = decodedToken.exp;
   
         res.cookie('token', token, {
           httpOnly: true
@@ -32,6 +40,8 @@ router.post('/', async (req, res) => {
   
         res.json({
           message: 'Authentication successful!',
+          userInfo,
+          expiresAt
         });
       } else {
         res.status(403).json({

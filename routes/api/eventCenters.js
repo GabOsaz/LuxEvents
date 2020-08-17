@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
       if (existingName) {
         return res
           .status(400)
-          .json({ message: 'Email already exists' });
+          .json({ message: 'That name already exists' });
       }
   
       const newCenter = new EventCenter(req.body);

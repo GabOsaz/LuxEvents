@@ -38,7 +38,9 @@ const EventCenterSchema = new Schema ({
         type: String,
         required: true
     },
-    amenities: []
+    amenities: {
+        type: String
+    }
 })
 
 module.exports = EventCenter = mongoose.model('eventCenter', EventCenterSchema)

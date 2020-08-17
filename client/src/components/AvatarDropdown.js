@@ -9,8 +9,8 @@ import {
     faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { AuthContext } from './../context/AuthContext';
-import defaultAvatar from './../images/defaultAvatar.png';
+import { AuthContext } from '../context/AuthContext';
+import defaultAvatar from '../images/defaultAvatar.png';
   
 const DropdownItem = ({ item }) => (
 <button
@@ -38,15 +38,15 @@ return (
   
 const AvatarDropdown = () => {
     const node = useRef();
-    // const auth = useContext(AuthContext);
-    // const { authState } = auth;
+    const auth = useContext(AuthContext);
+    const { authState } = auth;
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const dropdownItems = [
         {
         title: 'Log Out',
         icon: faSignOutAlt,
-        // onClick: auth.logout
+        onClick: auth.logout
         }
     ];
 
@@ -74,18 +74,18 @@ const AvatarDropdown = () => {
             className="flex rounded-full items-center py-2 px-3 bg-gradient focus:outline-none shadow-lg"
             onClick={() => setDropdownOpen(!dropdownOpen)}
         >
-            {/* <img
+            <img
             src={authState.userInfo.avatar || defaultAvatar}
             className="rounded-full w-6 border-2 border-white"
             alt="Avatar"
-            /> */}
-            <img
+            />
+            {/* <img
             src={ defaultAvatar}
             className="rounded-full w-6 border-2 border-white"
             alt="Avatar"
-            />
+            /> */}
             <div className="px-3">
-                {/* <p className="text-white">{authState.userInfo.firstname}</p> */}
+                <p className="text-white">{authState.userInfo.firstname}</p>
             </div>
             <div className="mr-1 text-white">
                 <FontAwesomeIcon icon={faCaretDown} />
@@ -94,7 +94,7 @@ const AvatarDropdown = () => {
 
         {dropdownOpen && (
             <div className="relative">
-            <DropdownContent dropdownItems={dropdownItems} />
+                <DropdownContent dropdownItems={dropdownItems} />
             </div>
         )}
         </div>

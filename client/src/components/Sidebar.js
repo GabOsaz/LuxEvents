@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -9,7 +9,6 @@ import {
     faCog,
   } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
-//import { AuthContext } from './../context/AuthContext'
 
 const navItems = [
   {
@@ -19,7 +18,7 @@ const navItems = [
   },
   {
     label: 'Events',
-    path: 'events',
+    path: 'addCenter',
     icon: faCalendarDay,
   },
   {
@@ -45,8 +44,8 @@ const NavItem = ({ navItem }) => {
     location.pathname === `/${navItem.path}`;
   const classes = classNames({
     'px-2 sm:px-6 justify-center sm:justify-start py-3 rounded-full flex': true,
-    'text-white hover:text-blue-500 transform hover:translate-x-1 transition ease-in-out duration-100': !isCurrentRoute,
-    'bg-white text-blue-500 shadow-sm': isCurrentRoute
+    'text-white hover:text-white-500 transform hover:translate-x-1 transition ease-in-out duration-100': !isCurrentRoute,
+    'bg-gradient text-white-500 shadow-sm': isCurrentRoute
   });
   return (
     <Link to={navItem.path} className={classes}>
@@ -67,11 +66,10 @@ const NavItemContainer = ({ children }) => (
 );
 
 const Sidebar = () => {
-//   const authContext = useContext(AuthContext);
   return (
     <section className="h-screen">
       <div className="w-16 sm:w-24 m-auto">
-        <img src='' rel="logo" alt="Logo" />
+        <h2 className="text-white-500"> Lux Events </h2>
       </div>
       <div className="mt-20">
         {navItems.map((navItem, i) => (

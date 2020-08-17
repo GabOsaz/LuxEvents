@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const fileUpload = require('express-fileupload');
+
 const cloudinary = require('cloudinary').v2;
 
-app.use(fileUpload({
-    useTempFiles: true
-}));
 
 cloudinary.config({
     cloud_name: 'omo-cloud',
@@ -25,3 +22,5 @@ router.post('/upload', (req, res) => {
         console.log(result);
     })
 })
+
+module.exports = router;
