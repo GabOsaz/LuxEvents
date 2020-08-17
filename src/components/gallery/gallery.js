@@ -24,7 +24,9 @@ const Gallery = (props) => {
   
   return (
 
-    loading ? <div>loading</div> : 
+    loading ?   <div className="loadingScreen"><div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div></div> : 
     error ? <div>error</div> :
     
    <div>
@@ -42,14 +44,14 @@ const Gallery = (props) => {
         </div>
         {
        venues.map((venue) =>
-        <div className="container mobile-gallery-body" key={venue._id}>
+        <div className="container mobile-gallery-body" key={venue.id}>
           <Row className="red">
             <Col sm="6 mb-4">
               <Card
                 body
                 className="mobile-gallery-card border-0 d-block d-sm-none"
               >
-                <Link to={`/event-center-details/` + venue._id} className="mobile-gallery-border">
+                <Link to={`/event-center-details/` + venue.id} className="mobile-gallery-border">
                   <img
                     
                     width="100%"
@@ -71,7 +73,7 @@ const Gallery = (props) => {
               </Card>
 
 
-              <Link to={`/event-center-details/` + venue._id} className="gallery-card-web border-0 d-none d-sm-block">
+              <Link to={`/event-center-details/` + venue.id} className="gallery-card-web border-0 d-none d-sm-block">
                 <div className="e">
                   <img
                     className="gallery-image-web"
@@ -86,7 +88,7 @@ const Gallery = (props) => {
             </Col>
 
             <Col sm="6 mb-4 d-none d-sm-block">
-              <Link to={`/event-center-details/` + venue._id}
+              <Link to={`/event-center-details/` + venue.id}
                 
                 className="gallery-card-web  border-0 gallery-right"
               >

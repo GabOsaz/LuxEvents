@@ -1,15 +1,19 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "../reducers/index";
 import thunk from "redux-thunk";
-// import Cookie from "js-cookie";
+import Cookie from "js-cookie";
 
 // const cartItems = Cookie.getJSON("cartItems") || [];
 // console.log(cartItems, "inside store");
 
-// const initialState = { cartItems };
+
+const userInfo = Cookie.getJSON("userInfo") || null;
+console.log(userInfo, "inside store");
 
 
-const initialState = { };
+const initialState = { userSignin : { userInfo } };
+
+
 
 const middleWare = [thunk];
 

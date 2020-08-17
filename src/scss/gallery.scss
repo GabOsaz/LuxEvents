@@ -14,6 +14,23 @@ $largeLaptop: 1200px;
 //   border-bottom: 0.5rem solid rgb(255, 165, 0);
 // }
 
+.loadingScreen{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.errorScreen{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .gallery-card-web {
   height: 100%;
   flex-direction: column;
