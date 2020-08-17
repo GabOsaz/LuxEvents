@@ -1,12 +1,34 @@
-import React from "react";
+import React,{ useEffect} from "react";
 import {Link }from "react-router-dom"
 import { Card, CardText, Row, Col } from "reactstrap";
-import db from './../../DB/db';
+import {useSelector, useDispatch} from "react-redux"
+import { listVenues } from "../../redux/actions/venueActions";
 
-const Gallery = () => {
+
+
+const Gallery = (props) => {
+
+  const venueList = useSelector(state => state.venueList);
+  const {venues, loading, error } = venueList;
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+   
+    dispatch(listVenues());
+    
+    return () => {
+      // cleanup
+    }
+  }, [])
+  
+  
   return (
+
+    loading ? <div>loading</div> : 
+    error ? <div>error</div> :
     
    <div>
+
       
           <div className="gallery-body">
       <div className="container">
@@ -19,7 +41,7 @@ const Gallery = () => {
           </h4>
         </div>
         {
-       db.Venues.map((venue) =>
+       venues.map((venue) =>
         <div className="container mobile-gallery-body" key={venue._id}>
           <Row className="red">
             <Col sm="6 mb-4">

@@ -67,13 +67,13 @@ const Header = () => {
               <NavLink href="/gallery" className="nav-text">Gallery</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Contact/" className="nav-text">Contact</NavLink>
+              <NavLink href="/Contact" className="nav-text">Contact</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/SignIn" className="nav-text">Sign in</NavLink>
             </NavItem>
             <NavItem className="header-signup-button">
-              <NavLink href="/SignIn" className="header-signup-text nav-text">Sign up</NavLink>
+              <NavLink href="/SignUp" className="header-signup-text nav-text">Sign up</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

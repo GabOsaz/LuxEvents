@@ -1,15 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import db from "../../DB/db";
+import React, { useEffect } from "react";
+import { Link} from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux"
+import { detailsVenue } from "../../redux/actions/venueActions"
 
 const EventCenterDetails = (props) => {
-  console.log(props.match.params.id);
-  console.log(props, "propsssss");
+   
 
-  const venue = db.Venues.find((venue) => venue._id === props.match.params.id);
+  const venueDetails = useSelector(state => state.venueDetails);
+  const {venue, loading, error} = venueDetails;
+  const dispatch = useDispatch();
 
-  console.log(venue);
+  
+  useEffect(() => {
+    dispatch(detailsVenue(props.match.params.id))
+    return () => {
+      // cleanup
+    }
+  }, [])
+
+  console.log(props);
+
   return (
+    loading ? <div>loading</div> : 
+    error ? <div>error</div> :
+
     <div className="details">
       <h3 className="details-heading">Details</h3>
 
@@ -482,8 +496,8 @@ const EventCenterDetails = (props) => {
                 />
               </svg>
             </icon>
-            <div className=""><b>amenities</b> <br/> {venue.amen.map((amenities) => 
-            <div key="">{amenities }</div> )} </div>
+            {/* <div className=""><b>amenities</b> <br/> {venue.amen.map((amenities) => 
+            <div key="">{amenities }</div> )} </div> */}
             
           </div>
 
