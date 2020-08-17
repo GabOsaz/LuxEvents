@@ -46,17 +46,17 @@ const Gallery = (props) => {
        venues.map((venue) =>
         <div className="container mobile-gallery-body" key={venue.id}>
           <Row className="red">
-            <Col sm="6 mb-4">
+            <Col sm="6 mb-5">
               <Card
                 body
                 className="mobile-gallery-card border-0 d-block d-sm-none"
               >
-                <Link to={`/event-center-details/` + venue.id} className="mobile-gallery-border">
+                <Link to={`/event-center-details/` + venue.id} style={{textDecoration: "none"}} className ="mobile-gallery-border" style={{textDecoration: "none"}}>
                   <img
                     
                     width="100%"
                     className="mobile-gallery-image"
-                    src="https://res.cloudinary.com/dsipecjov/image/upload/v1591924577/dpl94k9kf4cb5o7fwska.jpg"
+                    src={venue.image}
                     alt="event Venue"
                   />
 
@@ -73,13 +73,13 @@ const Gallery = (props) => {
               </Card>
 
 
-              <Link to={`/event-center-details/` + venue.id} className="gallery-card-web border-0 d-none d-sm-block">
+              <Link to={`/event-center-details/` + venue.id} className="gallery-card-web border-0 d-none d-sm-block" style={{textDecoration: "none"}}>
                 <div className="e">
                   <img
                     className="gallery-image-web"
                     
                     width="100%"
-                    src="https://res.cloudinary.com/dsipecjov/image/upload/v1591924577/dpl94k9kf4cb5o7fwska.jpg"
+                    src={venue.image}
                     alt="event Venue"
                   />
                 </div>
@@ -87,9 +87,9 @@ const Gallery = (props) => {
              
             </Col>
 
-            <Col sm="6 mb-4 d-none d-sm-block">
+            <Col sm="6 mb-5 d-none d-sm-block">
               <Link to={`/event-center-details/` + venue.id}
-                
+                style={{textDecoration: "none"}}
                 className="gallery-card-web  border-0 gallery-right"
               >
                 <div className="gallery-body-image-text mt-1">

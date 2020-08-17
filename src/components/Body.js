@@ -6,6 +6,7 @@ import EventCenterDetails from './gallery/EventCenterDetails';
 import Calender from "./calender/Calender"
 import SignIn from "./sigin/SignIn"
 import SignUp from './sigin/siginUp';
+import MainPayment from './payment/MainPayment';
 
 const Body = () => {
   return (
@@ -14,9 +15,11 @@ const Body = () => {
         <Route path="/" exact={true} component={LandingPage} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/event-center-details/:id" component={EventCenterDetails} />
+        <Route path="/MainPayment" component={MainPayment} />
         <Route path="/calender" component={Calender} />
         <Route path="/SignIn" component={SignIn} />
         <Route path="/SignUp" component={SignUp} />
+
       
       </div>
     </div>
