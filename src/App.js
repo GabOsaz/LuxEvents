@@ -7,6 +7,8 @@ import "./scss/calender.scss";
 import "./scss/signIn.scss";
 import "./scss/adminSetting.scss";
 import "./scss/payment.scss";
+import "./scss/extras.scss";
+import "./scss/errorPage.scss";
 
 import AppIndex from './components/Index';
 

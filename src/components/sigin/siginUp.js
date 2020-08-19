@@ -114,7 +114,7 @@ const SignUp = (props) => {
                     </li>
                     <li className="password-container">
                         
-                        <input type="password" name="password" id="password" placeholder="Password" nChange={((e) => setPassword(e.target.value))}></input>
+                        <input type="password" name="password" id="password" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input>
                         
                     </li>
                     <Link className="forgot-password">

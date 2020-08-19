@@ -67,7 +67,7 @@ const Header = () => {
               <NavLink href="/gallery" className="nav-text">Gallery</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Contact" className="nav-text">Contact</NavLink>
+              <NavLink href="/ErrorPage" className="nav-text">Contact</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/SignIn" className="nav-text">Sign in</NavLink>

@@ -34,7 +34,7 @@ const EventCenterDetails = (props) => {
             <img className="event-center-image" src={venue.image} alt="venue" />
           </div>
           <div className="event-details-button">
-            <Link to="/MainPayment" style={{textDecoration: "none"}}>
+            <Link to="/request-reservation" style={{textDecoration: "none"}}>
               <button className="event-details-button-1">Book Now</button>
             </Link>
             <Link to="/calender" style={{textDecoration: "none"}}>
@@ -206,7 +206,7 @@ const EventCenterDetails = (props) => {
               <h3 className=""> Description</h3> {venue.descriptionWeb}{" "}
             </div>
             <div className="event-details-button">
-              <Link to="/MainPayment" style={{textDecoration: "none"}}>
+              <Link to="/request-reservation" style={{textDecoration: "none"}}>
                 <button className="event-details-button-1">Book Now</button>
               </Link>
               <Link to="/calender" style={{textDecoration: "none"}}>

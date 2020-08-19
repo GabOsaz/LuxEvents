@@ -1,0 +1,64 @@
+$primaryColor : #EF9B38;
+$skyBlue : #7C9BBD;
+$skyBlue2 : #5B82AD;
+$background: #F8F8F8;
+$HeadingFont: Playfair;
+$pFont: Poppins;
+$ratio-16-9: 56.25%;
+$cols: 4;
+$colsTab: 2;
+$cols2: 1;
+$cols6: 3;
+$cols5: 5;
+$mobile: 550px;
+$tablet: 768px;
+$miniLaptop: 1024px;
+
+
+
+
+  
+  .name-container,
+  .email-container,
+  .date-container {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: initial;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+ 
+ 
+
+
+
+  @media(min-width: 1200px) {
+     
+      .signin-web-image{
+        width: 100%;
+        height: 50rem;
+        width: 60rem;
+      }
+
+      .Request-reservation-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      margin: 5rem 0rem;
+      padding: 0rem 10rem;
+    }
+
+    
+
+  }
+
+
+  
+  
+  
+  
+  
+  

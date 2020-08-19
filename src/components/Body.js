@@ -7,6 +7,8 @@ import Calender from "./calender/Calender"
 import SignIn from "./sigin/SignIn"
 import SignUp from './sigin/siginUp';
 import MainPayment from './payment/MainPayment';
+import RequestReservation from './extras/RequestReservation';
+import ErrorPage from './extras/ErrorPage';
 
 const Body = () => {
   return (
@@ -19,8 +21,8 @@ const Body = () => {
         <Route path="/calender" component={Calender} />
         <Route path="/SignIn" component={SignIn} />
         <Route path="/SignUp" component={SignUp} />
-
-      
+        <Route path="/request-reservation" component={RequestReservation} />
+        <Route path="/ErrorPage" component={ErrorPage} />
       </div>
     </div>
   );
