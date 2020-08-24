@@ -61,12 +61,12 @@ const SignIn = (props) => {
 
                         <li className="email-container">
                         
-                            <input type="email" name="email" id="email" placeholder="Email address" onChange={((e) => setEmail(e.target.value))}></input>
+                            <input type="email" name="email" id="email" placeholder="Email address" value={email} onChange={((e) => setEmail(e.target.value))}></input>
                             
                         </li>
                         <li className="password-container">
                             
-                            <input type="password" name="password" id="password" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input>
+                            <input type="password" name="password" id="password" placeholder="Password" value={password} onChange={((e) => setPassword(e.target.value))}></input>
                             
                         </li>
                         <Link className="forgot-password">

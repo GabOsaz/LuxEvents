@@ -1,16 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { publicFetch } from '../../util/fetch';
+import { AuthContext } from '../../context/AuthContext'
 
 
-const SignUp = (props) => {
-
-   const [Name, setName] = useState('')
-   const [email, setEmail] = useState('')
-   const [password, setPassword] = useState('')
+const SignUp = () => {
+    const authContext = useContext(AuthContext)
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [signupSuccess, setSignupSuccess] = useState();
+    const [signupError, setSignupError] = useState();
+    const [redirectOnLogin, setRedirectOnLogin] = useState(false);
     
+   const credentials = {
+    firstName,
+    lastName,
+    email,
+    password
+   }
+   console.log(credentials);
   
-  const submitHandler = (e) => {
-     
+  const submitHandler = async (e) => {
+      try {
+        e.preventDefault();
+        const { data } = await publicFetch.post('signup', credentials);
+        console.log('data >>', data);
+        authContext.setAuthState(data);
+        setSignupSuccess(data.message);
+        setSignupError('');
+        setTimeout(() => {
+            setRedirectOnLogin(true)
+          }, 700)
+    } catch(error) {
+        console.log(error);
+        const { data } = error.response;
+        setSignupError(data.message);
+        setSignupSuccess('');
+    }
   }
 
   
@@ -25,13 +53,27 @@ const SignUp = (props) => {
 
 
     return (
-        <div className="signIn-container">
+        <>
+        {redirectOnLogin && <Redirect to="/"/>}
+            <div className="signIn-container">
             <div className="form-mobile">
                 <div className="form signin-form">
                 <form onSubmit={submitHandler}>
                     <ul className="form-container ">
                         
                         <h3 className="sigin-heading">Create an account </h3>
+
+                        {signupSuccess && (
+                            <div class="alert alert-success" role="alert">
+                                {signupSuccess}
+                            </div>
+                        )}
+
+                        {signupError && (
+                            <div class="alert alert-danger" role="alert">
+                                {signupError}
+                            </div>
+                        )}
                     
                         {/* <li>{error.message}</li> */}
                         {/* <li>
@@ -41,24 +83,20 @@ const SignUp = (props) => {
                         </li> */}
 
                         <li className="name-container">
-                        
-                        <input type="name" name="name" id="name" placeholder="Name" onChange={((e) => setName(e.target.value))}></input>
-                        
-                    </li>
-
+                            <input type="text" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
+                        </li>
+                        <li className="name-container">
+                            <input type="text" name="lastName" id="lastName" placeholder="Last name" value={lastName} onChange={((e) => setLastName(e.target.value))}></input>                       
+                        </li>
                         <li className="email-container">
-                        
-                            <input type="email" name="email" id="email" placeholder="Email address" onChange={((e) => setEmail(e.target.value))}></input>
-                            
+                            <input type="email" name="email" id="email" placeholder="Email address" value={email} onChange={((e) => setEmail(e.target.value))}></input>                           
                         </li>
                         <li className="password-container">
-                            
-                            <input type="password" name="password" id="password" placeholder="Password" nChange={((e) => setPassword(e.target.value))}></input>
-                            
+                            <input type="password" name="password" id="password" placeholder="Password" value={password} onChange={((e) => setPassword(e.target.value))}></input>
                         </li>
-                        <Link className="forgot-password">
+                        <li className="forgot-password">
                             Forgot your Password ?
-                        </Link>
+                        </li>
                         
                         <li>
                             <button type="submit" className="signin-button">Sign in </button>
@@ -67,7 +105,7 @@ const SignUp = (props) => {
                         <li className="signUp-policy-text">By signing up below you have accepted our <br/>terms of service and privacy policy</li>
                         
                         <li>
-                            <button type="submit" className="connect-google-button"><icon> <img className="googleLogo" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597539426/wdx0jpcmfcbwclckrpdh.svg" /></icon> Connect with Google </button>
+                            <button type="submit" className="connect-google-button"> <img className="googleLogo" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597539426/wdx0jpcmfcbwclckrpdh.svg" /> Connect with Google </button>
                         </li>
 
                         <li className="signUp-link">
@@ -86,13 +124,25 @@ const SignUp = (props) => {
 
 
 
-
+            {redirectOnLogin && <Redirect to="/"/>}
             <div className="form-web">
             <div className="form signin-form">
             <form onSubmit={submitHandler}>
                 <ul className="form-container ">
                     
                     <h3 className="sigin-heading">Create an account </h3>
+
+                    {signupSuccess && (
+                        <div class="alert alert-success" role="alert">
+                            {signupSuccess}
+                        </div>
+                    )}
+                        
+                    {signupError && (
+                        <div class="alert alert-danger" role="alert">
+                            {signupError}
+                        </div>
+                    )} 
                  
                     {/* <li>{error.message}</li> */}
                     {/* <li>
@@ -102,29 +152,23 @@ const SignUp = (props) => {
                     </li> */}
 
                     <li className="name-container">
-                       
-                       <input type="name" name="name" id="name" placeholder="Name" onChange={((e) => setName(e.target.value))}></input>
-                       
-                   </li>
-
+                        <input type="name" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
+                    </li>
+                    <li className="name-container">
+                        <input type="name" name="lastName" id="lastName" placeholder="Last name" value={lastName} onChange={((e) => setLastName(e.target.value))}></input>                       
+                    </li>
                     <li className="email-container">
-                       
-                        <input type="email" name="email" id="email" placeholder="Email address" onChange={((e) => setEmail(e.target.value))}></input>
-                        
+                        <input type="email" name="email" id="email" placeholder="Email address" value={email} onChange={((e) => setEmail(e.target.value))}></input> 
                     </li>
                     <li className="password-container">
-                        
-                        <input type="password" name="password" id="password" placeholder="Password" nChange={((e) => setPassword(e.target.value))}></input>
-                        
+                        <input type="password" name="password" id="password" placeholder="Password" value={password} onChange={((e) => setPassword(e.target.value))}></input>
                     </li>
-                    <Link className="forgot-password">
+                    <li className="forgot-password">
                         Forgot your Password ?
-                    </Link>
-                    
+                    </li>
                     <li>
                         <button type="submit" className="signin-button">Sign in </button>
                     </li>
-
                     <li className="signUp-policy-text">By signing up below you have accepted our <br/>terms of service and privacy policy</li>
                     
                     <li>
@@ -158,6 +202,7 @@ const SignUp = (props) => {
 
 
         </div>
+        </>
         
     )
 }

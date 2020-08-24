@@ -13,3 +13,5 @@ router.get('/', async (req, res) => {
       res.status(400).json({ msg: e.message });
     }
 });
+
+module.exports = router;

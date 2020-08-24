@@ -7,6 +7,7 @@ import "./scss/calender.scss";
 import "./scss/signIn.scss";
 import "./scss/adminSetting.scss";
 import "./scss/payment.scss";
+import { AuthProvider } from './context/AuthContext';
 
 import AppIndex from './components/Index';
 
@@ -15,7 +16,9 @@ import AppIndex from './components/Index';
 function App() {
   return (
     <div>
+      <AuthProvider>
         <AppIndex />
+      </AuthProvider>
      
     </div>
   );

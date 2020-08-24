@@ -12,7 +12,7 @@ const signin = (email, password) => async (dispatch) => {
 
   try {
     
-    const { data, } = await axios.post("https://my-json-server.typicode.com/oyeyipo45/fakerest/users", {
+    const { data, } = await axios.post("http://localhost:5050/api/login", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     email,password});

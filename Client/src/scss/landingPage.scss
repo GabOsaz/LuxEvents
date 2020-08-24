@@ -295,7 +295,6 @@ body {
         @media (max-width : $tablet) {
             font-size: 1.6rem;
         }
-        
     }
 
     .dropdown-toggle {
@@ -329,6 +328,7 @@ body {
     .dropdown-item {
         font-size: 1.5rem;
         z-index: 10;
+        line-height: normal;
 
         @media (max-width : $tablet) {
             font-size: 1.3rem;
@@ -336,7 +336,8 @@ body {
     }
 
     .dropdown-item:hover {
-        background: rgb(180, 176, 176)
+        background: rgb(180, 176, 176);
+        cursor: pointer;
     }
 
     .dropdown-menu {
