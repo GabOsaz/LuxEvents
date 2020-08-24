@@ -2,20 +2,29 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsVenue } from "../../redux/actions/venueActions";
+import ErrorPage from './../extras/ErrorPage';
+
+
 
 const EventCenterDetails = (props) => {
   const venueDetails = useSelector((state) => state.venueDetails);
   const { venue, loading, error } = venueDetails;
   const dispatch = useDispatch();
 
+  
+
   useEffect(() => {
     dispatch(detailsVenue(props.match.params.id));
+     
     return () => {
       // cleanup
     };
   }, []);
 
   // console.log(props.match.params.id);
+  // console.log(props, "inside details")
+  //       console.log(props.location.pathname.split("/")[2], "ID")
+  //       const venueId = Number(props.location.pathname.split("/")[2])
 
   return loading ? (
     <div className="loadingScreen"><div class="spinner-border" role="status">
@@ -23,7 +32,7 @@ const EventCenterDetails = (props) => {
   </div></div>
     
   ) : error ? (
-    <div className="errorScreen">error</div>
+    <div className="errorScreen">{ErrorPage()}</div>
   ) : (
     <div className="details">
       <h3 className="details-heading">Details</h3>
@@ -37,7 +46,7 @@ const EventCenterDetails = (props) => {
             <Link to="/MainPayment" style={{textDecoration: "none"}}>
               <button className="event-details-button-1">Book Now</button>
             </Link>
-            <Link to="/calender" style={{textDecoration: "none"}}>
+            <Link to={`/request-reservation/` + venue._id} style={{textDecoration: "none"}}>
               <button className="event-details-button-2">Make Reservation</button>
             </Link>
           </div>
@@ -54,7 +63,7 @@ const EventCenterDetails = (props) => {
               <b>Price</b> <br /> {venue.price}
             </div>
           </div>
-          <Link to="/calender" className="event-details-sub" style={{textDecoration: "none"}}>
+          <Link to={`/calender/` + venue._id}  className="event-details-sub" style={{textDecoration: "none"}}>
             <icon>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
@@ -73,7 +82,7 @@ const EventCenterDetails = (props) => {
             </icon>
 
             <div className="">
-              <b>Guest Capacity</b> <br /> {venue.guestCapacity}{" "}
+              <b>Guest Capacity</b> <br /> {venue.capacity}{" "}
             </div>
           </div>
           <div className="event-details-sub">
@@ -83,7 +92,7 @@ const EventCenterDetails = (props) => {
             </icon>
             <div className="">
               <b>Service</b> <br />
-              {venue.service}{" "}
+              {venue.services}{" "}
             </div>
           </div>
 
@@ -110,7 +119,7 @@ const EventCenterDetails = (props) => {
 
           <div className="event-center-description">
             <h3 className="details-heading"> Description</h3>{" "}
-            {venue.descriptionMobile}{" "}
+            {venue.description}{" "}
           </div>
         </div>
       </div>
@@ -128,7 +137,7 @@ const EventCenterDetails = (props) => {
                 <b>Price</b> <br /> {venue.price}
               </div>
             </div>
-            <Link to="/calender" className="event-details-sub" style={{textDecoration: "none"}}>
+            <Link to={`/request-reservation/` + venue._id} className="event-details-sub" style={{textDecoration: "none"}}>
               <icon>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
@@ -147,7 +156,7 @@ const EventCenterDetails = (props) => {
             </icon>
 
               <div className="">
-                <b>Guest Capacity</b> <br /> {venue.guestCapacity}{" "}
+                <b>Guest Capacity</b> <br /> {venue.capacity}{" "}
               </div>
             </div>
             <div className="event-details-sub">
@@ -157,7 +166,7 @@ const EventCenterDetails = (props) => {
             </icon>
               <div className="">
                 <b>Service</b> <br />
-                {venue.service}{" "}
+                {venue.services}{" "}
               </div>
             </div>
 
@@ -187,8 +196,9 @@ const EventCenterDetails = (props) => {
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
             </icon>
-              {/* <div className=""><b>amenities</b> <br/> {venue.amen.map((amenities) => 
-            <div key="">{amenities }</div> )} </div> */}
+              {/* <div className=""><b>amenities</b> <br/> {venue.amenities.map((amenity) => 
+            <div key={venue._id}>{amenity}</div> )} </div>
+             */}
             </div>
           </div>
         </div>
@@ -203,14 +213,14 @@ const EventCenterDetails = (props) => {
               />
             </div>
             <div className="event-center-description">
-              <h3 className=""> Description</h3> {venue.descriptionWeb}{" "}
+              <h3 className=""> Description</h3> {venue.description}{" "}
             </div>
             <div className="event-details-button">
               <Link to="/MainPayment" style={{textDecoration: "none"}}>
                 <button className="event-details-button-1">Book Now</button>
               </Link>
-              <Link to="/calender" style={{textDecoration: "none"}}>
-                <button className="event-details-button-2">Make Reservation</button>
+              <Link to="/request-reservation" style={{textDecoration: "none"}}>
+                <button className="event-details-button-2">request Reservation</button>
               </Link>
             </div>
           </div>
