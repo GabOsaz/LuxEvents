@@ -21,7 +21,7 @@ const fileUploadRoute = require('./routes/api/fileupload');
 const db = process.env.MONGO_URI;
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 app.use(cookieParser());
 
 app.use('/api/signup', signup);
