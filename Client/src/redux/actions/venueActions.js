@@ -14,8 +14,9 @@ import {
   const listVenues = () => async (dispatch) => {
     try {
       dispatch({ type: VENUE_LIST_REQUEST });
-  
-      const { data } = await axios.get("https://my-json-server.typicode.com/oyeyipo45/fakerest/venues");
+      
+      const { data } = await axios.get("http://127.0.0.1:5050/api/gallery");
+    
       dispatch({ type: VENUE_LIST_SUCCESS, payload: data });
     } catch (error) {
       dispatch({ type: VENUE_LIST_FAIL, payload: error.message });
@@ -27,7 +28,7 @@ import {
   const detailsVenue = (venueId) => async (dispatch) => {
     try {
       dispatch({ type: VENUE_DETAILS_REQUEST, payload: venueId });  
-      const { data } = await axios.get(`https://my-json-server.typicode.com/oyeyipo45/fakerest/venues/${venueId}`);
+      const { data } = await axios.get(`http://127.0.0.1:5050/api/gallery/${venueId}`);
       dispatch({ type: VENUE_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({ type: VENUE_DETAILS_FAIL, payload: error.message });

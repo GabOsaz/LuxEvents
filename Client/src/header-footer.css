@@ -105,9 +105,9 @@ body {
 
   /* HEADER SECTION */
 
-  .header-home-button {
+  .header-home-button:active{
     border-bottom: orange 0.5rem solid;
-    width: 5rem;
+    width: 6rem;
     display: flex;
     justify-content: center;
   }
@@ -123,6 +123,13 @@ body {
 
   .header-signup-text {
     color: #ffffff;
+  }
+
+  .active{
+    border-bottom: orange 0.5rem solid;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
   }
 
   

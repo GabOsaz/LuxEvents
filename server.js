@@ -10,11 +10,15 @@ require('dotenv').config();
 
 const app = express();
 
+
 const signup = require('./routes/api/signup');
 const login = require('./routes/api/login');
 const gallery = require('./routes/api/gallery');
 
 const db = process.env.MONGO_URI;
+
+
+app.use(cors())
 
 app.use(express.json());
 app.use(cors());

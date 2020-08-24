@@ -1,15 +1,21 @@
 import React from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 export default class Calendar extends React.Component {
+    
     state = {
         dateContext: moment(),
         today: moment(),
         showMonthPopup: false,
         showYearPopup: false,
         selectedDay: null,
+        selectedDate: null,
         booked: true
     }
+
+
+    
 
     weekdays = moment.weekdays(); //["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
     weekdaysShort = moment.weekdaysShort(); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -30,6 +36,10 @@ export default class Calendar extends React.Component {
     }
     currentDay = () => {
         return this.state.dateContext.format("D");
+    }
+
+    selectedDate = () => {
+        return this.state.currentDate.format("D");
     }
 
     firstDayOfMonth = () => {
@@ -74,9 +84,9 @@ export default class Calendar extends React.Component {
         let popup = props.data.map((data) => {
             return (
                 <div key={data}>
-                    <a href="data" onClick={(e)=> {this.onSelectChange(e, data)}}>
+                    <p  onClick={(e)=> {this.onSelectChange(e, data)}}>
                         {data}
-                    </a>
+                    </p>
                 </div>
             );
         });
@@ -153,11 +163,12 @@ export default class Calendar extends React.Component {
         );
     }
 
-    onDayClick = (e, day) => {
+    onDayClick = (e, day, month, year) => {
         this.setState({
-            selectedDay: day
+            selectedDay: day,
         }, () => {
             console.log("SELECTED DAY: ", this.state.selectedDay);
+
         });
 
         this.props.onDayClick && this.props.onDayClick(e, day);
@@ -172,6 +183,10 @@ export default class Calendar extends React.Component {
                </td>
             )
         });
+
+        console.log(this.props, "inside calender")
+        console.log(this.props.location.pathname.split("/")[2], "ID")
+        const venueId = Number(this.props.location.pathname.split("/")[2])
 
         let blanks = [];
         for (let i = 0; i < this.firstDayOfMonth(); i++) {
@@ -234,9 +249,11 @@ export default class Calendar extends React.Component {
                           <p className="availability-icon-1"> </p>
                         <p className="calender-align-availability">Available dates</p></div>
 
-                        <i className="fa fa-times close-icon">
+                       <Link to={`/event-center-details/` + {venueId}}>
+                       <i className="fa fa-times close-icon">
 
-                        </i>
+</i>
+                       </Link>
                       </div>
           
                       <div className="available-dates-1">
@@ -288,35 +305,6 @@ export default class Calendar extends React.Component {
                 </div>
 
 
-            {/* <div className="calender-container">
-                <table className="calender">
-                    <thead>
-                        <tr className="calender-header">
-                            <td colSpan="5">
-                                <this.MonthNav />
-                                {" "}
-                                <this.YearNav />
-                            </td>
-                            <td colSpan="2" className="nav-month">
-                                <i className="prev fa fa-fw fa-chevron-left"
-                                    onClick={(e)=> {this.prevMonth()}}>
-                                </i>
-                                <i className="prev fa fa-fw fa-chevron-right"
-                                    onClick={(e)=> {this.nextMonth()}}>
-                                </i>
-
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            {weekdays}
-                        </tr>
-                        {trElems}
-                    </tbody>
-                </table>
-
-            </div> */}
           </div>
           
 

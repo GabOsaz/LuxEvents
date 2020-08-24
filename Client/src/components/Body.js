@@ -7,6 +7,8 @@ import Calender from "./calender/Calender"
 import SignIn from "./signin/SignIn"
 import SignUp from './signin/siginUp';
 import MainPayment from './payment/MainPayment';
+import Front from './../front';
+import RequestReservation from './extras/RequestReservation';
 
 const Body = () => {
   return (
@@ -19,7 +21,8 @@ const Body = () => {
         <Route path="/calender" component={Calender} />
         <Route path="/SignIn" component={SignIn} />
         <Route path="/SignUp" component={SignUp} />
-
+        <Route path="/Front" component={Front} />
+        <Route path="/request-reservation" component={RequestReservation} />
       
       </div>
     </div>

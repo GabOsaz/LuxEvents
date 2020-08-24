@@ -3,15 +3,12 @@ import rootReducer from "../reducers/index";
 import thunk from "redux-thunk";
 import Cookie from "js-cookie";
 
-// const cartItems = Cookie.getJSON("cartItems") || [];
-// console.log(cartItems, "inside store");
-
 
 const userInfo = Cookie.getJSON("userInfo") || null;
-console.log(userInfo, "inside store");
+// console.log(userInfo, "inside store");
 
 
-const initialState = { userSignin : { userInfo } };
+const initialState = { userSignIn : { userInfo }};
 
 
 

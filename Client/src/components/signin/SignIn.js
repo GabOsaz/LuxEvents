@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch,  useSelector } from 'react-redux';
-import signin from './../../redux/actions/signinAction';
+import { signin} from './../../redux/actions/userAction';
 
 
 const SignIn = (props) => {
@@ -30,16 +30,7 @@ const SignIn = (props) => {
   }
 
   
-    // useEffect(() => {
-    //     if(userInfo){
-    //         props.history.push('/')
-    //     }
-    //     return () => {
-           
-    //     }
-    // }, [userInfo])
-
-
+  
     return (
         <div className="signIn-container">
             <div className="form-mobile">

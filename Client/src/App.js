@@ -7,7 +7,11 @@ import "./scss/calender.scss";
 import "./scss/signIn.scss";
 import "./scss/adminSetting.scss";
 import "./scss/payment.scss";
+<<<<<<< HEAD
 import { AuthProvider } from './context/AuthContext';
+=======
+import "./scss/errorPage.scss";
+>>>>>>> 55c819ad08d1a4925547ae00eb6199e00d6e9b80
 
 import AppIndex from './components/Index';
 

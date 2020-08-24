@@ -81,6 +81,10 @@ const SignUp = () => {
                             {error && <div className="alert alert-danger alert-dismissible fade show">
                                 <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>}
                         </li> */}
+                         <li>
+          {loading && <div>Loading...</div>}
+          {error && <div>{error}</div>}
+        </li>
 
                         <li className="name-container">
                             <input type="text" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
@@ -99,7 +103,7 @@ const SignUp = () => {
                         </li>
                         
                         <li>
-                            <button type="submit" className="signin-button">Sign in </button>
+                            <button type="submit" className="signin-button">Sign up </button>
                         </li>
 
                         <li className="signUp-policy-text">By signing up below you have accepted our <br/>terms of service and privacy policy</li>
@@ -151,6 +155,12 @@ const SignUp = () => {
                             <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>}
                     </li> */}
 
+<li className="name-container">
+                        
+                        <input type="name" name="name" id="name" placeholder="First name" onChange={((e) => setFirstName(e.target.value))}></input>
+                        
+                    </li>
+
                     <li className="name-container">
                         <input type="name" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
                     </li>
@@ -167,7 +177,7 @@ const SignUp = () => {
                         Forgot your Password ?
                     </li>
                     <li>
-                        <button type="submit" className="signin-button">Sign in </button>
+                        <button type="submit" className="signin-button">Sign up </button>
                     </li>
                     <li className="signUp-policy-text">By signing up below you have accepted our <br/>terms of service and privacy policy</li>
                     

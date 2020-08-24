@@ -189,4 +189,8 @@ $largeLaptop: 1200px;
   .gallery-center-details-bigScreen {
     display: contents;
   }
+
+  .gallery-center-details-smallScreen{
+    display: none;
+  }
 }

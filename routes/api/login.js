@@ -4,6 +4,13 @@ const router = express.Router();
 const User = require('../../models/User');
 const { createToken, verifyPassword } = require('./util')
 
+
+router.get("/", async (req, res) => {
+  User.find()
+    .then((users) => res.json(users))
+    .catch((error) => res.json("error from res", error));
+});
+ 
 router.post('/', async (req, res) => {
     try {
       const { email, password } = req.body;
@@ -31,6 +38,7 @@ router.post('/', async (req, res) => {
         })
   
         res.json({
+          email,
           message: 'Authentication successful!',
         });
       } else {
@@ -44,6 +52,6 @@ router.post('/', async (req, res) => {
         .status(400)
         .json({ message: 'Something went wrong.' });
     }
-  });
+});
 
 module.exports = router;
