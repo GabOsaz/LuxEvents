@@ -6,6 +6,8 @@ import {
   Redirect
 } from 'react-router-dom';
 import './styles.css';
+import './SCSS/adminSetting.scss';
+import './SCSS/calender.scss';
 import AppShell from './components/AppShell';
 import { AuthProvider, AuthContext } from './context/AuthContext';
 import FourOFour from './components/FourOFour';
@@ -15,8 +17,7 @@ import Signup from './components/Signup';
 const Dashboard = lazy(() => import('./components/Dashboard'));
 const AddCenter = lazy(() => import('./components/AddCenter'));
 const Settings = lazy(() => import('./components/Settings'));
-
-
+const Calender = lazy(() => import('./components/Calender'));
 
 const AuthenticatedRoute = ({ children, ...rest}) => {
   const authContext = useContext(AuthContext);
@@ -50,6 +51,9 @@ const AppRoutes = () => {
         </AuthenticatedRoute>
         <AuthenticatedRoute path="/settings">
           <Settings />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute path="/calender">
+          <Calender />
         </AuthenticatedRoute>
 
         <Route path="*">

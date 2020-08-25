@@ -17,7 +17,7 @@ const navItems = [
     icon: faChartLine,
   },
   {
-    label: 'Events',
+    label: 'Add Center',
     path: 'addCenter',
     icon: faCalendarDay,
   },
@@ -29,6 +29,11 @@ const navItems = [
   {
     label: 'Bookings',
     path: 'bookings',
+    icon: faBook,
+  },
+  {
+    label: 'Calender',
+    path: 'calender',
     icon: faBook,
   },
   {

@@ -35,14 +35,15 @@ const Signup = () => {
     try {
       setLoginLoading(true);
       const { data } = await publicFetch.post('signup', credentials);
-      authContext.setAuthState(data);
       console.log(data);
+       authContext.setAuthState(data);
       setSignupSuccess(data.message);
       setSignupError('');
       // redirect after successful signup
-      setTimeout(() => {
-        setRedirectOnLogin(true)
-      }, 700)  
+      setRedirectOnLogin(true)
+      // setTimeout(() => {
+      //   setRedirectOnLogin(true)
+      // }, 700)  
     } catch (error) {
       setLoginLoading(false);
       const { data } = error.response;

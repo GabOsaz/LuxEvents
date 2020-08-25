@@ -79,11 +79,6 @@ const AvatarDropdown = () => {
             className="rounded-full w-6 border-2 border-white"
             alt="Avatar"
             />
-            {/* <img
-            src={ defaultAvatar}
-            className="rounded-full w-6 border-2 border-white"
-            alt="Avatar"
-            /> */}
             <div className="px-3">
                 <p className="text-white">{authState.userInfo.firstname}</p>
             </div>

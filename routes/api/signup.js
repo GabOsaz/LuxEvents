@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const jwtDecode = require('jwt-decode');
 
 const User = require('../../models/User');
 const { createToken, hashPassword } = require('./util')
@@ -21,7 +22,7 @@ router.post('/', async (req, res) => {
   
       const existingEmail = await User.findOne({
         email: userData.email
-      }).lean();
+      });
   
       if (existingEmail) {
         return res
@@ -31,16 +32,32 @@ router.post('/', async (req, res) => {
   
       const newUser = new User(userData);
       const savedUser = await newUser.save();
-  
+
       if (savedUser) {
         const token = createToken(savedUser);
+        const decodedToken = jwtDecode(token);
+        const expiresAt = decodedToken.exp;
+
+        const {
+          firstName,
+          lastName,
+          email,
+        } = savedUser;
+  
+        const userInfo = {
+          firstName,
+          lastName,
+          email,
+        };
   
         res.cookie('token', token, {
           httpOnly: true
         })
   
         return res.json({
-          message: 'User created!'
+          message: 'User created!',
+          userInfo,
+          expiresAt
         });
       } else {
         return res.status(400).json({
