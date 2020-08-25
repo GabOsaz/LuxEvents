@@ -11,7 +11,7 @@ import FormError from './common/FormError';
 import GradientBar from './common/GradientBar';
 import GradientButton from './common/GradientButton';
 import { publicFetch } from '../util/fetch';
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../context/AuthContext';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().required('Email is required'),
@@ -136,6 +136,7 @@ const Login = () => {
         </Card>
       </section>
     </>
+
   );
 };
 

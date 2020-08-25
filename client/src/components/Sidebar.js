@@ -56,7 +56,7 @@ const NavItem = ({ navItem }) => {
     <Link to={navItem.path} className={classes}>
       <div className="flex items-center">
         <div className="mr-0 sm:mr-4">
-          <FontAwesomeIcon icon={navItem.icon} />
+          <FontAwesomeIcon icon={navItem.icon}/>
         </div>
         <span className="hidden sm:block">
           {navItem.label}
