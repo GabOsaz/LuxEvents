@@ -62,7 +62,7 @@ const Dashboard = () => {
               />
             </div>
           </div>
-          <div className="w-full mt-4">
+          <div className="w-4/4 mt-4">
             <Card>
               {dashboardData && (
                 <DashboardChart

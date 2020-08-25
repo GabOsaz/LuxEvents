@@ -41,9 +41,9 @@ const Signup = () => {
       setSignupError('');
       // redirect after successful signup
       setRedirectOnLogin(true)
-      // setTimeout(() => {
-      //   setRedirectOnLogin(true)
-      // }, 700)  
+      setTimeout(() => {
+        setRedirectOnLogin(true)
+      }, 700)  
     } catch (error) {
       setLoginLoading(false);
       const { data } = error.response;

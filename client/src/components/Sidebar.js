@@ -72,10 +72,12 @@ const NavItemContainer = ({ children }) => (
 
 const Sidebar = () => {
   return (
-    <section className="h-screen">
+    <section className="fixed h-screen">
       <div className="w-16 sm:w-24 m-auto">
-        <h2 className="text-white-500"> Lux Events </h2>
+        <img src='https://res.cloudinary.com/dsipecjov/image/upload/v1597838388/j922o1oiqelot0klg57v.svg' alt='Lux Events Management' ></img>
+        {/* <h2 className="text-white-500"> Lux Events </h2> */}
       </div>
+        <div><span className='ml-5 pl-1' >Management</span></div>
       <div className="mt-20">
         {navItems.map((navItem, i) => (
           <>
