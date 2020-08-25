@@ -74,9 +74,9 @@ export default class Calendar extends React.Component {
         let popup = props.data.map((data) => {
             return (
                 <div key={data}>
-                    <a href="data" onClick={(e)=> {this.onSelectChange(e, data)}}>
+                    <p  onClick={(e)=> {this.onSelectChange(e, data)}}>
                         {data}
-                    </a>
+                    </p>
                 </div>
             );
         });
@@ -143,11 +143,14 @@ export default class Calendar extends React.Component {
                 onKeyUp= {(e) => this.onKeyUpYear(e)}
                 onChange = {(e) => this.onYearChange(e)}
                 type="number"
-                placeholder="year"/>
+                placeholder="year"
+                />
             :
             <span
                 className="label-year"
-                onClick={(e)=> { this.showYearEditor()}}>
+                onClick={(e)=> { this.showYearEditor()}}
+                style={{cursor:"pointer"}}
+                >
                 {this.year()}
             </span>
         );
@@ -234,7 +237,9 @@ export default class Calendar extends React.Component {
                           <p className="availability-icon-1"> </p>
                         <p className="calender-align-availability">Available dates</p></div>
 
-                        <i className="fa fa-times close-icon">
+                        <i className="fa fa-times close-icon"
+                         style={{cursor:"pointer"}}
+                         >
 
                         </i>
                       </div>
@@ -264,10 +269,15 @@ export default class Calendar extends React.Component {
                               </td>
                               <td colSpan="4" className="nav-month">
                                   <i className="prev fa fa-fw fa-chevron-left"
-                                      onClick={(e)=> {this.prevMonth()}}>
+                                      onClick={(e)=> {this.prevMonth()}}
+                                      style={{cursor:"pointer"}}
+                                      >
                                   </i>
                                   <i className="prev fa fa-fw fa-chevron-right"
-                                      onClick={(e)=> {this.nextMonth()}}>
+                                      onClick={(e)=> {this.nextMonth()}}
+                                      style={{cursor:"pointer"}}
+                                      
+                                      >
                                   </i>
 
                               </td>
@@ -286,37 +296,6 @@ export default class Calendar extends React.Component {
                     </div>
                   </div>
                 </div>
-
-
-            {/* <div className="calender-container">
-                <table className="calender">
-                    <thead>
-                        <tr className="calender-header">
-                            <td colSpan="5">
-                                <this.MonthNav />
-                                {" "}
-                                <this.YearNav />
-                            </td>
-                            <td colSpan="2" className="nav-month">
-                                <i className="prev fa fa-fw fa-chevron-left"
-                                    onClick={(e)=> {this.prevMonth()}}>
-                                </i>
-                                <i className="prev fa fa-fw fa-chevron-right"
-                                    onClick={(e)=> {this.nextMonth()}}>
-                                </i>
-
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            {weekdays}
-                        </tr>
-                        {trElems}
-                    </tbody>
-                </table>
-
-            </div> */}
           </div>
           
 
