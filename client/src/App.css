@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+/* 
+$primaryColor : #EF9B38;
+$skyBlue : #7C9BBD;
+$skyBlue2 : #5B82AD;
+#F8F8F8: #F8F8F8;
+$HeadingFont: Playfair;
+$pFont: Poppins;
+$ratio-16-9: 56.25%;
+$cols: 4;
+$colsTab: 2;
+$cols2: 1;
+$cols6: 3;
+$cols5: 5;
+$mobile: 550px;
+$tablet: 768px;
+$miniLaptop: 1024px; */
+
+
+
+
+
+/* ***********************  EVENTS  *************************8 */
+
+
+/* .events-container{
+background-color: #f3f0f0;
+padding: 2rem;
+}
+
+
+.events-table{
+margin-top: 4rem;
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+border: .1rem solid #dddddd;
+
+}
+
+.events-tableData, .events-tableHead {
+text-align: left;
+padding: .8rem;
+} 
+
+.events-tableHead{
+font-weight: 700;
+font-size: 1.5rem;
+}
+
+.events-tableData{
+font-weight: 500;
+font-size: 1.2rem;
+} */ 

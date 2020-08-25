@@ -14,6 +14,9 @@ import Signup from './components/Signup';
 
 const Dashboard = lazy(() => import('./components/Dashboard'));
 const AddCenter = lazy(() => import('./components/AddCenter'));
+const Settings = lazy(() => import('./components/Settings'));
+
+
 
 const AuthenticatedRoute = ({ children, ...rest}) => {
   const authContext = useContext(AuthContext);
@@ -44,6 +47,9 @@ const AppRoutes = () => {
         </AuthenticatedRoute>
         <AuthenticatedRoute path="/addCenter">
           <AddCenter />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute path="/settings">
+          <Settings />
         </AuthenticatedRoute>
 
         <Route path="*">
