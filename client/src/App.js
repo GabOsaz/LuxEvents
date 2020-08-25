@@ -18,6 +18,7 @@ const Dashboard = lazy(() => import('./components/Dashboard'));
 const AddCenter = lazy(() => import('./components/AddCenter'));
 const Settings = lazy(() => import('./components/Settings'));
 const Calender = lazy(() => import('./components/Calender'));
+const Bookings = lazy(() => import('./components/Bookings'));
 
 const AuthenticatedRoute = ({ children, ...rest}) => {
   const authContext = useContext(AuthContext);
@@ -54,6 +55,9 @@ const AppRoutes = () => {
         </AuthenticatedRoute>
         <AuthenticatedRoute path="/calender">
           <Calender />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute path="/bookings">
+          <Bookings />
         </AuthenticatedRoute>
 
         <Route path="*">
