@@ -106,7 +106,7 @@ body {
   /* HEADER SECTION */
 
   .header-home-button:active{
-    border-bottom: orange 0.5rem solid;
+    /* border-bottom: orange 0.5rem solid; */
     width: 6rem;
     display: flex;
     justify-content: center;
@@ -126,7 +126,7 @@ body {
   }
 
   .active{
-    border-bottom: orange 0.5rem solid;
+    /* border-bottom: orange 0.5rem solid; */
     width: 6rem;
     display: flex;
     justify-content: center;

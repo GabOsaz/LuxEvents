@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Redirect } from "react-router-dom";
 import { publicFetch } from '../../util/fetch';
-import { AuthContext } from '../../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext';
 
 const SearchBar = () => {
     const authContext = useContext(AuthContext);

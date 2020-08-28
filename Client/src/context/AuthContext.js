@@ -15,6 +15,8 @@ const AuthProvider = ({ children }) => {
     userInfo: userInfo ? JSON.parse(userInfo) : {}
   });
   const [searchInfo, setSearchInfo] = useState();
+  const [details, setDetails] = useState();
+  const [galleryData, setGallery] = useState();
 
   const setAuthInfo = ({ userInfo, expiresAt }) => {
     localStorage.setItem('userInfo', JSON.stringify(userInfo));
@@ -49,6 +51,10 @@ const AuthProvider = ({ children }) => {
         setAuthState: authInfo => setAuthInfo(authInfo),
         setGallerySearchData: data => setSearchInfo(data),
         searchInfo,
+        setVenueDetails: data => setDetails(data),
+        details,
+        setGalleryData: data => setGallery(data),
+        galleryData,
         isAuthenticated,
         logout,
       }}

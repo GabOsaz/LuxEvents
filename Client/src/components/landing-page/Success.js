@@ -1,5 +1,5 @@
 import React from 'react';
-import successGif from '../img/successGif.gif';
+import successGif from '../../img/successGif.gif';
 
 export default function Success() {
     return (
