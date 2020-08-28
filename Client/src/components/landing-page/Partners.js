@@ -10,11 +10,11 @@ export default function Partners() {
         <div id='partners' className='container-fluid'>
             <div className="heading"> Our Partners </div>
             <div className='case'>
-                <div> <img src={partners1} className="centered" /> </div>
-                <div> <img src={partners2} className="centered"/> </div>
-                <div> <img src={partners3} className="centered" /> </div>
-                <div> <img src={partners4} className="centered" /> </div>
-                <div> <img src={partners5} className="centered" /> </div>
+                <div> <img src={partners1} className="centered" alt="partners" /> </div>
+                <div> <img src={partners2} className="centered"alt="partners"/> </div>
+                <div> <img src={partners3} className="centered"  alt="partners"/> </div>
+                <div> <img src={partners4} className="centered" alt="partners" /> </div>
+                <div> <img src={partners5} className="centered" alt="partners" /> </div>
             </div>
         </div>
 

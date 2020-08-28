@@ -13,7 +13,7 @@ const SignIn = (props) => {
    const {loading, userInfo, error } = userSignIn;
 
    const dispatch = useDispatch()
-
+    
     
    useEffect(() => {
    if(userInfo){
@@ -43,9 +43,9 @@ const SignIn = (props) => {
                     
                     
                          
-                      <li>
-                            {loading && <div> Signing In ...</div>}
-                            {error && <div> {error} </div>}
+                        <li>
+                            {loading && <div class="alert alert-success" role="alert"> Signing In ...</div>}
+                            {error && <div class="alert alert-danger" role="alert"> {error.message} </div>}
                         </li>
 
                     
@@ -60,7 +60,7 @@ const SignIn = (props) => {
                             <input type="password" name="password" id="password" placeholder="Password" value={password} onChange={((e) => setPassword(e.target.value))}></input>
                             
                         </li>
-                        <Link className="forgot-password">
+                        <Link to="/" className="forgot-password">
                             Forgot your Password ?
                         </Link>
                         
@@ -94,12 +94,10 @@ const SignIn = (props) => {
                             <h3 className="sigin-heading">Sigin In  </h3>
                             <h3 className="sigin-heading">Welcome Back </h3>
                         
-                            {/* <li>{error.message}</li> */}
-                            {/* <li>
-                                {loading && <div className="alert alert-success"> Signing In ...</div>}
-                                {error && <div className="alert alert-danger alert-dismissible fade show">
-                                    <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>}
-                            </li> */}
+                            <li>
+                            {loading && <div class="alert alert-success" role="alert"> Signing In ...</div>}
+                            {error && <div class="alert alert-danger" role="alert"> {error.message} </div>}
+                        </li>
 
                         
 
@@ -110,10 +108,10 @@ const SignIn = (props) => {
                             </li>
                             <li className="password-container">
                                 
-                                <input type="password" name="password" id="password" placeholder="Password" nChange={((e) => setPassword(e.target.value))}></input>
+                                <input type="password" name="password" id="password" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input>
                                 
                             </li>
-                            <Link className="forgot-password">
+                            <Link to="/"  className="forgot-password">
                                 Forgot your Password ?
                             </Link>
                             
@@ -138,7 +136,7 @@ const SignIn = (props) => {
 
                     <div className="signin-web-image-container">
                         
-                    <img  className="signin-web-image" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597544943/rxempkcphe7rqkbdx1u2.svg" />
+                    <img  alt="sign-up" className="signin-web-image" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597544943/rxempkcphe7rqkbdx1u2.svg" />
                         
                     
             </div>

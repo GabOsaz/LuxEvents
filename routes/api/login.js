@@ -11,6 +11,7 @@ router.get("/", async (req, res) => {
     .catch((error) => res.json("error from res", error));
 });
  
+
 router.post('/', async (req, res) => {
     try {
       const { email, password } = req.body;
@@ -38,7 +39,8 @@ router.post('/', async (req, res) => {
         })
   
         res.json({
-          email,
+          email : user.email,
+          firstName : user.firstName,
           message: 'Authentication successful!',
         });
       } else {
@@ -50,8 +52,9 @@ router.post('/', async (req, res) => {
       console.log(err);
       return res
         .status(400)
-        .json({ message: 'Something went wrong.' });
+        .json({ message: 'Something went wrong.'});
     }
 });
+
 
 module.exports = router;

@@ -12,27 +12,27 @@ export default function SelectLocation() {
             <div className="locationHeader"> Select your location </div>
             <div className='row location'>
                 <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4  mb-3'>
-                        <img src = {location1} className="img centered "/>
+                        <img src = {location1} alt="location" className="img centered "/>
                         <p> Abuja </p>
                 </div>
                 <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4 mb-3'>
-                        <img src = {location2} className=" img centered"/>
+                        <img src = {location2} alt="location" className=" img centered"/>
                         <p> Kano </p>
                 </div>
                 <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4 mb-3'>
-                        <img src = {services1} className="img centered "/>
+                        <img src = {services1} alt="location" className="img centered "/>
                         <p> Ikeja </p>
                 </div>
                 <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4 mb-3'>
-                        <img src = {carousel_img_1} className=" img centered"/>
+                        <img src = {carousel_img_1} alt="location" className=" img centered"/>
                         <p> Lekki </p>
                 </div>
                 <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4 mb-3'>
-                        <img src = {location3} className=" img centered"/>
+                        <img src = {location3} alt="location" className=" img centered"/>
                         <p> PH </p>
                 </div>
                 <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4 mb-3'>
-                        <img src = {location4} className=" img centered"/>
+                        <img src = {location4} alt="location" className=" img centered"/>
                         <p> Ibadan </p>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { Card, CardText, Row, Col } from "reactstrap";
 import {useSelector, useDispatch} from "react-redux"
 import { listVenues } from "../../redux/actions/venueActions";
 import ErrorPage from "../extras/ErrorPage"
+import EventCenterMap from './EventCenterMap';
 
 
 const Gallery = (props) => {
@@ -11,6 +12,8 @@ const Gallery = (props) => {
   const venueList = useSelector(state => state.venueList);
   const {venues, loading, error } = venueList;
   const dispatch = useDispatch()
+
+  console.log(venues, "gallery");
 
   useEffect(() => {
    
@@ -52,7 +55,7 @@ const Gallery = (props) => {
                 body
                 className="mobile-gallery-card border-0 d-block d-sm-none"
               >
-                <Link to={`/event-center-details/` + venue._id} style={{textDecoration: "none"}} className ="mobile-gallery-border" style={{textDecoration: "none"}}>
+                <Link to={`/event-center-details/` + venue._id}  className ="mobile-gallery-border" style={{textDecoration: "none"}}>
                   <img
                     
                     width="100%"
@@ -112,11 +115,15 @@ const Gallery = (props) => {
               </Link>
             </Col>
           </Row>
+          <EventCenterMap 
+          
+            />
         </div>
 
         )
      }
       </div>
+      
     </div>
           </div>  
   

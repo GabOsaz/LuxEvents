@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch,  useSelector } from 'react-redux';
+import React, { useState } from "react";
+// import { Link } from "react-router-dom";
+import { useDispatch} from 'react-redux';
+import {Link} from "react-router-dom"
 import requestReservation from './../../redux/actions/reservationAction';
 
 const RequestReservation = (props) => {
-  const [firstName, setFirstName] = useState("")
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
 
-  const reservationDetails = useSelector(state => state.reservationDetails)
+  // const reservationDetails = useSelector(state => state.reservationDetails)
 
  const dispatch = useDispatch()
 
@@ -72,12 +73,38 @@ const RequestReservation = (props) => {
               </li>
 
               <li>
-                <button type="submit" className="signin-button">
+                <button type="submit" className="signin-button"
+                data-toggle="modal" data-target="#exampleModalCenter">
                   Submit
                 </button>
               </li>
             </ul>
           </form>
+          <div className="requestSuccess-Modal">
+
+
+<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered" role="document">
+    <div className="modal-content">
+      <div className="modal-header">
+        
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body">
+        <h3 className="text-center">Venue Reserved</h3>
+        
+        <p className="reservation-success-text">
+          Please note that the 10% deposit is to be made within the next 7 days to permanently 
+          reserve the venue and date <Link to="/Main-payment">Click here</Link> to make deposit  
+          </p>
+      </div>
+     
+    </div>
+  </div>
+</div>
+        </div>
         </div>
       </div>
 
@@ -129,12 +156,39 @@ const RequestReservation = (props) => {
               </li>
 
               <li>
-                <button type="submit" className="signin-button">
-                  Sign in{" "}
+                <button type="submit" className="signin-button"
+                 data-toggle="modal" data-target="#exampleModalCenter"
+                >
+                  Submit{" "}
                 </button>
               </li>
             </ul>
           </form>
+          <div className="requestSuccess-Modal">
+
+
+<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered" role="document">
+    <div className="modal-content">
+      <div className="modal-header">
+        
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body">
+        <h3 className="text-center">Venue Reserved</h3>
+        
+        <p className="reservation-success-text">
+          Please note that the 10% deposit is to be made within the next 7 days to permanently 
+          reserve the venue and date <Link to="/Main-payment">Click here</Link> to make deposit  
+          </p>
+      </div>
+     
+    </div>
+  </div>
+</div>
+        </div>
         </div>
       </div>
     </div>

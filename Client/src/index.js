@@ -13,9 +13,9 @@ import "../node_modules/font-awesome/css/font-awesome.min.css"
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <React.StrictMode>
+      <React.Fragment>
         <App />
-      </React.StrictMode>
+      </React.Fragment>
     </BrowserRouter>,
   </Provider>,
   document.getElementById("root")

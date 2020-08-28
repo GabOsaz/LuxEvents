@@ -102,11 +102,16 @@ const Header = (props) => {
             {/* <NavLink href="/SignIn" className="nav-text">Sign in</NavLink> */}
             {userInfo ? (
               <NavLink
-                href="/signin"
-                className="nav-text"
-                onClick={handleLogout}
+                href="/profile"
+                className="nav-text profile-icon"
+               
               >
-                Damii
+                <img 
+                alt="header-icon"
+                className="header-icon-profile"
+                src="https://res.cloudinary.com/dsipecjov/image/upload/v1598451513/v6buqtwza3jqjvvtyr2n.svg" 
+                />
+               <p>{userInfo.firstName}</p>
               </NavLink>
             ) : (
               <NavLink href="/SignIn" className="nav-text">
@@ -114,10 +119,30 @@ const Header = (props) => {
               </NavLink>
             )}
           </NavItem>
-          <NavItem className="header-signup-button">
-            <NavLink href="/SignUp" className="header-signup-text nav-text">
+          <NavItem className={!userInfo ? "header-signup-button" : "profile-dropDown"}>
+            {userInfo ? (
+              
+              <div className="dropdown">
+                
+              <div className=" dropdown-toggle" style={{color:"black"}}  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               
+              </div>
+            
+              <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                <a className="dropdown-item" href="/messages">Messages</a>
+                <a className="dropdown-item" href="/reserved-venues">Reserved Venues</a>
+                <a className="dropdown-item" href="/booked-venues">Booked Venues</a>
+                <a className="dropdown-item" href="/favourites">Favourites</a>
+                <a className="dropdown-item" href="/help">Help</a>
+                <a className="dropdown-item" href="/account-setting">Account Setting</a>
+                <a className="dropdown-item" href="/SignIn"  onClick={handleLogout}>Logout</a>
+              </div>
+            </div>
+            ) : (
+              <NavLink href="/SignUp" className="header-signup-text nav-text">
               Sign up
             </NavLink>
+            )}
           </NavItem>
         </Nav>
       </Collapse>

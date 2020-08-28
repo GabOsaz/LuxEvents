@@ -56,6 +56,7 @@ const ErrorPage = () => {
 
       <div className="signin-web-image-container">
         <img
+          alt="signin-web"
           className="signin-web-image"
           src="https://res.cloudinary.com/dsipecjov/image/upload/v1597708857/gkczeo9v454iuxxvdxkg.jpg"
         />

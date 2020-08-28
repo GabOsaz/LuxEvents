@@ -69,7 +69,7 @@ const SearchBar = () => {
                             <div className="dropdown ml-0">
                                 <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <ul class="">
+                                    <ul className="">
                                         <li onClick={handleCity} className="dropdown-item">Lekki</li>
                                         <li onClick={handleCity} className="dropdown-item">Ikeja</li>
                                         <li onClick={handleCity} className="dropdown-item">Ikoyi</li>

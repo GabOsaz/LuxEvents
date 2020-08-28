@@ -54,6 +54,46 @@ body {
 }
 
 
+.profile-dropDown{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  font-size: 2.5rem;
+}
+
+.profile-icon{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 8rem;
+  height: 100%;
+}
+
+.header-icon-profile{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 2rem;
+  height: 2rem;
+}
+
+.signIn-popUp{
+  display: flex;
+  justify-content: center;
+  background: rgb(92, 247, 131);
+  margin-bottom: .5rem;
+  color: white;
+}
+
+
+.signInError-popUp{
+  display: flex;
+  justify-content: center;
+  background: rgb(240, 67, 67);
+  margin-bottom: .5rem;
+  color: white;
+}
 
 
 /*********************************************** FOOTER SECTION ******************************************/

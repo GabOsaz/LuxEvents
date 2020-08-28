@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { publicFetch } from '../../util/fetch';
 import { AuthContext } from '../../context/AuthContext'
@@ -81,10 +81,10 @@ const SignUp = () => {
                             {error && <div className="alert alert-danger alert-dismissible fade show">
                                 <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>}
                         </li> */}
-                         <li>
+                         {/* <li>
           {loading && <div>Loading...</div>}
           {error && <div>{error}</div>}
-        </li>
+        </li> */}
 
                         <li className="name-container">
                             <input type="text" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
@@ -109,7 +109,7 @@ const SignUp = () => {
                         <li className="signUp-policy-text">By signing up below you have accepted our <br/>terms of service and privacy policy</li>
                         
                         <li>
-                            <button type="submit" className="connect-google-button"> <img className="googleLogo" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597539426/wdx0jpcmfcbwclckrpdh.svg" /> Connect with Google </button>
+                            <button type="submit" className="connect-google-button"> <img className="googleLogo" alt="google logo" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597539426/wdx0jpcmfcbwclckrpdh.svg" /> Connect with Google </button>
                         </li>
 
                         <li className="signUp-link">
@@ -155,12 +155,6 @@ const SignUp = () => {
                             <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>}
                     </li> */}
 
-<li className="name-container">
-                        
-                        <input type="name" name="name" id="name" placeholder="First name" onChange={((e) => setFirstName(e.target.value))}></input>
-                        
-                    </li>
-
                     <li className="name-container">
                         <input type="name" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
                     </li>
@@ -182,7 +176,7 @@ const SignUp = () => {
                     <li className="signUp-policy-text">By signing up below you have accepted our <br/>terms of service and privacy policy</li>
                     
                     <li>
-                        <button type="submit" className="connect-google-button"><icon> <img className="googleLogo" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597539426/wdx0jpcmfcbwclckrpdh.svg" /></icon> Connect with Google </button>
+                        <button type="submit" className="connect-google-button"><icon> <img className="googleLogo" alt="google-logo"  src="https://res.cloudinary.com/dsipecjov/image/upload/v1597539426/wdx0jpcmfcbwclckrpdh.svg" /></icon> Connect with Google </button>
                     </li>
 
                     <li className="signUp-link">
@@ -200,7 +194,7 @@ const SignUp = () => {
 
             <div className="signin-web-image-container">
                 <div >
-              <img className="signin-web-image" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597544929/rns0p9b206ji9vmhsjgw.svg" />
+              <img className="signin-web-image" alt="signin-web" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597544929/rns0p9b206ji9vmhsjgw.svg" />
                 </div>
                
             </div>

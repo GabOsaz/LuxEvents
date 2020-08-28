@@ -1,7 +1,6 @@
-import React, { useEffect, useContext } from "react";
+import React, {  useContext } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { detailsVenue } from "../../redux/actions/venueActions";
+import { useSelector} from "react-redux";
 import { AuthContext } from '../../context/AuthContext';
 import ErrorPage from './../extras/ErrorPage';
 
@@ -15,7 +14,7 @@ const EventCenterDetails = (props) => {
   const authContext = useContext(AuthContext);
   const { searchInfo } = authContext;
   const searchInfo1 = searchInfo[0];
-  console.log('search Info >>>', searchInfo);
+  console.log(searchInfo1);
 
   // useEffect(() => {
   //   dispatch(detailsVenue(props.match.params.id));
@@ -67,7 +66,7 @@ const EventCenterDetails = (props) => {
               <b>Price</b> <br /> {searchInfo1.price}
             </div>
           </div>
-          <Link to={`/calender/` + venue._id}  className="event-details-sub" style={{textDecoration: "none"}}>
+          <Link to={`/calender`}  className="event-details-sub" style={{textDecoration: "none"}}>
             <icon>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
