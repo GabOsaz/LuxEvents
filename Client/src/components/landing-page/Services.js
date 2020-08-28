@@ -8,6 +8,9 @@ export default function Services() {
     return (
         <section id='servicesStyle'>
             <div className='container mdContainer'>
+                <div className='mt-n1 text-center st'>
+                    <h2 className='servicesTitle'> Our Services </h2>
+                </div>
                 <div className='row justify-content-center text-center'>
                     <div className='col-xs-12 col-sm-6 col-md-3 col-lg-3'>
                         <div className="card">

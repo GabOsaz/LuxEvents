@@ -45,60 +45,6 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-//  Navbar Styles
-.container-fluid {
-    .navStyle {
-        background: transparent;
-        color: #1C1717;
-        z-index: 2;
-        margin: 0;
-    }
-
-    .navbar {
-        border-bottom: $primaryColor 3px solid;
-        opacity: 1;
-        background: #FFFFFF
-    }
-
-    ul li {
-        font-family: $pFont;
-        font-style: Regular;
-        font-size: 18px;
-        line-height: 27px;
-        margin-left: 15px
-    }
-
-    ul li a {
-        color: #1C1717
-    }
-    
-    .signupPill {
-        background: $primaryColor;
-        width: 96px;
-        height: 32px;
-        border-radius:5px;
-        color: #fff;
-        text-align: center;
-        margin-top: 5px;
-        line-height: 15px;
-    }
-    
-    .brandStyle {
-        color: #1C1717;
-        font-family: $HeadingFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 20px;
-    }
-    
-    .activeLinkBorder {
-        border-bottom: 7.31px;
-        background: $primaryColor
-    }
-    
-}
-
 //  Jumbo Component Styles
 .carouselStyle {
     // border-top: $primaryColor 2px solid;
@@ -185,7 +131,6 @@ body {
     }
 
     #carouselExampleControlsCircle {
-        //border: 2px solid red;
         height: 49rem;
         position: relative;
 
@@ -232,7 +177,7 @@ body {
 
     .searchMain {
         position: absolute;
-        top: 21%;
+        top: 25%;
         left: 9.5%;
         right: 9.5%;
         // border: 2px solid blue;
@@ -254,7 +199,7 @@ body {
         position: absolute;
         left: 9.5%;
         right: 9.5%;
-        top: 15%;
+        top: 22%;
         z-index: 10;
         text-align: center;
         color: #FFFFFF;
@@ -262,13 +207,14 @@ body {
         font-size: 4.5rem;
         font-weight: bold;
         font-family: $HeadingFont;
+        // border: 2px solid red;
 
         @media (max-width : $mobile) {
             padding-top: -17rem;
         }        
 
         @media (max-width : $tablet) {
-            transform: translate(0px, -10px);
+            transform: translate(0px, -20px);
             font-size: 4rem;
         }
         @media (max-width : $miniLaptop) {
@@ -377,6 +323,17 @@ body {
     line-height: 2.7rem;
     font-size: 1.8rem;
     font-family: $HeadingFont;
+
+    .st {
+        margin-bottom: 1rem;
+    }
+
+    .servicesTitle {
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 5.3rem;
+        color: #144D8A;
+    }
 
     .mdContainer {
         @media (max-width : $tablet) {

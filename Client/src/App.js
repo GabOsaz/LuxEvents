@@ -8,6 +8,7 @@ import "./scss/signIn.scss";
 import "./scss/adminSetting.scss";
 import "./scss/payment.scss";
 import { AuthProvider } from './context/AuthContext';
+import "./scss/errorPage.scss";
 
 import AppIndex from './components/Index';
 

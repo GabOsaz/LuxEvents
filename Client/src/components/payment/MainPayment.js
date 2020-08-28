@@ -7,8 +7,8 @@ const MainPayment = () => {
         <div className="main-payment-container">
             <p className="main-payment-header" >Payment</p>
             <div className="main-payment-container-wrapper" >
-            <div className="payment-calculator-container" ><Calculator /> </div>
-           <div className="payment-method-container" ><PaymentMethod /> </div>
+                <div className="payment-calculator-container" ><Calculator /> </div>
+                <div className="payment-method-container" ><PaymentMethod /> </div>
             </div>
 
           

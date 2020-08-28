@@ -12,6 +12,7 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [signupSuccess, setSignupSuccess] = useState();
     const [signupError, setSignupError] = useState();
+    const [loading, setLoading] = useState(false);
     const [redirectOnLogin, setRedirectOnLogin] = useState(false);
     
    const credentials = {
@@ -25,6 +26,7 @@ const SignUp = () => {
   const submitHandler = async (e) => {
       try {
         e.preventDefault();
+        setLoading(true);
         const { data } = await publicFetch.post('signup', credentials);
         console.log('data >>', data);
         authContext.setAuthState(data);
@@ -34,6 +36,7 @@ const SignUp = () => {
             setRedirectOnLogin(true)
           }, 700)
     } catch(error) {
+        setLoading(false);
         console.log(error);
         const { data } = error.response;
         setSignupError(data.message);
@@ -83,8 +86,8 @@ const SignUp = () => {
                         </li> */}
                          {/* <li>
           {loading && <div>Loading...</div>}
-          {error && <div>{error}</div>}
-        </li> */}
+          {signupError && <div>{signupError}</div>}
+        </li>
 
                         <li className="name-container">
                             <input type="text" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
