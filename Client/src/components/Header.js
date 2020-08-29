@@ -18,6 +18,7 @@ const Header = (props) => {
   const userSignIn = useSelector((state) => state.userSignIn);
 
   const { userInfo } = userSignIn;
+  
   console.log(userInfo, "userInfo header");
   const [isOpen, setIsOpen] = useState(false);
 

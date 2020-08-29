@@ -1,22 +1,32 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
-import { useDispatch} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {Link} from "react-router-dom"
 import requestReservation from './../../redux/actions/reservationAction';
 
 const RequestReservation = (props) => {
+
+  const userSignIn = useSelector((state) => state.userSignIn);
+
+  const { userInfo } = userSignIn;
+
+  console.log(userInfo)
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
+  
+  
 
   // const reservationDetails = useSelector(state => state.reservationDetails)
 
  const dispatch = useDispatch()
 
- const venueId = Number(props.match.params.id)
+ 
 
   const submitHandler = (e) => {
+    const venueId = Number(props.match.params.id)
     e.preventDefault();
     dispatch(requestReservation(firstName, lastName, email, date, venueId))
    
@@ -38,6 +48,7 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder="first name"
+                  value={userInfo.firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
               </li>
@@ -47,7 +58,8 @@ const RequestReservation = (props) => {
                   type="name"
                   name="name"
                   id="name"
-                  placeholder=" last name"
+                  placeholder="last name"
+                  value={userInfo.lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </li>
@@ -58,6 +70,7 @@ const RequestReservation = (props) => {
                   name="email"
                   id="email"
                   placeholder="email"
+                  value={userInfo.email}
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </li>
@@ -122,6 +135,7 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder="first name"
+                  value={userInfo.firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
               </li>
@@ -132,6 +146,7 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder=" last name"
+                  value={userInfo.lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </li>
@@ -142,6 +157,7 @@ const RequestReservation = (props) => {
                   name="email"
                   id="email"
                   placeholder="email"
+                  value={userInfo.email}
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </li>

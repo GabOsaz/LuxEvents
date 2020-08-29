@@ -40,6 +40,7 @@ router.post('/', async (req, res) => {
   
         res.json({
           email : user.email,
+          lastName : user.lastName,
           firstName : user.firstName,
           message: 'Authentication successful!',
         });

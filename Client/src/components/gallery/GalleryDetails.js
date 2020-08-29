@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { detailsVenue } from "../../redux/actions/venueActions";
 import { AuthContext } from '../../context/AuthContext';
 import ErrorPage from '../extras/ErrorPage';
+import EventCenterMap from "./EventCenterMap";
 
 
 
@@ -25,14 +26,13 @@ const GalleryDetails = (props) => {
     };
   }, []);
 
-  console.log(props.match.params.id);
-  console.log(props, "inside details")
+  console.log(props.match.params.id, "inside details");
         console.log(props.location.pathname.split("/")[2], "ID")
         const venueId = Number(props.location.pathname.split("/")[2])
 
   return loading ? (
-    <div className="loadingScreen"><div class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
+    <div className="loadingScreen"><div className="spinner-border" role="status">
+    <span className="sr-only">Loading...</span>
   </div></div>
     
   ) : error ? (
@@ -45,7 +45,7 @@ const GalleryDetails = (props) => {
       <div className="event-details-mobile">
         <div className="event-details-mobile-upper-container">
           <div className="event-center-container">
-            <img className="event-center-image" src='' alt="venue" />
+            <img className="event-center-image" src={venue.image} alt="venue" />
           </div>
           <div className="event-details-button">
             <Link to="/MainPayment" style={{textDecoration: "none"}}>
@@ -60,10 +60,10 @@ const GalleryDetails = (props) => {
         <div className="event-details-mobile-lower-container">
           <h3 className="details-heading"> Venue details</h3>
           <div className="event-details-sub">
-            <icon>
+            <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
             <div className="">
               <b>Price</b> <br /> {venue.price}
             </div>
@@ -111,12 +111,12 @@ const GalleryDetails = (props) => {
             </div>
           </div>
 
-          <div className="event-center-location"> MAP</div>
+          <div className="event-center-location"> <EventCenterMap />  </div>
           <div className="event-details-sub">
-            <icon>
+            <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
             <div className="">
               <b>Style</b> <br /> {venue.style}{" "}
             </div>
@@ -186,7 +186,7 @@ const GalleryDetails = (props) => {
               </div>
             </div>
 
-            <div className="event-center-location"> MAP</div>
+            <div className="event-center-location"> <EventCenterMap /></div>
             <div className="event-details-sub">
               <icon>
               
@@ -226,7 +226,7 @@ const GalleryDetails = (props) => {
               <Link to="/MainPayment" style={{textDecoration: "none"}}>
                 <button className="event-details-button-1">Book Now</button>
               </Link>
-              <Link to="/request-reservation" style={{textDecoration: "none"}}>
+              <Link to={`/request-reservation/` + venue._id} style={{textDecoration: "none"}}>
                 <button className="event-details-button-2">request Reservation</button>
               </Link>
             </div>

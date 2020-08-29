@@ -17,6 +17,13 @@ export default class Calendar extends React.Component {
   weekdaysShort = moment.weekdaysShort(); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
   months = moment.months();
 
+  // console.log(this.props, "inside calender");
+  //   console.log(this.props.location.pathname.split("/")[2], "ID");
+ //venueId = Number(this.props.location.pathname.split("/")[2]);
+    // console.log(typeof(venueId));
+
+    
+
   year = () => {
     return this.state.dateContext.format("Y");
   };
@@ -166,21 +173,22 @@ export default class Calendar extends React.Component {
     );
   };
 
-//   onDayClick = (e, day, year, month) => {
+  // onDayClick = (e, day) => {
 
-//     // const moments = this.moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
-//     this.setState(
-//       {
-//         selectedDay: day
-//       },
-//       () => {
-//         console.log(year, month)
-//         console.log("SELECTED DAY: ", this.state.selectedDay);
-//       }
-//     );
+   
+  //   this.setState(
+  //     {
+  //       selectedDay: day
+  //     },
+  //     () => {
+       
+  //       console.log("SELECTED DAY: ", this.state.selectedDay);
+  //     }
+  //   );
 
-//     this.props.onDayClick && this.props.onDayClick(e, day);
-//   };
+  //   this.props.onDayClick && this.props.onDayClick(e, day);
+  // };
+
 
 onDayClick = (e, day) => {
     const mo = this.state.dateContext.format("MMMM");
@@ -198,6 +206,9 @@ onDayClick = (e, day) => {
 
   
   render() {
+
+    console.log(this.props.location.pathname.split("/")[2], "ID")
+    const venueId = Number(this.props.location.pathname.split("/")[2])
    
     // Map the weekdays i.e Sun, Mon, Tue etc as <td>
     let weekdays = this.weekdaysShort.map((day) => {
@@ -208,9 +219,7 @@ onDayClick = (e, day) => {
       );
     });
 
-    console.log(this.props, "inside calender");
-    console.log(this.props.location.pathname.split("/")[2], "ID");
-    const venueId = Number(this.props.location.pathname.split("/")[2]);
+    
 
     let blanks = [];
     for (let i = 0; i < this.firstDayOfMonth(); i++) {
@@ -223,7 +232,7 @@ onDayClick = (e, day) => {
     let daysInMonth = [];
     for (let d = 1; d <= this.daysInMonth(); d++) {
       let className = d == this.currentDay() ? "current-day day " : "day";
-      let selectedClass = d === this.state.selectedDay ? " selected-day " : "";
+      let selectedClass = d === this.state.selectedDay ? "selected-day" : "";
       let classNameBooking =
         this.state.booked === false
           ? "availability-icon-2-cal"
@@ -277,7 +286,7 @@ onDayClick = (e, day) => {
                   <p className="calender-align-availability">Available dates</p>
                 </div>
 
-                <Link to={`/event-center-details/` + { venueId }}>
+                <Link to={`/galleryDetails/` +  venueId} >
                   <i className="fa fa-times close-icon"></i>
                 </Link>
               </div>

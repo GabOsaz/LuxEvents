@@ -137,10 +137,10 @@ body {
 
 
 .event-center-location{
-    height: 10rem;
+    height: 15rem;
     width: 100%;
-    background: white;
-    padding: 2rem;
+    padding: .5rem;
+    
 }
 
 .event-center-description{
@@ -249,10 +249,9 @@ body {
     }
 
     .event-center-location{
-        height: 15rem;
+        height: 25rem;
         width: 100%;
-        background: white;
-        padding: 2rem;
+        padding: .5rem;
     }
 
     .event-center-description{
@@ -352,11 +351,17 @@ body {
     }
 
     .event-center-location{
-        height: 25rem;
+        height: 30rem;
         width: 100%;
-        background: white;
-        padding: 2rem;
+        padding: .5rem;
     }
     
 }
+
+
+// .map{
+//     width: 40rem;
+//     height: 40rem;
+//     border: 1px blue solid;
+// }
 
