@@ -14,8 +14,10 @@ const RequestReservation = (props) => {
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   
+  const venueId = props.location.pathname.split("/")[2]
+
   const toPayment = () => {
-    props.history.push("/MainPayment");
+    props.history.push(`/MainPayment/` +  venueId );
   }
 
   // const reservationDetails = useSelector(state => state.reservationDetails)
@@ -24,12 +26,16 @@ const RequestReservation = (props) => {
 
  
 
-  const submitHandler = (e) => {
-    const venueId = Number(props.match.params.id)
+  const submitHandler = (e, venueId) => {
+    
     e.preventDefault();
     dispatch(requestReservation(firstName, lastName, email, date, venueId))
+
+    
    
   };
+
+  console.log(venueId)
 
   return (
     <div className="Request-reservation-container">
@@ -47,7 +53,7 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder="first name"
-                  value={userInfo.firstName}
+                  // value={userInfo.firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
               </li>
@@ -58,7 +64,7 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder="last name"
-                  value={userInfo.lastName}
+                  // value={userInfo.lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </li>
@@ -69,7 +75,7 @@ const RequestReservation = (props) => {
                   name="email"
                   id="email"
                   placeholder="email"
-                  value={userInfo.email}
+                  // value={userInfo.email}
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </li>
@@ -95,7 +101,7 @@ const RequestReservation = (props) => {
           <div className="requestSuccess-Modal">
 
 
-<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div className="modal-dialog modal-dialog-centered" role="document">
     <div className="modal-content">
       <div className="modal-header">
@@ -109,7 +115,7 @@ const RequestReservation = (props) => {
         
         <p className="reservation-success-text">
           Please note that the 10% deposit is to be made within the next 7 days to permanently 
-          reserve the venue and date <Link to="/MainPayment" onClick={toPayment} data-dismiss="modal" >Click here</Link> to make deposit  
+          reserve the venue and date <Link to={`/MainPayment`  + venueId } onClick={toPayment} data-dismiss="modal" >Click here</Link> to make deposit  
           </p>
       </div>
      
@@ -138,7 +144,7 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder="first name"
-                  value={userInfo.firstName}
+                  // value={userInfo.firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 ></input>
               </li>
@@ -149,7 +155,7 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder=" last name"
-                  value={userInfo.lastName}
+                  // value={userInfo.lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </li>
@@ -160,7 +166,7 @@ const RequestReservation = (props) => {
                   name="email"
                   id="email"
                   placeholder="email"
-                  value={userInfo.email}
+                  // value={userInfo.email}
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </li>
@@ -186,7 +192,7 @@ const RequestReservation = (props) => {
           <div className="requestSuccess-Modal">
 
 
-<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div className="modal-dialog modal-dialog-centered" role="document">
     <div className="modal-content">
       <div className="modal-header">
@@ -200,39 +206,15 @@ const RequestReservation = (props) => {
         
         <p className="reservation-success-text">
           Please note that the 10% deposit is to be made within the next 7 days to permanently 
-          reserve the venue and date <Link to="/MainPayment"  data-dismiss="modal" >Click here</Link> to make deposit  
-          </p>
+          reserve the venue and date <Link to="/MainPayment"  onClick={toPayment} data-dismiss="modal" >Click here</Link> to make deposit  
+        </p>
       </div>
      
     </div>
   </div>
 </div>
         </div>
-          {/* <div className="requestSuccess-Modal">
-
-
-<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div className="modal-dialog modal-dialog-centered" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div className="modal-body">
-        <h3 className="text-center">Venue Reserved</h3>
-        
-        <p className="reservation-success-text">
-          Please note that the 10% deposit is to be made within the next 7 days to permanently 
-          reserve the venue and date <Link to="/Main-payment">Click here</Link> to make deposit  
-          </p>
-      </div>
-     
-    </div>
-  </div>
-</div>
-        </div> */}
+         
 
 
 

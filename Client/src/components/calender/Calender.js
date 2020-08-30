@@ -17,12 +17,6 @@ export default class Calendar extends React.Component {
   weekdaysShort = moment.weekdaysShort(); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
   months = moment.months();
 
-  // console.log(this.props, "inside calender");
-  //   console.log(this.props.location.pathname.split("/")[2], "ID");
- //venueId = Number(this.props.location.pathname.split("/")[2]);
-    // console.log(typeof(venueId));
-
-    
 
   year = () => {
     return this.state.dateContext.format("Y");
@@ -204,13 +198,11 @@ onDayClick = (e, day) => {
     this.props.onDayClick && this.props.onDayClick(e, day);
 }
 
+
   
   render() {
 
-    console.log(this.props.location.pathname.split("/")[2], "ID")
-    const venueId = Number(this.props.location.pathname.split("/")[2])
    
-    // Map the weekdays i.e Sun, Mon, Tue etc as <td>
     let weekdays = this.weekdaysShort.map((day) => {
       return (
         <td key={day} className="week-day">
@@ -283,7 +275,8 @@ onDayClick = (e, day) => {
                   <p className="calender-align-availability">Available dates</p>
                 </div>
 
-                <Link to={`/galleryDetails/` +  venueId} >
+                <Link to={`/galleryDetails/` + this.venueId } 
+                >
                   <i className="fa fa-times close-icon"></i>
                 </Link>
               </div>

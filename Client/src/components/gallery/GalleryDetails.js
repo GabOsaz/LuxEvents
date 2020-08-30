@@ -79,10 +79,10 @@ const GalleryDetails = (props) => {
             </div>
           </div>
           <Link to={`/calender/` + venue._id}  className="event-details-sub" style={{textDecoration: "none"}}>
-            <icon>
+            <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
 
             <div className="">
               {" "}
@@ -92,19 +92,19 @@ const GalleryDetails = (props) => {
             </div>
           </Link>
           <div className="event-details-sub">
-            <icon>
+            <i>
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
 
             <div className="">
               <b>Guest Capacity</b> <br /> {venue.capacity}{" "}
             </div>
           </div>
           <div className="event-details-sub">
-            <icon>
+            <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
             <div className="">
               <b>Service</b> <br />
               {venue.services}{" "}
@@ -112,10 +112,10 @@ const GalleryDetails = (props) => {
           </div>
 
           <div className="event-details-sub">
-            <icon>
+            <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
             <div className="">
               <b>Location</b> <br /> {venue.location}{" "}
             </div>
@@ -144,19 +144,19 @@ const GalleryDetails = (props) => {
           <div className="event-center-details-left-container-web">
             <h3 className="details-heading"> Venue details</h3>
             <div className="event-details-sub">
-              <icon>
+              <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
               <div className="">
                 <b>Price</b> <br /> {venue.price}
               </div>
             </div>
             <Link to={`/calender/` + venue._id} className="event-details-sub" style={{textDecoration: "none"}}>
-              <icon>
+              <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
 
               <div className="">
                 {" "}
@@ -166,20 +166,20 @@ const GalleryDetails = (props) => {
               </div>
             </Link>
             <div className="event-details-sub">
-              <icon>
+              <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
 
               <div className="">
                 <b>Guest Capacity</b> <br /> {venue.capacity}{" "}
               </div>
             </div>
             <div className="event-details-sub">
-              <icon>
+              <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
               <div className="">
                 <b>Service</b> <br />
                 {venue.services}{" "}
@@ -187,10 +187,10 @@ const GalleryDetails = (props) => {
             </div>
 
             <div className="event-details-sub">
-              <icon>
+              <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
               <div className="">
                 <b>Location</b> <br /> {venue.location}{" "}
               </div>
@@ -198,20 +198,20 @@ const GalleryDetails = (props) => {
 
             <div className="event-center-location"> <EventCenterMap /></div>
             <div className="event-details-sub">
-              <icon>
+              <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
               <div className="">
                 <b>Style</b> <br /> {venue.style}{" "}
               </div>
             </div>
 
             <div className="event-details-sub">
-              <icon>
+              <i>
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
-            </icon>
+            </i>
               {/* <div className=""><b>amenities</b> <br/> {venue.amenities.map((amenity) => 
             <div key={venue._id}>{amenity}</div> )} </div>
              */}
