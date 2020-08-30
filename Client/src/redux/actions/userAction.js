@@ -36,8 +36,6 @@ const logout = () => (dispatch) => {
   dispatch({ type: USER_LOGOUT })
 }
 
-
-
 const signup = (firstName, lastName, email, password) => async (dispatch) => {
   dispatch({ type: USER_SIGNUP_REQUEST, payload: { firstName, lastName, email, password } });
   try {
@@ -48,8 +46,5 @@ const signup = (firstName, lastName, email, password) => async (dispatch) => {
     dispatch({ type: USER_SIGNUP_FAIL, payload: error.message });
   }
 }
-
-
-
 
 export {signin, logout, signup};

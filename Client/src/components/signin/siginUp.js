@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { publicFetch } from '../../util/fetch';
-import { AuthContext } from '../../context/AuthContext'
-
+import { AuthContext } from '../../context/AuthContext';
+import {useSelector} from 'react-redux';
 
 const SignUp = () => {
     const authContext = useContext(AuthContext)
@@ -14,6 +14,11 @@ const SignUp = () => {
     const [signupError, setSignupError] = useState();
     const [loading, setLoading] = useState(false);
     const [redirectOnLogin, setRedirectOnLogin] = useState(false);
+
+    const userSignIn = useSelector((state) => state.userSignIn);
+    const { userInfo } = userSignIn;
+
+    const history = useHistory();
     
    const credentials = {
     firstName,
@@ -45,14 +50,14 @@ const SignUp = () => {
   }
 
   
-    // useEffect(() => {
-    //     if(userInfo){
-    //         props.history.push('/')
-    //     }
-    //     return () => {
+    useEffect(() => {
+        if(userInfo){
+            history.push('/')
+        }
+        return () => {
            
-    //     }
-    // }, [userInfo])
+        }
+    }, [userInfo])
 
 
     return (
@@ -79,15 +84,15 @@ const SignUp = () => {
                         )}
                     
                         {/* <li>{error.message}</li> */}
-                        {/* <li>
+                        <li>
                             {loading && <div className="alert alert-success"> Signing In ...</div>}
-                            {error && <div className="alert alert-danger alert-dismissible fade show">
-                                <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>}
-                        </li> */}
+                            {/* {error && <div className="alert alert-danger alert-dismissible fade show">
+                                <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>} */}
+                        </li>
                          {/* <li>
           {loading && <div>Loading...</div>}
           {signupError && <div>{signupError}</div>}
-        </li>
+        </li> */}
 
                         <li className="name-container">
                             <input type="text" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
@@ -151,12 +156,12 @@ const SignUp = () => {
                         </div>
                     )} 
                  
-                    {/* <li>{error.message}</li> */}
-                    {/* <li>
+                     {/* <li>{error.message}</li> */}
+                    <li>
                         {loading && <div className="alert alert-success"> Signing In ...</div>}
-                        {error && <div className="alert alert-danger alert-dismissible fade show">
-                            <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>}
-                    </li> */}
+                        {/* {error && <div className="alert alert-danger alert-dismissible fade show">
+                            <button type="button" className="close" data-dismiss="alert">&times;</button>Invalid Email or Password</div>} */}
+                    </li>
 
                     <li className="name-container">
                         <input type="name" name="firstName" id="firstName" placeholder="First name" value={firstName} onChange={((e) => setFirstName(e.target.value))}></input>                       
@@ -192,22 +197,12 @@ const SignUp = () => {
             </form>
             
         </div>
-
             </div>
-
             <div className="signin-web-image-container">
                 <div >
               <img className="signin-web-image" alt="signin-web" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597544929/rns0p9b206ji9vmhsjgw.svg" />
                 </div>
-               
             </div>
-
-
-
-
-
-
-
         </div>
         </>
         

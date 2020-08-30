@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsVenue } from "../../redux/actions/venueActions";
 import { AuthContext } from '../../context/AuthContext';
@@ -9,6 +9,9 @@ import EventCenterMap from "./EventCenterMap";
 
 
 const GalleryDetails = (props) => {
+  const userSignIn = useSelector((state) => state.userSignIn);
+  const { userInfo } = userSignIn;
+  const history = useHistory();
   const venueDetails = useSelector((state) => state.venueDetails);
   const { venue, loading, error } = venueDetails;
   const dispatch = useDispatch();
@@ -26,9 +29,16 @@ const GalleryDetails = (props) => {
     };
   }, []);
 
+  const handleReservation = () => {
+    if(!userInfo) {
+     return history.push('/SignIn');
+    }
+    history.push(`/request-reservation/${venue._id}`)
+  }
+
   console.log(props.match.params.id, "inside details");
-        console.log(props.location.pathname.split("/")[2], "ID")
-        const venueId = Number(props.location.pathname.split("/")[2])
+    console.log(props.location.pathname.split("/")[2], "ID")
+    const venueId = Number(props.location.pathname.split("/")[2])
 
   return loading ? (
     <div className="loadingScreen"><div className="spinner-border" role="status">
@@ -51,9 +61,9 @@ const GalleryDetails = (props) => {
             <Link to="/MainPayment" style={{textDecoration: "none"}}>
               <button className="event-details-button-1">Book Now</button>
             </Link>
-            <Link to={`/request-reservation/` + venue._id} style={{textDecoration: "none"}}>
-              <button className="event-details-button-2">Make Reservation</button>
-            </Link>
+            <div style={{textDecoration: "none"}}>
+              <button onClick={handleReservation} className="event-details-button-2">Make Reservation</button>
+            </div>
           </div>
         </div>
 
@@ -226,9 +236,9 @@ const GalleryDetails = (props) => {
               <Link to="/MainPayment" style={{textDecoration: "none"}}>
                 <button className="event-details-button-1">Book Now</button>
               </Link>
-              <Link to={`/request-reservation/` + venue._id} style={{textDecoration: "none"}}>
-                <button className="event-details-button-2">request Reservation</button>
-              </Link>
+              <div style={{textDecoration: "none"}}>
+                <button onClick={handleReservation} className="event-details-button-2">Request Reservation</button>
+              </div>
             </div>
           </div>
         </div>

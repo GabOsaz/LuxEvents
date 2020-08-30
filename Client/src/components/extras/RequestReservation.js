@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
 import {Link} from "react-router-dom"
 import requestReservation from './../../redux/actions/reservationAction';
 
 const RequestReservation = (props) => {
-
   const userSignIn = useSelector((state) => state.userSignIn);
-
   const { userInfo } = userSignIn;
 
   console.log(userInfo)
@@ -109,7 +106,7 @@ const RequestReservation = (props) => {
         <h3 className="text-center">Venue Reserved</h3>
         
         <p className="reservation-success-text">
-          Please note that the 10% deposit is to be made within the next 7 days to permanently 
+          Please note that 10% deposit is to be made within the next 7 days to permanently 
           reserve the venue and date <Link to="/Main-payment">Click here</Link> to make deposit  
           </p>
       </div>
