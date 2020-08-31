@@ -24,13 +24,13 @@ const Body = () => {
         <Route path="/galleryDetails/:id" component={GalleryDetails} />
         {/* <Route path="/event-center-details/:id" render = { () => <AppShell> <EventCenterDetails /> </AppShell>} /> */}
         <Route path="/event-center-details/:id" component={EventCenterDetails} />
-        <Route path="/MainPayment" component={MainPayment} />
-        <Route path="/calender" component={Calender} />
+        <Route path="/MainPayment/:id" component={MainPayment} />
+        <Route path="/calender/:id" component={Calender} />
         <Route path="/SignIn" component={SignIn} />
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Front" component={Front} />
-        <Route path="/request-reservation" component={RequestReservation} />
-        <Route path="/success" component={BookingSuccess} />
+        <Route path="/request-reservation/:id" component={RequestReservation} />
+        <Route path="/success/:id" component={BookingSuccess} />
 
         {/* <Route path="/gallery" render = { () => <AppShell> <Gallery /> </AppShell>} /> */}
       </div>

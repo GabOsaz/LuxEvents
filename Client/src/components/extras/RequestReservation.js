@@ -14,7 +14,11 @@ const RequestReservation = (props) => {
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   
-  
+  const venueId = props.location.pathname.split("/")[2]
+
+  const toPayment = () => {
+    props.history.push(`/MainPayment/` +  venueId );
+  }
 
   // const reservationDetails = useSelector(state => state.reservationDetails)
 
@@ -22,12 +26,16 @@ const RequestReservation = (props) => {
 
  
 
-  const submitHandler = (e) => {
-    const venueId = Number(props.match.params.id)
+  const submitHandler = (e, venueId) => {
+    
     e.preventDefault();
-    dispatch(requestReservation(firstName, lastName, email, date, venueId))
+    dispatch(requestReservation(userInfo.firstName, userInfo.lastName, userInfo.email, date))
+
+    
    
   };
+
+  console.log(venueId)
 
   return (
     <div className="Request-reservation-container">
@@ -37,7 +45,6 @@ const RequestReservation = (props) => {
             <ul className="form-container ">
               <h3 className="sigin-heading">Request Reservation </h3>
 
-           
 
               <li className="name-container">
                 <input
@@ -46,7 +53,7 @@ const RequestReservation = (props) => {
                   id="name"
                   placeholder="first name"
                   value={userInfo.firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  
                 ></input>
               </li>
 
@@ -56,8 +63,8 @@ const RequestReservation = (props) => {
                   name="name"
                   id="name"
                   placeholder="last name"
-                  value={userInfo.lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                value={userInfo.lastName}
+                 
                 ></input>
               </li>
 
@@ -68,7 +75,7 @@ const RequestReservation = (props) => {
                   id="email"
                   placeholder="email"
                   value={userInfo.email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  
                 ></input>
               </li>
               <li className="email-container">
@@ -93,21 +100,23 @@ const RequestReservation = (props) => {
           <div className="requestSuccess-Modal">
 
 
-<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div className="modal-dialog modal-dialog-centered" role="document">
     <div className="modal-content">
       <div className="modal-header">
-        
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+     <div className="mx-auto"> <h3 className="text-center">Venue Reserved</h3></div>
+       <div className=""> <button type="button" className="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
+
       </div>
       <div className="modal-body">
-        <h3 className="text-center">Venue Reserved</h3>
+        
         
         <p className="reservation-success-text">
-          Please note that 10% deposit is to be made within the next 7 days to permanently 
-          reserve the venue and date <Link to="/Main-payment">Click here</Link> to make deposit  
+          Please note that the 10% deposit is to be made within the next 7 days to permanently 
+          reserve the venue and date <Link to={`/MainPayment`  + venueId } onClick={toPayment} data-dismiss="modal" >Click here</Link> to make deposit  
           </p>
       </div>
      
@@ -115,6 +124,13 @@ const RequestReservation = (props) => {
   </div>
 </div>
         </div>
+
+
+
+
+
+
+
         </div>
       </div>
 
@@ -133,7 +149,6 @@ const RequestReservation = (props) => {
                   id="name"
                   placeholder="first name"
                   value={userInfo.firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
                 ></input>
               </li>
 
@@ -144,7 +159,6 @@ const RequestReservation = (props) => {
                   id="name"
                   placeholder=" last name"
                   value={userInfo.lastName}
-                  onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </li>
 
@@ -155,7 +169,7 @@ const RequestReservation = (props) => {
                   id="email"
                   placeholder="email"
                   value={userInfo.email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  
                 ></input>
               </li>
               <li className="email-container">
@@ -170,38 +184,40 @@ const RequestReservation = (props) => {
 
               <li>
                 <button type="submit" className="signin-button"
-                 data-toggle="modal" data-target="#exampleModalCenter"
-                >
-                  Submit{" "}
+                data-toggle="modal" data-target="#staticBackdrop">
+                  Submit
                 </button>
               </li>
             </ul>
           </form>
-          <div className="requestSuccess-Modal">
 
 
-<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div className="modal-dialog modal-dialog-centered" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div className="modal-header">
+     <div className="mx-auto"> <h3 className="text-center">Venue Reserved</h3></div>
+       <div className=""> <button type="button" className="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        </div>
+
       </div>
-      <div className="modal-body">
-        <h3 className="text-center">Venue Reserved</h3>
-        
-        <p className="reservation-success-text">
+      <div class="modal-body">
+      <p className="reservation-success-text">
           Please note that the 10% deposit is to be made within the next 7 days to permanently 
-          reserve the venue and date <Link to="/Main-payment">Click here</Link> to make deposit  
+          reserve the venue and date <Link to={`/MainPayment`  + venueId } onClick={toPayment} data-dismiss="modal" >Click here</Link> to make deposit  
           </p>
       </div>
-     
     </div>
   </div>
 </div>
-        </div>
+         
+
+
+
+        
         </div>
       </div>
     </div>
