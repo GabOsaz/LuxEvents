@@ -40,4 +40,4 @@ mongoose.connect(db, {
 
 const port = process.env.PORT || 5050
 
-app.listen(port, () => console.log(`Server started on port ${port}`, process.env.GOOGLE_MAP_API_KEY));
+app.listen(port, () => console.log(`Server started on port ${port}`));

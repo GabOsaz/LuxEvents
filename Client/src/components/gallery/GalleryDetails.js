@@ -15,7 +15,7 @@ const GalleryDetails = (props) => {
   const venueDetails = useSelector((state) => state.venueDetails);
   const { venue, loading, error } = venueDetails;
   const dispatch = useDispatch();
-  console.log(venue)
+  
 
 //   const authContext = useContext(AuthContext);
 //   const { details } = authContext;
@@ -44,13 +44,13 @@ const GalleryDetails = (props) => {
     <div className="loadingScreen"><div className="spinner-border" role="status">
     <span className="sr-only">Loading...</span>
   </div></div>
-    
+   
   ) : error ? (
     <div className="errorScreen">{ErrorPage()}</div>
   ) : (
     // return  (
     <div className="details">
-      <h3 className="details-heading">Details</h3>
+      <h3 className="details-heading">Details {console.log(venue.image)}</h3>
 
       <div className="event-details-mobile">
         <div className="event-details-mobile-upper-container">
@@ -212,9 +212,13 @@ const GalleryDetails = (props) => {
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
             </i>
-              {/* <div className=""><b>amenities</b> <br/> {venue.amenities.map((amenity) => 
-            <div key={venue._id}>{amenity}</div> )} </div>
-             */}
+              <div className="amen">
+              <b>amenities</b> 
+               
+              <div>{venue.amenities}</div>
+
+             </div>
+            
             </div>
           </div>
         </div>
