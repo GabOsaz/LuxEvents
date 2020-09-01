@@ -1,5 +1,5 @@
 import React, {  useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector} from "react-redux";
 import { AuthContext } from '../../context/AuthContext';
 import ErrorPage from './../extras/ErrorPage';
@@ -7,6 +7,9 @@ import ErrorPage from './../extras/ErrorPage';
 
 
 const EventCenterDetails = (props) => {
+  const history = useHistory();
+  const userSignIn = useSelector((state) => state.userSignIn);
+  const { userInfo } = userSignIn;
   const venueDetails = useSelector((state) => state.venueDetails);
   const { venue, loading, error } = venueDetails;
   // const dispatch = useDispatch();
@@ -15,6 +18,13 @@ const EventCenterDetails = (props) => {
   const { searchInfo } = authContext;
   const searchInfo1 = searchInfo[0];
   console.log(searchInfo1);
+
+  const handleReservation = () => {
+    if(!userInfo) {
+     return history.push('/SignIn');
+    }
+    history.push(`/request-reservation/${venue._id}`)
+  }
 
   // useEffect(() => {
   //   dispatch(detailsVenue(props.match.params.id));
@@ -221,12 +231,12 @@ const EventCenterDetails = (props) => {
               <h3 className=""> Description</h3> {searchInfo1.description}{" "}
             </div>
             <div className="event-details-button">
-              <Link to="/MainPayment" style={{textDecoration: "none"}}>
+              <Link to='/MainPayment' style={{textDecoration: "none"}}>
                 <button className="event-details-button-1">Book Now</button>
               </Link>
-              <Link to="/request-reservation" style={{textDecoration: "none"}}>
-                <button className="event-details-button-2">request Reservation</button>
-              </Link>
+              <div style={{textDecoration: "none"}}>
+                <button onClick={handleReservation} className="event-details-button-2">Request Reservation</button>
+              </div>
             </div>
           </div>
         </div>
