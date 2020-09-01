@@ -58,7 +58,7 @@ const GalleryDetails = (props) => {
             <img className="event-center-image" src={venue.image} alt="venue" />
           </div>
           <div className="event-details-button">
-            <Link to="/MainPayment" style={{textDecoration: "none"}}>
+            <Link to={`/MainPayment/` + venue._id} style={{textDecoration: "none"}}>
               <button className="event-details-button-1">Book Now</button>
             </Link>
             <div style={{textDecoration: "none"}}>
@@ -237,7 +237,7 @@ const GalleryDetails = (props) => {
               <h3 className=""> Description</h3> {venue.description}{" "}
             </div>
             <div className="event-details-button">
-              <Link to="/MainPayment" style={{textDecoration: "none"}}>
+              <Link to={`/MainPayment/` + venue._id} style={{textDecoration: "none"}}>
                 <button className="event-details-button-1">Book Now</button>
               </Link>
               <div style={{textDecoration: "none"}}>
