@@ -36,9 +36,9 @@ const GalleryDetails = (props) => {
     history.push(`/request-reservation/${venue._id}`)
   }
 
-  console.log(props.match.params.id, "inside details");
-    console.log(props.location.pathname.split("/")[2], "ID")
-    const venueId = Number(props.location.pathname.split("/")[2])
+  // console.log(props.match.params.id, "inside details");
+  //   console.log(props.location.pathname.split("/")[2], "ID")
+  //   const venueId = Number(props.location.pathname.split("/")[2])
 
   return loading ? (
     <div className="loadingScreen"><div className="spinner-border" role="status">
@@ -72,7 +72,7 @@ const GalleryDetails = (props) => {
           <div className="event-details-sub">
             <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598954233/cstdh9xbazhtvldeli1h.svg" alt="data-icon" />
             </i>
             <div className="">
               <b>Price</b> <br /> {venue.price}
@@ -81,7 +81,7 @@ const GalleryDetails = (props) => {
           <Link to={`/calender/` + venue._id}  className="event-details-sub" style={{textDecoration: "none"}}>
             <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598954415/iabl9cgttuqxb2sehhfz.svg" alt="data-icon" />
             </i>
 
             <div className="">
@@ -103,7 +103,7 @@ const GalleryDetails = (props) => {
           <div className="event-details-sub">
             <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598954492/iaxv8rwu4o6xn5tyh3ea.svg" alt="data-icon" />
             </i>
             <div className="">
               <b>Service</b> <br />
@@ -114,7 +114,7 @@ const GalleryDetails = (props) => {
           <div className="event-details-sub">
             <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598955252/jqvep5cfrzch1eq7n69p.svg" alt="data-icon" />
             </i>
             <div className="">
               <b>Location</b> <br /> {venue.location}{" "}
@@ -125,7 +125,7 @@ const GalleryDetails = (props) => {
           <div className="event-details-sub">
             <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598955324/mgydp4qxnvhhvysmhvl4.svg" alt="data-icon" />
             </i>
             <div className="">
               <b>Style</b> <br /> {venue.style}{" "}
@@ -146,7 +146,7 @@ const GalleryDetails = (props) => {
             <div className="event-details-sub">
               <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598954233/cstdh9xbazhtvldeli1h.svg" alt="data-icon" />
             </i>
               <div className="">
                 <b>Price</b> <br /> {venue.price}
@@ -155,13 +155,13 @@ const GalleryDetails = (props) => {
             <Link to={`/calender/` + venue._id} className="event-details-sub" style={{textDecoration: "none"}}>
               <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598954415/iabl9cgttuqxb2sehhfz.svg" alt="data-icon" />
             </i>
 
               <div className="">
                 {" "}
                 <b>Date</b> <br />
-                {/* {venue.date}{" "} */}
+                Check Available Dates
                 {" "}
               </div>
             </Link>
@@ -178,7 +178,7 @@ const GalleryDetails = (props) => {
             <div className="event-details-sub">
               <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598954492/iaxv8rwu4o6xn5tyh3ea.svg" alt="data-icon" />
             </i>
               <div className="">
                 <b>Service</b> <br />
@@ -189,7 +189,7 @@ const GalleryDetails = (props) => {
             <div className="event-details-sub">
               <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598955252/jqvep5cfrzch1eq7n69p.svg" alt="data-icon" />
             </i>
               <div className="">
                 <b>Location</b> <br /> {venue.location}{" "}
@@ -200,7 +200,7 @@ const GalleryDetails = (props) => {
             <div className="event-details-sub">
               <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598955324/mgydp4qxnvhhvysmhvl4.svg" alt="data-icon" />
             </i>
               <div className="">
                 <b>Style</b> <br /> {venue.style}{" "}
@@ -210,7 +210,7 @@ const GalleryDetails = (props) => {
             <div className="event-details-sub">
               <i>
               
-              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg" alt="data-icon" />
+              <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598955358/isdjrrssy7updgeghpb9.svg" alt="data-icon" />
             </i>
               <div className="amen">
               <b>amenities</b> 

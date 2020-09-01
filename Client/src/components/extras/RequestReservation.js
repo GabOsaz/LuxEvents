@@ -7,30 +7,31 @@ const RequestReservation = (props) => {
   const userSignIn = useSelector((state) => state.userSignIn);
   const { userInfo } = userSignIn;
 
-  console.log(userInfo)
+ 
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   
-  const venueId = props.location.pathname.split("/")[2]
+  const venueId = props.match.params.id
 
   const toPayment = () => {
     props.history.push(`/MainPayment/` +  venueId );
   }
 
-  // const reservationDetails = useSelector(state => state.reservationDetails)
+  
 
  const dispatch = useDispatch()
 
  
 
-  const submitHandler = (e, venueId) => {
-    
+  const submitHandler = (e) => {
+    const venueId = props.match.params.id
     e.preventDefault();
-    dispatch(requestReservation(userInfo.firstName, userInfo.lastName, userInfo.email, date))
+    dispatch(requestReservation(userInfo.firstName, userInfo.lastName, userInfo.email, date, venueId))
 
+    
     
    
   };
