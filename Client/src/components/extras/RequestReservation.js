@@ -30,10 +30,6 @@ const RequestReservation = (props) => {
     const venueId = props.match.params.id
     e.preventDefault();
     dispatch(requestReservation(userInfo.firstName, userInfo.lastName, userInfo.email, date, venueId))
-
-    
-    
-   
   };
 
   console.log(venueId)
