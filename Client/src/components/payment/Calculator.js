@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-// import {Link }from "react-router-dom"
+import { useSelector} from "react-redux";
+// import {Link }from "react-router-dom"  
 
 const Calculator = () => {
-  const [amount, setAmount] = useState(0);
+  const venueDetails = useSelector((state) => state.venueDetails);
+  const { venue } = venueDetails;
+  console.log(venue.price);
+  const priceInArray = venue.price.split('');
+  const removeNaira = priceInArray.splice(-6, 6);
+  const priceNumberArray = priceInArray.map( Number );
+  const priceInNumber = Number(priceNumberArray.join(''));
+  console.log(typeof priceInNumber);
   const [percentage, setPercentage] = useState(0);
-  const gottenAmount = amount;
+  const gottenAmount = priceInNumber;
   const gottenPercentage = percentage;
   const total = 0.01 * Number(gottenAmount) * Number(gottenPercentage);
 
@@ -24,8 +32,8 @@ const Calculator = () => {
               type="text"
               className="form-control text-primary"
               id="amount-input"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
+              value={priceInNumber}
+              // onChange={(e) => setAmount(e.target.value)}
               placeholder="Enter amount"
             />
           </div>
@@ -70,7 +78,7 @@ const Calculator = () => {
           <div className="calculator-details-container">
             <div className="calculator-details">
               <div className="calculator-details-subtotal">Subtotal </div>
-              <div className="calculator-details-subtotal-number">{amount}</div>
+              <div className="calculator-details-subtotal-number">{priceInNumber}</div>
             </div>
 
             <div className="calculator-details">

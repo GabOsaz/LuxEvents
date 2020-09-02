@@ -1,8 +1,10 @@
 import React from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import {connect} from 'react-redux'
 
-export default class Calendar extends React.Component {
+class Calendar extends React.Component {
   state = {
     dateContext: moment(),
     today: moment(),
@@ -11,7 +13,21 @@ export default class Calendar extends React.Component {
     selectedDay: null,
     selectedDate: null,
     booked: true,
+    venueId: '',
+    bookedDatesOnly: []
   };
+
+  componentDidMount = async () => {
+    const { data } = await axios.get('http://localhost5050:api/bookedVenue');
+    const selectedVenueBookings = data.filter(venue => venue._id === this.props.venueId)
+    const bookedDatesOnly = [];
+    selectedVenueBookings.map(eachBooking => bookedDatesOnly.push(eachBooking.date));
+    this.setState({
+      bookedDatesOnly
+    })
+  }
+
+   
 
   weekdays = moment.weekdays(); //["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
   weekdaysShort = moment.weekdaysShort(); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -225,7 +241,8 @@ onDayClick = (e, day) => {
     for (let d = 1; d <= this.daysInMonth(); d++) {
       let className = d == this.currentDay() ? "current-day day " : "day";
       let selectedClass = d === this.state.selectedDay ? "selected-day" : "";
-      let classNameBooking = this.state.booked === false  ? "availability-icon-2-cal"  : "availability-icon-1-cal";
+      let classNameBooking = this.state.bookedDatesOnly.find(bd => d === bd) === true  ? "availability-icon-2-cal"  : "availability-icon-1-cal";
+      // let classNameBooking = this.state.booked === false  ? "availability-icon-2-cal"  : "availability-icon-1-cal";
 
       daysInMonth.push(
         <td key={d} className={className + selectedClass}>
@@ -328,3 +345,12 @@ onDayClick = (e, day) => {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  const { venue } = state.venueDetails;
+  return {
+    venueId : venue._id
+  }
+}
+
+export default connect (mapStateToProps) (Calendar)
