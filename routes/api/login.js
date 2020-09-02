@@ -40,6 +40,7 @@ router.post('/', async (req, res) => {
         })
   
         res.json({
+          _id: user._id,
           email : user.email,
           lastName : user.lastName,
           firstName : user.firstName,

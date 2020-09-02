@@ -24,16 +24,16 @@ const Header = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
   const dispatch = useDispatch();
-
+  
   const wrapper = React.createRef();
-  let location = useLocation();
+  // let location = useLocation();
 
-  const currentLocation = location.pathname;
-  const menuItem = document.querySelectorAll("NavItem");
-  const menuLength = menuItem.length;
-  for (let i = 0; i < menuLength; i++) {
-    if (menuItem[i].href === currentLocation) menuItem[i].className = "active";
-  }
+  // const currentLocation = location.pathname;
+  // const menuItem = document.querySelectorAll("NavItem");
+  // const menuLength = menuItem.length;
+  // for (let i = 0; i < menuLength; i++) {
+  //   if (menuItem[i].href === currentLocation) menuItem[i].className = "active";
+  // }
 
   const handleLogout = () => {
     dispatch(logout());
@@ -131,7 +131,7 @@ const Header = (props) => {
             
               <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                 <a className="dropdown-item" href="/messages">Messages</a>
-                <a className="dropdown-item" href="/reserved-venues">Reserved Venues</a>
+                <a className="dropdown-item" href={`/reservedVenues/` + userInfo._id} >Reserved Venues</a>
                 <a className="dropdown-item" href="/booked-venues">Booked Venues</a>
                 <a className="dropdown-item" href="/favourites">Favourites</a>
                 <a className="dropdown-item" href="/help">Help</a>
