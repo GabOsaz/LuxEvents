@@ -7,9 +7,12 @@ const RequestReservation = (props) => {
   const userSignIn = useSelector((state) => state.userSignIn);
   const { userInfo } = userSignIn;
 
-  const reservationDetails = useSelector((state) => state.reservationDetails);
+  const venueDetails = useSelector((state) => state.venueDetails);
+  const { venue } = venueDetails;
+  console.log(venue);
+//   const reservationDetails = useSelector((state) => state.reservationDetails);
 
- console.log(reservationDetails);
+//  console.log(reservationDetails);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -27,18 +30,18 @@ const RequestReservation = (props) => {
  const dispatch = useDispatch()
 
  
-
+ 
   const submitHandler = (e) => {
     const venueId = props.match.params.id
+    
     if (date === "") {
       return e.preventDefault(alert("Please Fill Fields"));
        } else {
         e.preventDefault()
-        dispatch(requestReservation(userInfo.firstName, userInfo.lastName, userInfo.email, date, venueId))
+        dispatch(requestReservation(userInfo._id, userInfo.firstName, userInfo.lastName, venue.name, venue.location, userInfo.email, date, venueId, venue.uploadedImg, venue.description))
        }
   };
 
-  console.log(venueId)
 
   return (
     <div className="Request-reservation-container">

@@ -36,6 +36,8 @@ const GalleryDetails = (props) => {
     history.push(`/request-reservation/${venue._id}`)
   }
 
+
+  
   // console.log(props.match.params.id, "inside details");
   //   console.log(props.location.pathname.split("/")[2], "ID")
   //   const venueId = Number(props.location.pathname.split("/")[2])
@@ -50,12 +52,12 @@ const GalleryDetails = (props) => {
   ) : (
     // return  (
     <div className="details">
-      <h3 className="details-heading">Details {console.log(venue.image)}</h3>
+      <h3 className="details-heading">Details </h3>
 
       <div className="event-details-mobile">
         <div className="event-details-mobile-upper-container">
           <div className="event-center-container">
-            <img className="event-center-image" src={venue.image} alt="venue" />
+            <img className="event-center-image" src={venue.uploadedImg} alt="venue" />
           </div>
           <div className="event-details-button">
             <Link to={`/MainPayment/` + venue._id} style={{textDecoration: "none"}}>
@@ -228,7 +230,7 @@ const GalleryDetails = (props) => {
             <div className="event-center-container">
               <img
                 className="event-center-image"
-                src={venue.image}
+                src={venue.uploadedImg}
                 // src=''
                 alt="venue"
               />

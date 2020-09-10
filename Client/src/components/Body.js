@@ -13,6 +13,7 @@ import RequestReservation from './extras/RequestReservation';
 import BookingSuccess from "./landing-page/Success";
 // import AppShell from './AppShell'
 import ReservedVenues from './extras/ReservedVenues';
+import BookedVenues from "./extras/BookedVenue";
 
 const Body = () => {
   return (
@@ -30,6 +31,7 @@ const Body = () => {
         <Route path="/SignIn" component={SignIn} />
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Front" component={Front} />
+        <Route path="/bookedVenues/:id" component={BookedVenues} />
         <Route path="/reservedVenues/:id" component={ReservedVenues} />
         <Route path="/request-reservation/:id" component={RequestReservation} />
         <Route path="/success/:id" component={BookingSuccess} />

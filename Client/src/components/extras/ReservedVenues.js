@@ -11,20 +11,21 @@ import EventCenterMap from "../gallery/EventCenterMap";
 const ReservedVenues = (props) => {
 
   const  reservedVenueList = useSelector((state) => state. reservedVenueList);
-  const { reservedVenues, loading, error } =  reservedVenueList;
+  const {reservedVenues, loading, error } =  reservedVenueList;
   console.log(reservedVenues, " reseved venues >>>");
+
+
   const dispatch = useDispatch();
 
-  const userSignIn = useSelector(state => state.userSignIn);
-   const {userInfo} = userSignIn;
+  // const userSignIn = useSelector(state => state.userSignIn);
+  // const {_id} = userSignIn;
+   
 
- 
-
-  console.log(props.match.params.id);
+  const userId = props.match.params.id
 
   useEffect(() => {
     
-      dispatch(listReservedVenues());
+      dispatch(listReservedVenues(userId));
       
     return () => {
       // cleanup
@@ -45,15 +46,12 @@ const ReservedVenues = (props) => {
         <div className="container">
           <div className="gallery-heading ">
             <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading">
-              Reserved Venues
+            Your Reserved Venues
             </h4>
             <h4 className="text-center mt-5 mb-5 heading-web d-none d-sm-block">
-              Event Center Location
+              Your Reserved Venues
             </h4>
-            <div>
-              { console.log(reservedVenues.filter((element) => element.email === userInfo.email))
-  }
-            </div>
+            
               
           </div>
           {reservedVenues.map((venue) => (
@@ -69,7 +67,7 @@ const ReservedVenues = (props) => {
                         <img
                           width="100%"
                           className="mobile-gallery-image"
-                          src={venue.image}
+                          src={venue.uploadedImg}
                           alt="event Venue"
                         />
 
@@ -78,7 +76,7 @@ const ReservedVenues = (props) => {
                             {venue.name}
                           </div>
                           <CardText className="gallery-event-center-location-subtext mb-2 ">
-                            {venue.city}, {venue.state}.
+                            {venue.location}.
                           </CardText>
                         </div>
                       </Link>
@@ -94,7 +92,7 @@ const ReservedVenues = (props) => {
                       <img
                         className="gallery-image-web"
                         width="100%"
-                        src={venue.image}
+                        src={venue.uploadedImg}
                         alt="event Venue"
                       />
                     </div>
@@ -111,7 +109,7 @@ const ReservedVenues = (props) => {
                       <div className="font-weight-bold mb-4">{venue.name}</div>
                       <CardText className="text-secondary"
                        style={{ textDecoration: "none" }}>
-                        {venue.city}, {venue.state}.
+                        {venue.location}.
                       </CardText>
                     </div>
                     <CardText className="mt-4 gallery-center-details">

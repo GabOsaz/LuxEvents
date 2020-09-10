@@ -5,36 +5,57 @@ import {
   REQUEST_RESERVATION_FAIL,
   RESERVED_VENUE_LIST_REQUEST,
   RESERVED_VENUE_LIST_SUCCESS,
-  RESERVED_VENUE_LIST_FAIL
+  RESERVED_VENUE_LIST_FAIL,
 } from "../constants/reservationConstants";
 import Cookie from "js-cookie";
 
 const requestReservation = (
+  userId,
   firstName,
   lastName,
+  name, 
+  location,
   email,
   date,
-  venueId
+  venueId,
+  uploadedImg,
+  description
 ) => async (dispatch) => {
-  console.log("from action", firstName, lastName, email, date, venueId);
+  
   dispatch({
     type: REQUEST_RESERVATION_REQUEST,
-    payload: { firstName, lastName, email, date, venueId },
+    payload: {
+      userId,
+      firstName,
+      lastName,
+      name,
+      location,
+      email,
+      date,
+      venueId,
+      uploadedImg,
+      description
+    }
   });
 
   try {
     const { data } = await axios.post(
       `http://127.0.0.1:5050/api/reserveVenue`,
       {
+        userId,
         firstName,
-        lastName,
+  lastName,
+        name,
+        location,
         email,
         date,
         venueId,
+        uploadedImg,
+        description
       }
     );
 
-    console.log(firstName, lastName, email, date, venueId, "res success");
+   
     dispatch({ type: REQUEST_RESERVATION_SUCCESS, payload: data });
     Cookie.set("reservationInfo", JSON.stringify(data));
   } catch (error) {
@@ -42,12 +63,17 @@ const requestReservation = (
   }
 };
 
-const listReservedVenues = () => async (dispatch) => {
+
+
+
+
+const listReservedVenues = (userId) => async (dispatch) => {
   try {
-    dispatch({ type: RESERVED_VENUE_LIST_REQUEST });
+    dispatch({ type: RESERVED_VENUE_LIST_REQUEST, payload: userId});
     
-    const { data } = await axios.get("http://127.0.0.1:5050/api/reserveVenue");
-    
+
+    const { data } = await axios.get(`http://127.0.0.1:5050/api/reserveVenue/reserved/${userId}`);
+
     dispatch({ type: RESERVED_VENUE_LIST_SUCCESS, payload: data });
     
   } catch (error) {
@@ -55,4 +81,4 @@ const listReservedVenues = () => async (dispatch) => {
   }
 };
 
-export {requestReservation, listReservedVenues  } ;
+export { requestReservation, listReservedVenues };

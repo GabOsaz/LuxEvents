@@ -132,7 +132,7 @@ const Header = (props) => {
               <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                 <a className="dropdown-item" href="/messages">Messages</a>
                 <a className="dropdown-item" href={`/reservedVenues/` + userInfo._id} >Reserved Venues</a>
-                <a className="dropdown-item" href="/booked-venues">Booked Venues</a>
+                <a className="dropdown-item" href={`/bookedVenues/` + userInfo._id}>Booked Venues</a>
                 <a className="dropdown-item" href="/favourites">Favourites</a>
                 <a className="dropdown-item" href="/help">Help</a>
                 <a className="dropdown-item" href="/account-setting">Account Setting</a>
