@@ -14,6 +14,11 @@ import BookingSuccess from "./landing-page/Success";
 // import AppShell from './AppShell'
 import ReservedVenues from './extras/ReservedVenues';
 import BookedVenues from "./extras/BookedVenue";
+import BookingSuccessfulPage from "./extras/BookingSuccessfulPage";
+import ReservationSuccessfulPage from './extras/ReservationSucessfulPage';
+
+
+
 
 const Body = () => {
   return (
@@ -33,7 +38,9 @@ const Body = () => {
         <Route path="/Front" component={Front} />
         <Route path="/bookedVenues/:id" component={BookedVenues} />
         <Route path="/reservedVenues/:id" component={ReservedVenues} />
+        <Route path="/bookingsuccessful" component={BookingSuccessfulPage} />
         <Route path="/request-reservation/:id" component={RequestReservation} />
+        <Route path="/reservationSuccessful" component={ReservationSuccessfulPage} />
         <Route path="/success/:id" component={BookingSuccess} />
 
         {/* <Route path="/gallery" render = { () => <AppShell> <Gallery /> </AppShell>} /> */}

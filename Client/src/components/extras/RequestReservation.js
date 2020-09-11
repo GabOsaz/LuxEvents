@@ -96,10 +96,14 @@ const RequestReservation = (props) => {
               </li>
 
               <li>
-                <button type="submit" className="signin-button"
+                {/* <button type="submit" className="signin-button"
                 data-toggle="modal" data-target="#exampleModalCenter">
                   Submit
+                </button> */}
+                <Link to="/reservationSuccessful"><button type="submit" className="signin-button">  Submit
                 </button>
+                </Link>
+                 
               </li>
             </ul>
           </form>
@@ -189,10 +193,14 @@ const RequestReservation = (props) => {
               </li>
 
               <li>
-                <button type="submit" className="signin-button"
+                {/* <button type="submit" className="signin-button"
                 data-toggle="modal" data-target="#staticBackdrop">
                   Submit
+                </button> */}
+
+                <Link to="/reservationSuccessful"><button type="submit" className="signin-button">  Submit
                 </button>
+                </Link>
               </li>
             </ul>
           </form>
