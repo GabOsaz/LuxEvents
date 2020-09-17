@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "engines": {
     "node": "12.11.1"
-    },
+  },
   "description": "Event Booking and Management App built with the MERN stack",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js serve -s build",
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Client && npm run build --prefix Client"
@@ -24,7 +24,8 @@
     "google-maps-react": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
-    "mongoose": "^5.9.28"
+    "mongoose": "^5.9.28",
+    "serve": "^11.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
