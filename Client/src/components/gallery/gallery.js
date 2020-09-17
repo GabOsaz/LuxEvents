@@ -99,7 +99,7 @@ const Gallery = (props) => {
                         <img
                           width="100%"
                           className="mobile-gallery-image"
-                          src={venue.image}
+                          src={venue.uploadedImg}
                           alt="event Venue"
                         />
 
@@ -124,7 +124,7 @@ const Gallery = (props) => {
                       <img
                         className="gallery-image-web"
                         width="100%"
-                        src={venue.image}
+                        src={venue.uploadedImg}
                         alt="event Venue"
                       />
                     </div>
@@ -214,7 +214,7 @@ const Gallery = (props) => {
 
 //                     width="100%"
 //                     className="mobile-gallery-image"
-//                     src={venue.image}
+//                     src={venue.uploadedImg}
 //                     alt="event Venue"
 //                   />
 
@@ -236,7 +236,7 @@ const Gallery = (props) => {
 //                     className="gallery-image-web"
 
 //                     width="100%"
-//                     src={venue.image}
+//                     src={venue.uploadedImg}
 //                     alt="event Venue"
 //                   />
 //                 </div>

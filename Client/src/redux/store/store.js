@@ -3,12 +3,13 @@ import rootReducer from "../reducers/index";
 import thunk from "redux-thunk";
 import Cookie from "js-cookie";
 
-
+const reservationDetails = Cookie.getJSON("reservatonDetails") || [];
+console.log(reservationDetails, "inside store");
 const userInfo = Cookie.getJSON("userInfo") || null;
 // console.log(userInfo, "inside store");
 
 
-const initialState = { userSignIn : { userInfo }};
+const initialState = {reservationDetails, userSignIn : { userInfo }};
 
 
 

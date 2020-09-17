@@ -2,17 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Card, CardText, Row, Col } from "reactstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { listBookedVenues } from "../../redux/actions/bookVenueAction";
+import { listReservedVenues } from "../../redux/actions/reservationAction";
 import ErrorPage from "./ErrorPage";
 import EventCenterMap from "../gallery/EventCenterMap";
 
 
 
-const BookedVenues = (props) => {
+const ReservedVenues = (props) => {
 
-  const  bookedVenuesList = useSelector((state) => state.bookedVenuesList);
-  const {bookedVenues, loading, error } =  bookedVenuesList;
-  console.log(bookedVenues, " booked venues >>>");
+  const  reservedVenueList = useSelector((state) => state. reservedVenueList);
+  const {reservedVenues, loading, error } =  reservedVenueList;
+  console.log(reservedVenues, " reseved venues >>>");
 
 
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const BookedVenues = (props) => {
 
   useEffect(() => {
     
-      dispatch(listBookedVenues(userId));
+      dispatch(listReservedVenues(userId));
       
     return () => {
       // cleanup
@@ -46,15 +46,15 @@ const BookedVenues = (props) => {
         <div className="container">
           <div className="gallery-heading ">
             <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading">
-            Your Booked Venues
+            Your Reserved Venues
             </h4>
             <h4 className="text-center mt-5 mb-5 heading-web d-none d-sm-block">
-              Your Booked Venues
+              Your Reserved Venues
             </h4>
             
               
           </div>
-          {bookedVenues.map((venue) => (
+          {reservedVenues.map((venue) => (
             <div className="container mobile-gallery-body" key={venue._id}>
               <Row className="red">
                 <Col sm="6 mb-5">
@@ -134,4 +134,4 @@ const BookedVenues = (props) => {
 
 
 
-export default BookedVenues;
+export default ReservedVenues;

@@ -3,17 +3,45 @@ const router = express.Router();
 
 const BookedVenues = require('../../models/BookedVenues');
 
+
+
+
+router.get("/", async (req, res) => {
+  BookedVenues.find()
+    .then((venues) => res.json(venues))
+    .catch((error) => res.json("you have no reserved venues", error.message));
+});
+
+
+
+
 router.post('/', async (req, res) => {
+
+ 
   
     try {
-      const { firstName, lastName, email, date, venueId } = req.body;
-      const venueData = {
-        firstName,
-        lastName,
-        email,
-        date,
-        venueId
-      }
+      const {   
+        userId,
+    firstName,
+    lastName,
+    name,
+    location,
+    email,
+    date,
+    venueId,
+    uploadedImg,
+    description } = req.body;
+
+    const venueData =   {userId,
+    firstName,
+    lastName,
+    name,
+    location,
+    email,
+    date,
+    venueId,
+    uploadedImg,
+    description}
   
       const alreadyBookedDate = await BookedVenues.findOne({
         date, venueId
@@ -29,6 +57,7 @@ router.post('/', async (req, res) => {
       const savedVenue = await bookedVenue.save();
 
       if (savedVenue) {
+        console.log(savedVenue);
         res.status(200).json({
         message: 'Venue Booked!'
         });
@@ -44,6 +73,25 @@ router.post('/', async (req, res) => {
         .status(400)
         .json({ message: 'Something went wrong.'});
     }
+});
+
+
+
+
+router.get("/booked/:id", async (req, res) => {
+  try {
+    const bookedVenueList = await BookedVenues.find({
+      userId: req.params.id,
+    });
+
+    if (bookedVenueList){ res.send(bookedVenueList)
+      console.log(bookedVenueList);
+    }
+    else{ res.status(404).send({ message: "No Venue found" });}
+  } catch (error) {
+    error => error.message
+    
+  }
 });
 
 

@@ -10,10 +10,25 @@ const BookedVenuesSchema = new Schema({
       type: String,
       required: true
     },
+    name: {
+      type: String,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
+    },
     email: {
       type: String,
       required: true,
-      unique: true
+    },
+    uploadedImg: {
+      type: String,
+      required: true,
+    },
+    userId: {
+      type: String,
+      requires: true,
     },
     venueId: {
         type: String,
@@ -21,6 +36,10 @@ const BookedVenuesSchema = new Schema({
     },
     date: {
       type: String,
+      required: true
+    },
+    description: {
+      type : String,
       required: true
     },
     register_date: {

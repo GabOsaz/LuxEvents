@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import {useSelector, useDispatch} from 'react-redux';
 import {Link} from "react-router-dom"
-import requestReservation from './../../redux/actions/reservationAction';
+import {requestReservation} from './../../redux/actions/reservationAction';
 
 const RequestReservation = (props) => {
   const userSignIn = useSelector((state) => state.userSignIn);
   const { userInfo } = userSignIn;
 
- 
+  const venueDetails = useSelector((state) => state.venueDetails);
+  const { venue } = venueDetails;
+  console.log(venue);
+//   const reservationDetails = useSelector((state) => state.reservationDetails);
+
+//  console.log(reservationDetails);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -25,14 +30,18 @@ const RequestReservation = (props) => {
  const dispatch = useDispatch()
 
  
-
+ 
   const submitHandler = (e) => {
     const venueId = props.match.params.id
-    e.preventDefault();
-    dispatch(requestReservation(userInfo.firstName, userInfo.lastName, userInfo.email, date, venueId))
+    
+    if (date === "") {
+      return e.preventDefault(alert("Please Fill Fields"));
+       } else {
+        e.preventDefault()
+        dispatch(requestReservation(userInfo._id, userInfo.firstName, userInfo.lastName, venue.name, venue.location, userInfo.email, date, venueId, venue.uploadedImg, venue.description))
+       }
   };
 
-  console.log(venueId)
 
   return (
     <div className="Request-reservation-container">
@@ -87,10 +96,14 @@ const RequestReservation = (props) => {
               </li>
 
               <li>
-                <button type="submit" className="signin-button"
+                {/* <button type="submit" className="signin-button"
                 data-toggle="modal" data-target="#exampleModalCenter">
                   Submit
+                </button> */}
+                <Link to="/reservationSuccessful"><button type="submit" className="signin-button">  Submit
                 </button>
+                </Link>
+                 
               </li>
             </ul>
           </form>
@@ -180,19 +193,23 @@ const RequestReservation = (props) => {
               </li>
 
               <li>
-                <button type="submit" className="signin-button"
+                {/* <button type="submit" className="signin-button"
                 data-toggle="modal" data-target="#staticBackdrop">
                   Submit
+                </button> */}
+
+                <Link to="/reservationSuccessful"><button type="submit" className="signin-button">  Submit
                 </button>
+                </Link>
               </li>
             </ul>
           </form>
 
 
 
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+<div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
     <div className="modal-header">
      <div className="mx-auto"> <h3 className="text-center">Venue Reserved</h3></div>
        <div className=""> <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -201,7 +218,7 @@ const RequestReservation = (props) => {
         </div>
 
       </div>
-      <div class="modal-body">
+      <div className="modal-body">
       <p className="reservation-success-text">
           Please note that the 10% deposit is to be made within the next 7 days to permanently 
           reserve the venue and date <Link to={`/MainPayment`  + venueId } onClick={toPayment} data-dismiss="modal" >Click here</Link> to make deposit  

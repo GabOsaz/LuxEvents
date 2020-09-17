@@ -25,8 +25,13 @@ const SignIn = (props) => {
    }, [userInfo]);
   
   const submitHandler = (e) => {
-     e.preventDefault()
-     dispatch(signin(email,password))
+      if (email === "" || password === "") {
+      return e.preventDefault(alert("Please Fill Fields"));
+       } else {
+        e.preventDefault()
+        dispatch(signin(email,password))
+       }
+    
   }
 
   
