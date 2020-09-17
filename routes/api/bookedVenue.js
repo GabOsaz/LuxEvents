@@ -16,32 +16,35 @@ router.get("/", async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-
  
   
     try {
+      // const venueId = req.params.id
       const {   
-        userId,
+    userId,
     firstName,
     lastName,
-    name,
-    location,
+    // name,
+    // location,
     email,
-    date,
     venueId,
-    uploadedImg,
-    description } = req.body;
+    date,
+    // uploadedImg,
+    // description 
+  } = req.body;
 
-    const venueData =   {userId,
+    const venueData =   {
+      userId,
     firstName,
     lastName,
-    name,
-    location,
+    // name,
+    // location,
     email,
     date,
-    venueId,
-    uploadedImg,
-    description}
+    venueId
+    // uploadedImg,
+    // description
+    }
   
       const alreadyBookedDate = await BookedVenues.findOne({
         date, venueId

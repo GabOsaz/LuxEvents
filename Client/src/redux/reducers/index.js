@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import {venueListReducer, venuesDetailsReducer} from "./venueReducer";
 import {userSigninReducer, userSignupReducer } from './userReducer';
 import { reservationReducer, reservedVenueListReducer } from './reservationReducer';
-import { bookedVenueReducer } from "./bookVenues";
+import { bookedVenueReducer, makeBookingReducer } from "./bookVenuesReducer";
 
 const rootReducer = combineReducers({
     venueList: venueListReducer,
@@ -11,7 +11,8 @@ const rootReducer = combineReducers({
     userSignUp: userSignupReducer,
     reservationDetails : reservationReducer,
     reservedVenueList :reservedVenueListReducer,
-    bookedVenuesList: bookedVenueReducer
+    bookedVenuesList: bookedVenueReducer,
+    bookingDate: makeBookingReducer
 })
 
 

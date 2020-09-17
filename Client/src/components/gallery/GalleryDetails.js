@@ -1,29 +1,55 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsVenue } from "../../redux/actions/venueActions";
 import { AuthContext } from '../../context/AuthContext';
 import ErrorPage from '../extras/ErrorPage';
 import EventCenterMap from "./EventCenterMap";
+import { bookVenue } from "../../redux/actions/bookVenueAction";
 
 
 
 const GalleryDetails = (props) => {
+
   const userSignIn = useSelector((state) => state.userSignIn);
   const { userInfo } = userSignIn;
+  const {firstName, lastName, email, _id} = userInfo
   const history = useHistory();
+
+ 
+
   const venueDetails = useSelector((state) => state.venueDetails);
   const { venue, loading, error } = venueDetails;
+  //const {name, location, uploadedImg, description} = venue;
+
+  const bookingDate = useSelector(state => state.bookingDate);
+  const { date } = bookingDate;
+  console.log(date);
   const dispatch = useDispatch();
+
+
+  //DEFINING THE ID'S SENT WHEN MAKING BOOKING REQUESTS
+  const venueId = props.match.params.id
+  const userId = _id
+ 
+ 
+  //  console.log(venue.name);
+
+
+  const requestBooking = ()  => {
+ 
+    // const  {name, location, uploadedImg, description, _id} = venue;
+    dispatch(bookVenue({firstName, lastName, email, userId, date, venueId}))
+    
+    
+  }
+
   
 
-//   const authContext = useContext(AuthContext);
-//   const { details } = authContext;
-//   console.log('Clicked venue details >>>', details);
 
   useEffect(() => {
     dispatch(detailsVenue(props.match.params.id));
-    console.log(venue)
+    
     return () => {
       // cleanup
     };
@@ -36,11 +62,10 @@ const GalleryDetails = (props) => {
     history.push(`/request-reservation/${venue._id}`)
   }
 
-
   
-  // console.log(props.match.params.id, "inside details");
-  //   console.log(props.location.pathname.split("/")[2], "ID")
-  //   const venueId = Number(props.location.pathname.split("/")[2])
+
+ 
+
 
   return loading ? (
     <div className="loadingScreen"><div className="spinner-border" role="status">
@@ -60,8 +85,10 @@ const GalleryDetails = (props) => {
             <img className="event-center-image" src={venue.uploadedImg} alt="venue" />
           </div>
           <div className="event-details-button">
-            <Link to={`/MainPayment/` + venue._id} style={{textDecoration: "none"}}>
-              <button className="event-details-button-1">Book Now</button>
+            <Link to={`/bookingSuccessful/${venue._id}`} style={{textDecoration: "none"}}>
+              <button className="event-details-button-1"
+              onClick={requestBooking}
+              >Book Now</button>
             </Link>
             <div style={{textDecoration: "none"}}>
               <button onClick={handleReservation} className="event-details-button-2">Make Reservation</button>
@@ -85,11 +112,12 @@ const GalleryDetails = (props) => {
               
               <img className="event-details-icon" src="https://res.cloudinary.com/dsipecjov/image/upload/v1598954415/iabl9cgttuqxb2sehhfz.svg" alt="data-icon" />
             </i>
+            
 
             <div className="">
               {" "}
               <b>Date</b> <br />
-              {/* {venue.date}{" "} */}
+              Check Available Dates
               {" "}
             </div>
           </Link>
@@ -239,8 +267,10 @@ const GalleryDetails = (props) => {
               <h3 className=""> Description</h3> {venue.description}{" "}
             </div>
             <div className="event-details-button">
-              <Link to={`/MainPayment/` + venue._id} style={{textDecoration: "none"}}>
-                <button className="event-details-button-1">Book Now</button>
+              <Link to={`/bookingSuccessful/${venue._id}`} style={{textDecoration: "none"}}>
+                <button className="event-details-button-1"
+                 onClick={requestBooking}
+                 >Book Now</button>
               </Link>
               <div style={{textDecoration: "none"}}>
                 <button onClick={handleReservation} className="event-details-button-2">Request Reservation</button>
