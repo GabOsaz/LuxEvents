@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const mongoose = require('mongoose');
 mongoose.set('debug', true);
@@ -38,7 +39,15 @@ mongoose.connect(db, {
     }
 )
     .then(() => console.log('MongoDB connected...'))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err)
+)
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('Client/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html'))
+    })
+}
 
 const port = process.env.PORT || 5050
 
