@@ -211,7 +211,7 @@ onDayClick = (e, day) => {
             console.log("SELECTED DAY: ", this.state.selectedDay);
     }
     )
-    this.props.onDayClick && this.props.onDayClick(e, day);
+    // this.props.onDayClick && this.props.onDayClick(e, day);
 }
 
 
@@ -241,7 +241,7 @@ onDayClick = (e, day) => {
     for (let d = 1; d <= this.daysInMonth(); d++) {
       let className = d == this.currentDay() ? "current-day day " : "day";
       let selectedClass = d === this.state.selectedDay ? "selected-day" : "";
-      let classNameBooking = this.state.bookedDatesOnly.find(bd => d === bd) === true  ? "availability-icon-2-cal"  : "availability-icon-1-cal";
+      let classNameBooking = this.state.bookedDatesOnly.find(bd => d === bd) ? "availability-icon-2-cal"  : "availability-icon-1-cal";
       // let classNameBooking = this.state.booked === false  ? "availability-icon-2-cal"  : "availability-icon-1-cal";
 
       daysInMonth.push(
