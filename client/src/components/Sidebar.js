@@ -5,8 +5,9 @@ import {
     faChartLine,
     faCalendarDay,
     faBook,
-    faLongArrowAltLeft,
+    faCalendarAlt,
     faCog,
+    faHome
   } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -32,14 +33,14 @@ const navItems = [
     icon: faBook,
   },
   {
-    label: 'Calender',
+    label: 'Calendar',
     path: 'calender',
-    icon: faBook,
+    icon: faCalendarAlt,
   },
   {
-    label: 'Sign Out',
-    path: 'signOut',
-    icon: faLongArrowAltLeft,
+    label: 'Event Centers',
+    path: 'eventCenters',
+    icon: faHome,
   }
 ];
 
@@ -72,12 +73,12 @@ const NavItemContainer = ({ children }) => (
 
 const Sidebar = () => {
   return (
-    <section className="fixed h-screen">
+    <section className=" h-screen">
       <div className="w-16 sm:w-24 m-auto">
         <img src='https://res.cloudinary.com/dsipecjov/image/upload/v1597838388/j922o1oiqelot0klg57v.svg' alt='Lux Events Management' ></img>
         {/* <h2 className="text-white-500"> Lux Events </h2> */}
       </div>
-        <div><span className='ml-5 pl-1' >Management</span></div>
+        <div><span className='flex justify-center -ml-6' >Management</span></div>
       <div className="mt-20">
         {navItems.map((navItem, i) => (
           <>

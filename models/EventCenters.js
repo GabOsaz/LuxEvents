@@ -39,6 +39,9 @@ const EventCenterSchema = new Schema ({
         required: true
     },
     amenities: {
+        type: Array
+    },
+    uploadedImg: {
         type: String
     }
 })

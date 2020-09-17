@@ -5,6 +5,16 @@ const jwtDecode = require('jwt-decode');
 const User = require('../../models/User');
 const { createToken, verifyPassword } = require('./util')
 
+router.get('/', async (req, res) => {
+  try {
+    const users = await User.estimatedDocumentCount();
+    if(!users) res.json({ message: '0' });
+    res.status(200).json({ users });
+  } catch (error) {
+    res.status(400).json({ message: 'Unable to fetch users' })
+  }
+})
+
 router.post('/', async (req, res) => {
     try {
       const { email, password } = req.body;

@@ -10,6 +10,7 @@ const Settings = () => {
               <div className="setting-heading-wrapper">
                 <div className="setting-heading-icon">
                   <img
+                    alt='restaurant icon'
                     className="admin-settingis-Icon"
                     src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg"
                   />{" "}
@@ -45,6 +46,7 @@ const Settings = () => {
               <div className="setting-heading-wrapper">
                 <div className="setting-heading-icon">
                   <img
+                    alt='Table management icon'
                     className="admin-settingis-Icon"
                     src="https://res.cloudinary.com/dsipecjov/image/upload/v1598344417/wycgknvato3oiafawhnr.svg"
                   />
@@ -99,6 +101,7 @@ const Settings = () => {
               <div className="setting-heading-wrapper">
                 <div className="setting-heading-icon">
                   <img
+                    alt='security icon'
                     className="admin-settingis-Icon"
                     src="https://res.cloudinary.com/dsipecjov/image/upload/v1598343282/iihrsobhh7jyjoldfiw2.svg"
                   />
@@ -135,6 +138,7 @@ const Settings = () => {
               <div className="setting-heading-wrapper">
                 <div className="setting-heading-icon">
                   <img
+                    alt='Close outs icon'
                     className="admin-settingis-Icon"
                     src="https://res.cloudinary.com/dsipecjov/image/upload/v1598344497/kj8dtpejovee16se62tr.svg"
                   />
@@ -190,6 +194,7 @@ const Settings = () => {
               <div className="setting-heading-wrapper">
                 <div className="setting-heading-icon">
                   <img
+                    alt='Reservation icon'
                     className="admin-settingis-Icon"
                     src="https://res.cloudinary.com/dsipecjov/image/upload/v1598343430/ou37pod87p2wt4g9apgs.svg"
                   />
@@ -259,6 +264,7 @@ const Settings = () => {
               <div className="setting-heading-wrapper">
                 <div className="setting-heading-icon">
                   <img
+                    alt='Event enquiry icon'
                     className="admin-settingis-Icon"
                     src="https://res.cloudinary.com/dsipecjov/image/upload/v1597655492/uvgnril2ikrvviqusksl.svg"
                   />

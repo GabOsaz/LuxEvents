@@ -19,6 +19,8 @@ const AddCenter = lazy(() => import('./components/AddCenter'));
 const Settings = lazy(() => import('./components/Settings'));
 const Calender = lazy(() => import('./components/Calender'));
 const Bookings = lazy(() => import('./components/Bookings'));
+const UploadImg = lazy(() => import('./components/UploadImg'));
+const EventCenters = lazy(() => import('./components/EventCenters'));
 
 const AuthenticatedRoute = ({ children, ...rest}) => {
   const authContext = useContext(AuthContext);
@@ -58,6 +60,12 @@ const AppRoutes = () => {
         </AuthenticatedRoute>
         <AuthenticatedRoute path="/bookings">
           <Bookings />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute path="/uploadImg">
+          <UploadImg />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute path="/eventCenters">
+          <EventCenters />
         </AuthenticatedRoute>
 
         <Route path="*">

@@ -6,6 +6,7 @@ const EventCenter = require('../../models/EventCenters');
 router.post('/', async (req, res) => {
     try {
       const { name } = req.body;
+      console.log(req.body)
   
       const existingName = await EventCenter.findOne({
         name
@@ -38,19 +39,46 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const EventCenters = await EventCenter.find();
+    res.json(EventCenters);
+  } catch(error) {
+    res.status(400).json({ error })
+  }
+});
+
+router.patch('/', async (req, res) => {
+  try {
+    const { id, ...rest} = req.body;
+    await EventCenter.findOneAndUpdate(
+      { _id: req.body.id },
+      { ...rest }, { new: true}
+    );
+    res.json({
+      message:
+        'Event center updated!'
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(400).json({ error: err, message: 'Sorry, something went wrong' });
+  }
+});
+
 router.delete('/:id', async (req, res) => {
-    try {
-      const center = await EventCenter.findById(req.params.id);
-      if (!center) throw Error('No such event center found');
-  
-      const removed = await EventCenter.remove();
-      if (!removed)
-        throw Error('Something went wrong while trying to delete the event center');
-  
-      res.status(200).json({ success: true });
-    } catch (e) {
-      res.status(400).json({ msg: e.message, success: false });
-    }
+  try {
+    const deletedCenter = await EventCenter.findOneAndDelete(
+      { _id: req.params.id }
+    );
+    res.status(201).json({
+      message: 'Event Center Deleted!',
+      deletedCenter
+    });
+  } catch (err) {
+    return res.status(400).json({
+      message: 'There was a problem deleting the event center.'
+    });
+  }
 });
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import PageTitle from './common/PageTitle';
 import DashboardMetric from './common/DashboardMetric';
 import Card from './common/Card';
@@ -10,25 +10,47 @@ import {
 // import { FetchContext } from '../context/FetchContext';
 import DashboardChart from './common/DashboardChart';
 import {dashboardData} from '../util/dashboard';
+import { publicFetch } from '../util/fetch';
+//import axios from 'axios';
 
 const Dashboard = () => {
-  // const fetchContext = useContext(FetchContext);
-  // const [dashboardData, setDashboardData] = useState();
+  const [usersNum, setUserData] = useState();
+  //const [reservedVenues, setReservedVenues] = useState();
 
-  // useEffect(() => {
-  //   const getDashboardData = async () => {
-  //     try {
-  //       const { data } = await fetchContext.authAxios.get(
-  //         'dashboard-data'
-  //       );
-  //       setDashboardData(data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
+  useEffect(() => {
 
-  //   getDashboardData();
-  // }, [fetchContext]);
+    const getDashboardData = async () => {
+      // try {
+      //   const [ usersData, reservedVenuesData ] = await axios.all([publicFetch.get('login'), publicFetch.get('reservedVenues')]);
+      //   console.log(usersData);
+      //   usersData && setUserData(usersData.data.users);
+      //   reservedVenuesData && setReservedVenues(reservedVenuesData.data.reservedVenues);
+      //   console.log(usersNum, reservedVenues)
+      // } catch (error) {
+      //   console.log(error.message)
+      // }
+      // axios.all([
+      //   publicFetch.get('login'), publicFetch.get('reservedVenues'),
+      // ])
+      // .then(response => {
+      //   setUserData(response[0].data.users);
+      //   setReservedVenues(response[1].data.reservedVenues)
+      // });
+      try {
+        const { data } = await publicFetch.get(
+          'login'
+        );
+        // const { data1 } = await publicFetch.get('reservedVenues');
+        // setReservedVenues(data1.reservedVenues);
+        // console.log(data1.reservedVenues);
+        setUserData(data.users);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getDashboardData();
+  }, [ usersNum ]);
 
   return (
     <>
@@ -48,7 +70,7 @@ const Dashboard = () => {
             <div className="w-full sm:w-1/3 sm:ml-2 sm:mr-2 mb-4 sm:mb-0">
               <DashboardMetric
                 title="Registered Users"
-                value={dashboardData.registeredUsers}
+                value={usersNum}
                 icon={faUserPlus}
               />
             </div>

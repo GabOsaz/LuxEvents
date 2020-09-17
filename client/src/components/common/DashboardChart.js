@@ -20,7 +20,7 @@ const DashboardChart = ({ salesData }) => {
       labels: chartLabels,
       datasets: [
         {
-          label: 'Sales',
+          label: 'Cash Revenue',
           borderColor: '#3182ce',
           data: chartValues,
           backgroundColor: gradientFill
