@@ -19,8 +19,6 @@ const bookVenue = require('./routes/api/bookedVenue');
 
 const db = process.env.MONGO_URI;
 
-app.use(cors())
-
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
