@@ -1,0 +1,759 @@
+$primaryColor : #EF9B38;
+$skyBlue : #7C9BBD;
+$skyBlue2 : #5B82AD;
+$background: #F8F8F8;
+$HeadingFont: Playfair;
+$pFont: Poppins;
+$ratio-16-9: 56.25%;
+$cols: 4;
+$colsTab: 2;
+$cols2: 1;
+$cols6: 3;
+$cols5: 5;
+$mobile: 550px;
+$tablet: 768px;
+$miniLaptop: 1024px;
+
+
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -moz-transform: $property;
+    -o-transform: $property;
+    -webkit-backface-visibility: $property;
+    backface-visibility: $property;
+    transform: $property
+  }
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: $background;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+//  Jumbo Component Styles
+.carouselStyle {
+
+    .overlay {
+        width: 100%;
+        height: 135vh;
+        object-fit: cover;
+        background: $skyBlue;
+        clip-path: polygon(0 0, 100% 0, 100% 52%, 0 74%);
+        opacity: .4;
+
+        @media (max-width : $tablet) {
+            clip-path: polygon(0 0, 100% 0, 100% 52%, 0 66%);
+            height: 130vh;
+        }
+
+        @media (max-width : $mobile) {
+            clip-path: polygon(0 0, 100% 0, 100% 52%, 0 56%);
+            height: 220vh;
+        }
+    }
+
+    // .carousel-inner {
+    //     position: relative;
+    //     border: 2px solid purple;
+        
+    //     @media (max-width : $tablet) {
+    //         height: 50vh
+    //     }
+    // }
+
+    .carousel-item {
+        width: calc(100% / #{$cols2});
+        // height: 98vh
+    }
+
+    .padded-container {
+        height: 0;
+        position: relative;
+        
+        overflow: hidden;
+        padding-bottom: #{$ratio-16-9 / $cols2};
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        height: 135vh;
+        object-fit: cover;
+        background: $skyBlue;
+        clip-path: polygon(0 0, 100% 0, 100% 52%, 0 74%);
+
+        @media (max-width : $tablet) {
+            clip-path: polygon(0 0, 100% 0, 100% 52%, 0 66%);
+            height: 130vh;
+        }
+
+        @media (max-width : $mobile) {
+            height: 220vh;
+            clip-path: polygon(0 0, 100% 0, 100% 52%, 0 56%);
+        }
+    }
+
+    .centered {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        right: -50%;
+        bottom: -50%;
+        margin: auto;
+    }
+
+    .carousel-indicators .active {
+        // border: 2px solid red;
+        background: $primaryColor;
+        border-radius: 50%;
+        border: .1px solid $primaryColor;
+        width: 16px;
+        height: 16px;
+        margin-top: 8px;
+
+        @media (max-width : $miniLaptop) {
+            margin-top: -5.7rem;
+        }
+
+        @media (max-width : $tablet) {
+            margin-top: -18rem;
+        }
+    }
+
+    #carouselExampleControlsCircle {
+        height: 49rem;
+        position: relative;
+
+       @media (max-width : $tablet) {
+            margin-bottom: -6rem
+        }
+       @media (max-width : $miniLaptop){
+            height: 40rem
+        }
+    }
+
+    .carousel-indicators-circle li {
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        fill: #FFFFFF;
+
+        @media (max-width : $mobile) {
+            display: none
+        }
+
+        @media (max-width : $miniLaptop) {
+            margin-top: -6.4rem
+        }
+
+        @media (max-width : $tablet) {
+            margin-top: -18.7rem
+        }
+    }
+    
+    //  SearchBar Component Styles
+    .searchBar {
+        height: 76px;
+        line-height: 80px;
+        border-radius: 10px;
+        background: #FFFFFF;
+        margin-top: 4rem;
+
+        @media (max-width : $tablet) {
+            margin-top: 20.8rem;
+            min-width: 100%;
+            height: 7.2rem;
+            box-shadow: 0 6px 6px #c2c1c1;
+        }
+
+        @media (max-width : $mobile) {
+            margin-top: 8.8rem;
+            min-width: 100%;
+            height: 7.2rem;
+            padding: 0;
+            box-shadow: 0 6px 6px #c2c1c1;
+        }
+        
+    }
+
+    .searchMain {
+        position: absolute;
+        top: 25%;
+        left: 9.5%;
+        right: 9.5%;
+        // border: 2px solid blue;
+
+        @media (max-width : $tablet) {
+            top: 48%;
+        }
+
+        @media (max-width : $mobile) {
+            top: 2%;
+            width: 98%;
+            margin: auto;
+            left: 0%;
+            right: 0%;
+        }
+
+        @media (max-width : $tablet) {
+            top: 23%;
+        }
+    } 
+
+    .searchBtnMob {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid red;
+        border-radius: 1rem;
+        border: 2px solid rgba(112, 112, 112, 0.2);
+        width: 8.8rem;
+        height: 5rem;
+        line-height: 3.6rem;
+        font-size: 1.3rem;
+        font-style: bold;
+        font-family: $pFont;
+        margin: 3% 25% 0 36%;
+
+        @media (min-width : $mobile) {
+            display: none;
+        }
+    }
+
+    .searchBtnMob:hover {
+        background-color: $primaryColor;
+        color: white;
+    }
+
+    .searchBarHeader {
+        position: absolute;
+        left: 9.5%;
+        right: 9.5%;
+        top: 26%;
+        z-index: 10;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 4.3rem;
+        font-size: 4.5rem;
+        font-weight: bold;
+        font-family: $HeadingFont;
+        // border: 2px solid red;
+
+        @media (max-width : $mobile) {
+            padding-top: -17rem;
+            top: 21%;
+            line-height: 1.5rem;
+        }        
+
+        @media (max-width : $tablet) {
+            transform: translate(0px, -30px);
+            font-size: 4rem;
+        }
+        @media (max-width : $miniLaptop) {
+            font-size: 4rem;
+            transform: translate(0px, -50px);
+            
+        }
+    }
+
+    .searchBarHeader span {
+        @media (max-width : $mobile) {
+            font-size: 1.8rem;
+        }
+    }
+
+    .searchBar span {
+        font-size: 2rem;
+        font-family: $pFont;
+        
+        @media (max-width : $tablet) {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width : $mobile) {
+            font-size: 1.2rem;
+            flex-basis: fit-content;
+        }
+    }
+
+    .dropdown-toggle {
+        font-size: 1.1rem
+    }
+    
+    // .mobilePSpace {
+    //     visibility: hidden
+    // }
+    .searchBtn {
+        border-radius: 1rem;
+        border: 2px solid rgba(112, 112, 112, 0.2);
+        width: 13.8rem;
+        height: 7.6rem;
+        line-height: 3.6rem;
+        font-size: 2.3rem;
+        font-style: bold;
+        font-family: $pFont;
+        margin: 0;
+        
+
+        @media (max-width : $tablet) {
+            height: 7.2rem;
+            width: 8.8rem;
+            font-size: 2rem;
+        }
+
+        
+
+        @media (max-width : $mobile) {
+            height: 7.2rem;
+            width: 3.8rem;
+            font-size: 1.2rem;
+            padding: 0;
+            display: none;
+
+            
+        }
+    }
+
+    .searchBtn:hover {
+        background: $primaryColor;
+        color: #FFFFFF;
+        border: none
+    }
+
+    .dropdown-item {
+        font-size: 1.5rem;
+        z-index: 10;
+        line-height: normal;
+
+        @media (max-width : $tablet) {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width : $mobile) {
+            font-size: 1rem;
+        }
+    }
+
+    .dropdown-item:hover {
+        background: rgb(180, 176, 176);
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        margin-left: -7rem;
+        z-index: 10;
+
+        @media (max-width : $tablet) {
+            margin-top: -14rem
+        }
+    }
+
+    .location {
+        margin-left: -9rem;
+        z-index: 10;
+
+        @media (max-width : $tablet) {
+            margin-top: -22rem;
+        }
+
+        @media (max-width : $mobile) {
+            margin-left: -4rem
+        }
+    }
+
+    .dropdown-menu a {
+        z-index: 20;
+        line-height: 2.2rem;
+    }
+}
+
+// Services Component Styles
+
+#servicesStyle {
+    position: relative;
+    transform: translate(0px, 16vh);
+    line-height: 2.7rem;
+    font-size: 1.8rem;
+    font-family: $HeadingFont;
+
+    @media (max-width : $mobile) {
+        transform: translate(0px, 1vh);
+    }
+
+    .card-title {
+        font-size: 1.8rem;
+
+        @media (max-width : $mobile) {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            font-weight: bold;
+        }
+    }
+
+    .st {
+        margin-bottom: 1rem;
+    }
+
+    .servicesTitle {
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 5.3rem;
+        color: #144D8A;
+
+        @media (max-width : $mobile) {
+            font-size: 2rem;
+        }
+    }
+
+    .mdContainer {
+        @media (max-width : $tablet) {
+            min-width: 90%
+        }
+
+        @media (max-width : $miniLaptop) {
+            min-width: 90%
+        }
+    }
+
+    .card {
+        border: none;
+        background: $background;
+        border-radius: 10px;
+    }
+
+    // .card-inner {
+    //     overflow: hidden;
+    // }
+
+    .card-inner img{
+        width: 100%;
+        height: 18rem;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: all 1.5s ease;
+
+        @media (max-width : $mobile) {
+            height: 21rem
+        }
+    }
+
+    .card-inner:hover img {
+        transform: scale(1.2)
+    }
+}
+
+// HowItWorks Component Styles
+.howItWorks {
+    position: relative;
+    top: 17rem;
+    left: 0;
+    background: $skyBlue2;
+    text-align: center;
+    height: 40rem;
+    width: 100%;
+    z-index: 2;     
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    @include transform(skewY(-6deg));
+    
+
+    @media (max-width : $tablet) {
+        top: 12rem;
+        padding-top: 4rem;
+        height: 30rem;
+    }
+
+    @media (max-width : $mobile) {
+        display: none
+    }
+
+    .inner {
+        @include transform(skewY(6deg));
+        //border: 2px solid #000;
+
+        @media (max-width : $tablet) {
+            min-width: 90%;
+            top: 1.2rem
+        }
+    }
+    
+    .inner h1 {
+        color: #FFFFFF;
+        font-family: $HeadingFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 53px;
+        text-align: center;
+
+        @media (max-width : $tablet) {
+            display: none;
+        }
+    }
+
+    .innerContent {
+        // border: 2px solid green;
+        padding: 10px 0;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 2.5rem;
+
+        @media (max-width : $tablet) {
+            padding: 0;
+        }
+    }
+
+    .card {
+        background: $skyBlue2;
+        height: 25rem;
+        border: none;
+
+        @media (max-width : $tablet) {
+            height: 15rem;
+            padding: 0
+        }
+    }
+
+    .item h4{
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 21px;
+        line-height: 27px;
+        margin-bottom: 20px;
+
+        @media (max-width : $tablet) {
+            font-size: 1.5rem;
+            line-height: 2.3rem;
+            margin: none
+        }
+    }
+
+    .item p {
+        font-family: Poppins;
+        font-style: normal;
+        font-size: 2rem;
+        font-weight: 100;
+        line-height: 3rem;
+        text-align: center;
+        letter-spacing: 0.02em;
+        padding: 0 4rem;
+
+        @media (max-width : $tablet) {
+            font-size: 1.9rem;
+            line-height: 2.3rem;
+            padding: 0;
+        }
+
+        @media (max-width : $miniLaptop) {
+            font-size: 1.6rem;
+            line-height: 2.0rem;
+        }
+    }
+
+    .item span{
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 2.1rem;
+        line-height: 2.7rem;
+        margin-bottom: 2rem;
+
+        @media (max-width : $tablet) {
+            display: none
+        }
+
+        @media (max-width : $tablet) {
+            font-weight: 700;
+            font-size: 1.9rem;
+            line-height: 2.5rem;
+        }
+    }
+}
+
+// SelectLocation Component Styles
+.selectLocation {
+    position: relative;
+    font-family: $HeadingFont;
+    font-style: normal;
+    line-height: 53px;
+    transform: translate(0px, 37vh);
+    
+
+    @media (max-width : $mobile) {
+        margin-top: -16rem;
+        margin-bottom: 20rem;
+    }
+    
+
+    @media (max-width : $tablet) {
+        transform: translate(0px, 26vh);
+        min-width: 90%
+    }
+
+    @media (max-width : $miniLaptop) {
+        min-width: 90%
+    }
+
+    .locationHeader {
+        margin-bottom: 3rem;
+        font-weight: bold;
+        font-size: 40px;
+        color: #144D8A;
+        text-align: center;
+
+        @media (max-width : $mobile) {
+            font-size: 2rem;
+            margin-bottom: 0rem;
+        }
+    }
+
+    .location div img {
+        margin-bottom: 12px;
+        width: 100%;
+        height: 21rem;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .location div p {
+        z-index: 5;
+        padding-right: 10px ;
+        position: absolute;
+        bottom: 0;
+        right: 1rem;
+        font-size: 1.8rem;
+        color: #FFFFFF;
+    }
+      
+    .padded-container {
+        position: relative;
+    }
+}
+
+// Partners Component Styles
+#partners {
+    position: relative;
+    background: $skyBlue2;
+    height: 30.7rem;
+    // height: calc(100vh - 2.7rem);
+    transform: translate(0px, 37vh);
+    padding: 0rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 4rem;
+    line-height: 5.3rem;
+    font-family: $HeadingFont;
+
+    @media (max-width : $mobile) {
+        display: none
+    }
+
+    @media (max-width : $tablet) {
+        transform: translate(0px, 26vh);
+    }
+
+    
+
+    .case {
+        display: grid;
+        grid-template-columns: repeat(5, 13%);
+        gap: 5%;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width : $tablet) {
+            gap: 2%;
+            grid-template-columns: repeat(5, 17%);
+        }
+    }
+
+    .heading {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .icons div {
+        margin-left: 5rem;
+    }
+
+    .wrapper {
+        width: calc(100% / #{$cols5});
+        height: auto;
+    }
+
+    .padded-container {
+        height: 0;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: #{$ratio-16-9 / $cols5};
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#FourOFour {
+    .card-title {
+        font-family: $HeadingFont;
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+        color: #1C1717;
+    }
+
+    .card-text {
+        color: #1C1717;
+        opacity: 60%;
+        font-family: $pFont;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+    }
+    .fOfBtn {
+        width: 100%;
+        color: #FFFFFF;
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+        font-family: $pFont;
+        background-color: $primaryColor;
+    }
+}
+
+#editVenue {
+    .editVenue {
+        color: #144D8A;
+        font-size: 4rem;
+        line-height: 5.3rem;
+        font-family: $HeadingFont;
+        font-style: bold;
+    }
+
+    .editValueBtn {
+        color: #FFFFFF;
+        background-color: $primaryColor;
+        text-align: center;
+        font-size: 2.5rem;
+        font-family: $pFont
+    }
+}
+
+
+
+
+

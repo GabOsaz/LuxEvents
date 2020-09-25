@@ -1,0 +1,104 @@
+$primaryColor : #EF9B38;
+$skyBlue : #7C9BBD;
+$skyBlue2 : #5B82AD;
+$background: #F8F8F8;
+$HeadingFont: Playfair;
+$pFont: Poppins;
+$ratio-16-9: 56.25%;
+$cols: 4;
+$colsTab: 2;
+$cols2: 1;
+$cols6: 3;
+$cols5: 5;
+$mobile: 550px;
+$tablet: 768px;
+$miniLaptop: 1024px;
+
+
+
+.errorPage-heading-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0 2rem 0;
+        font-size: 4rem;
+}
+
+
+.bookingSuccessfulPage-heading-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+    font-size: 2rem;
+    color: $skyBlue2;
+}
+
+.errorPage-heading-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+    font-size: 1.2rem;
+    opacity: .5;
+}
+
+
+@media (min-width: 700px) {
+    .ErrorPage-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 85vh;
+        margin: 5rem 0rem;
+        padding: 0rem 10rem;
+    }
+
+    .BookingSuccessfulPage-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 85vh;
+    }
+
+    .BookingSuccessfulPage-container-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10rem 0rem 0rem 0rem;
+        width: 100%;
+    }
+
+      .form-container{
+          background: $background;
+      }
+
+      .errorPage-heading-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0 2rem 0;
+        font-size: 6rem;
+}
+
+.errorPage-heading-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+    font-size: 2rem;
+    opacity: .5;
+}
+
+.bookingSuccessfulPage-heading-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: $skyBlue2;
+}
+
+    
+}

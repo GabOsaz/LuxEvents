@@ -1,0 +1,148 @@
+$primaryColor : #EF9B38;
+$skyBlue : #7C9BBD;
+$skyBlue2 : #5B82AD;
+$background: #F8F8F8;
+$HeadingFont: Playfair;
+$pFont: Poppins;
+$ratio-16-9: 56.25%;
+$cols: 4;
+$colsTab: 2;
+$cols2: 1;
+$cols6: 3;
+$cols5: 5;
+$mobile: 550px;
+$tablet: 768px;
+$miniLaptop: 1024px;
+
+
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -moz-transform: $property;
+    -o-transform: $property;
+    -webkit-backface-visibility: $property;
+    backface-visibility: $property;
+    transform: $property
+  }
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: $background;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+.setting-container{
+    background-color: #dddddd;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+  
+  }
+  
+  
+  @media(max-width: 566px) {
+    .setting-container{
+      background-color: #dddddd;
+      padding: 2rem;
+      display: block;
+      color: gray;
+    }
+  }
+  
+  .setting-body{
+    line-height: 1rem;
+  }
+  
+  .setting-body-1{
+    margin-top: 1rem;
+  }
+  
+  .setting-left{
+    
+    height: 100%;
+    
+  }
+  
+  .setting-left-wrapper{
+    padding: 2rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    height: 100%;
+  }
+  
+  .setting-right{
+    height: 100%;
+  }
+  
+  .setting-right-wrapper{
+    padding: 2rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    height: 100%;
+  }
+  
+  .setting-heading{
+    
+    border-bottom: .1rem solid gray;
+    
+  }
+  
+  .setting-heading-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: cent;
+    background-color: red;
+    height: 2.3rem;
+    width: 10rem;
+  }
+
+
+
+/* ***********************  EVENTS  *************************8 */
+
+
+.events-container{
+  background-color: #f3f0f0;
+  padding: 2rem;
+}
+
+
+.events-table{
+  margin-top: 4rem;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: .1rem solid #dddddd;
+  
+}
+
+.events-tableData, .events-tableHead {
+  text-align: left;
+  padding: .8rem;
+} 
+
+.events-tableHead{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.events-tableData{
+  font-weight: 500;
+  font-size: 1.2rem;
+}
