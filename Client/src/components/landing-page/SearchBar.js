@@ -59,7 +59,7 @@ const SearchBar = () => {
                                 <div className="dropdown-menu location" aria-labelledby="dropdownMenuButton">
                                     <a onClick={handleState} className="dropdown-item">Lagos</a>
                                     <a onClick={handleState} className="dropdown-item">Abuja</a>
-                                    <a onClick={handleState} className="dropdown-item">Port Harcourt</a>
+                                    <a onClick={handleState} className="dropdown-item">PH</a>
                                     <a onClick={handleState} className="dropdown-item">Kano</a>
                                     <a onClick={handleState} className="dropdown-item">Ibadan</a>
                                     <a onClick={handleState} className="dropdown-item">Delta</a>
@@ -73,6 +73,7 @@ const SearchBar = () => {
                                         <li onClick={handleCity} className="dropdown-item">Lekki</li>
                                         <li onClick={handleCity} className="dropdown-item">Ikeja</li>
                                         <li onClick={handleCity} className="dropdown-item">Ikoyi</li>
+                                        <li onClick={handleCity} className="dropdown-item">FCT</li>
                                     </ul>
                                 </div>
                             </div>
@@ -86,7 +87,7 @@ const SearchBar = () => {
                                         <li onClick={handleCapacity}  className="dropdown-item">350 - 500</li>
                                         <li onClick={handleCapacity}  className="dropdown-item">500 - 700</li>
                                         <li onClick={handleCapacity}  className="dropdown-item">700 - 1000</li>
-                                        <li onClick={handleCapacity}  className="dropdown-item">1000 and above</li>
+                                        <li onClick={handleCapacity}  className="dropdown-item">1000+</li>
                                     </ul>
                                 </div>
                             </div>

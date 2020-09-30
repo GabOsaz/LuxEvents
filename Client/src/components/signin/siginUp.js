@@ -57,7 +57,7 @@ const SignUp = () => {
         return () => {
            
         }
-    }, [userInfo])
+    }, [userInfo, history])
 
 
     return (

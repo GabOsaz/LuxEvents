@@ -214,7 +214,7 @@ onDayClick = (e, day) => {
             console.log("SELECTED DAY: ", console.log(this.state.selectedDay));
     }
     )
-    this.props.onDayClick && this.props.onDayClick(e, day);
+    // this.props.onDayClick && this.props.onDayClick(e, day);
 }
 
 
@@ -254,7 +254,6 @@ onDayClick = (e, day) => {
       const classNameBooking = this.state.bookedDatesOnly.find(date => monthArray.includes(date)) ? "availability-icon-2-cal noselect"  : "availability-icon-1-cal";
 
     
-
       daysInMonth.push(
         <td key={d} className={className + selectedClass}>
           <span
