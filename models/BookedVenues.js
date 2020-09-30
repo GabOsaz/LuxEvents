@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const EventCenter = require('./EventCenters');
 
 const dateSchema = {
   date: {
@@ -33,6 +34,11 @@ const BookedVenuesSchema = new Schema({
     type: String,
     required: true,
   },
+      uploadedImg: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'EventCenter',
+      required: true,
+    }
 });
 
 // const BookedVenuesSchema = new Schema({

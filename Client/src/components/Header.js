@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { logout } from "../redux/actions/userAction";
 import { useDispatch } from "react-redux";
+import ActivePage from "./ActivePage";
 
 import {
   Collapse,
@@ -18,13 +19,13 @@ const Header = (props) => {
   const userSignIn = useSelector((state) => state.userSignIn);
 
   const { userInfo } = userSignIn;
-  
+
   console.log(userInfo, "userInfo header");
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   const dispatch = useDispatch();
-  
+
   const wrapper = React.createRef();
   // let location = useLocation();
 
@@ -88,6 +89,7 @@ const Header = (props) => {
             <NavLink href="/" className="nav-text">
               Home
             </NavLink>
+            
           </NavItem>
           <NavItem>
             <NavLink href="/gallery" className="nav-text ">
@@ -102,17 +104,13 @@ const Header = (props) => {
           <NavItem>
             {/* <NavLink href="/SignIn" className="nav-text">Sign in</NavLink> */}
             {userInfo ? (
-              <NavLink
-                href="/profile"
-                className="nav-text profile-icon"
-               
-              >
-                <img 
-                alt="header-icon"
-                className="header-icon-profile"
-                src="https://res.cloudinary.com/dsipecjov/image/upload/v1598451513/v6buqtwza3jqjvvtyr2n.svg" 
+              <NavLink href="/profile" className="nav-text profile-icon">
+                <img
+                  alt="header-icon"
+                  className="header-icon-profile"
+                  src="https://res.cloudinary.com/dsipecjov/image/upload/v1598451513/v6buqtwza3jqjvvtyr2n.svg"
                 />
-               <p>{userInfo.firstName}</p>
+                <p>{userInfo.firstName}</p>
               </NavLink>
             ) : (
               <NavLink href="/SignIn" className="nav-text">
@@ -120,29 +118,63 @@ const Header = (props) => {
               </NavLink>
             )}
           </NavItem>
-          <NavItem className={!userInfo ? "header-signup-button" : "profile-dropDown"}>
+          <NavItem
+            className={!userInfo ? "header-signup-button" : "profile-dropDown"}
+          >
             {userInfo ? (
-              
               <div className="dropdown">
-                
-              <div className=" dropdown-toggle" style={{color:"black"}}  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               
+                <div
+                  className=" dropdown-toggle"
+                  style={{ color: "black" }}
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                ></div>
+
+                <div
+                  className="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <a className="dropdown-item" href="/messages">
+                    Messages
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href={`/reservedVenues/` + userInfo._id}
+                  >
+                    Reserved Venues
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href={`/bookedVenues/` + userInfo._id}
+                  >
+                    Booked Venues
+                  </a>
+                  <a className="dropdown-item" href="/favourites">
+                    Favourites
+                  </a>
+                  <a className="dropdown-item" href="/help">
+                    Help
+                  </a>
+                  <a className="dropdown-item" href="/account-setting">
+                    Account Setting
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/SignIn"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </a>
+                </div>
               </div>
-            
-              <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <a className="dropdown-item" href="/messages">Messages</a>
-                <a className="dropdown-item" href={`/reservedVenues/` + userInfo._id} >Reserved Venues</a>
-                <a className="dropdown-item" href={`/bookedVenues/` + userInfo._id}>Booked Venues</a>
-                <a className="dropdown-item" href="/favourites">Favourites</a>
-                <a className="dropdown-item" href="/help">Help</a>
-                <a className="dropdown-item" href="/account-setting">Account Setting</a>
-                <a className="dropdown-item" href="/SignIn"  onClick={handleLogout}>Logout</a>
-              </div>
-            </div>
             ) : (
-              <NavLink href="/SignUp" className="header-signup-text nav-text">
-              Sign up
-            </NavLink>
+              <NavLink href="/SignUp" className="header-signup-text nav-text"
+              style={{ color: "white" }}>
+                Sign up
+              </NavLink>
             )}
           </NavItem>
         </Nav>

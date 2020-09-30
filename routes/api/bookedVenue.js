@@ -79,7 +79,7 @@ router.post('/', async (req, res) => {
 });
 
 
-
+const EventCenter = require('../../models/EventCenters');
 
 router.get("/booked/:id", async (req, res) => {
   try {

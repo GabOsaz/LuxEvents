@@ -145,6 +145,14 @@ body {
 
   /* HEADER SECTION */
 
+  .nav-text {
+    color: #0c0c0c;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
   .header-home-button:active{
     /* border-bottom: orange 0.5rem solid; */
     width: 6rem;
@@ -198,10 +206,25 @@ body {
 /* LARGER TAB AND LARGE SCREENS */
 @media (min-width: 967px) { 
 
+  /* Header Section */
+  .nav-text {
+    color: #0c0c0c;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+
   /* fOOTER SECTION */
 
   .copyright {
     line-height: 2rem;
   }
+  
+}
+
+
+.active {
+  border-bottom: 3px solid red;
 }
 

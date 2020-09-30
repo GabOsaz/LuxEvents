@@ -32,11 +32,13 @@ const GalleryDetails = (props) => {
   const venueId = props.match.params.id
   const userId = _id
  
- 
-  //  console.log(venue.name);
-
+ console.log(venueDetails.venue);
+  if(venue) {
+    console.log(console.log(venue.name));
+  }
 
   const requestBooking = ()  => {
+   
  
     // const  {name, location, uploadedImg, description, _id} = venue;
     dispatch(bookVenue({firstName, lastName, email, userId, date, venueId}))
