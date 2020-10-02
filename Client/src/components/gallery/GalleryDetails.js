@@ -102,7 +102,7 @@ const GalleryDetails = (props) => {
             <div className="">
               {" "}
               <b>Date</b> <br />
-              {/* {venue.date}{" "} */}
+              Check Available Dates
               {" "}
             </div>
           </Link>

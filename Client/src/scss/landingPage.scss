@@ -47,6 +47,13 @@ body {
 
 //  Jumbo Component Styles
 .carouselStyle {
+<<<<<<< HEAD
+=======
+    // border-top: $primaryColor 2px solid;
+    // position: relative;
+    // border: 2px solid orange;
+    // height: 93vh;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
 
     .overlay {
         width: 100%;
@@ -58,12 +65,19 @@ body {
 
         @media (max-width : $tablet) {
             clip-path: polygon(0 0, 100% 0, 100% 52%, 0 66%);
+<<<<<<< HEAD
             height: 130vh;
         }
 
         @media (max-width : $mobile) {
             clip-path: polygon(0 0, 100% 0, 100% 52%, 0 56%);
             height: 220vh;
+=======
+        }
+
+        @media (max-width : $tablet) {
+            height: 130vh;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         }
     }
 
@@ -98,12 +112,19 @@ body {
 
         @media (max-width : $tablet) {
             clip-path: polygon(0 0, 100% 0, 100% 52%, 0 66%);
+<<<<<<< HEAD
             height: 130vh;
         }
 
         @media (max-width : $mobile) {
             height: 220vh;
             clip-path: polygon(0 0, 100% 0, 100% 52%, 0 56%);
+=======
+        }
+
+        @media (max-width : $tablet) {
+            height: 130vh;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         }
     }
 
@@ -125,10 +146,13 @@ body {
         height: 16px;
         margin-top: 8px;
 
+<<<<<<< HEAD
         @media (max-width : $miniLaptop) {
             margin-top: -5.7rem;
         }
 
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         @media (max-width : $tablet) {
             margin-top: -18rem;
         }
@@ -156,10 +180,13 @@ body {
             display: none
         }
 
+<<<<<<< HEAD
         @media (max-width : $miniLaptop) {
             margin-top: -6.4rem
         }
 
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         @media (max-width : $tablet) {
             margin-top: -18.7rem
         }
@@ -172,13 +199,21 @@ body {
         border-radius: 10px;
         background: #FFFFFF;
         margin-top: 4rem;
+<<<<<<< HEAD
 
         @media (max-width : $tablet) {
             margin-top: 20.8rem;
+=======
+        
+
+        @media (max-width : $tablet) {
+            margin-top: 13.8rem;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
             min-width: 100%;
             height: 7.2rem;
             box-shadow: 0 6px 6px #c2c1c1;
         }
+<<<<<<< HEAD
 
         @media (max-width : $mobile) {
             margin-top: 8.8rem;
@@ -187,6 +222,8 @@ body {
             padding: 0;
             box-shadow: 0 6px 6px #c2c1c1;
         }
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         
     }
 
@@ -202,12 +239,17 @@ body {
         }
 
         @media (max-width : $mobile) {
+<<<<<<< HEAD
             top: 2%;
+=======
+            top: 42%;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
             width: 98%;
             margin: auto;
             left: 0%;
             right: 0%;
         }
+<<<<<<< HEAD
 
         @media (max-width : $tablet) {
             top: 23%;
@@ -239,15 +281,27 @@ body {
         color: white;
     }
 
+=======
+    } 
+
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     .searchBarHeader {
         position: absolute;
         left: 9.5%;
         right: 9.5%;
+<<<<<<< HEAD
         top: 26%;
         z-index: 10;
         text-align: center;
         color: #FFFFFF;
         line-height: 4.3rem;
+=======
+        top: 22%;
+        z-index: 10;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 5.3rem;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         font-size: 4.5rem;
         font-weight: bold;
         font-family: $HeadingFont;
@@ -255,48 +309,79 @@ body {
 
         @media (max-width : $mobile) {
             padding-top: -17rem;
+<<<<<<< HEAD
             top: 21%;
             line-height: 1.5rem;
         }        
 
         @media (max-width : $tablet) {
             transform: translate(0px, -30px);
+=======
+        }        
+
+        @media (max-width : $tablet) {
+            transform: translate(0px, -20px);
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
             font-size: 4rem;
         }
         @media (max-width : $miniLaptop) {
             font-size: 4rem;
+<<<<<<< HEAD
             transform: translate(0px, -50px);
             
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         }
     }
 
     .searchBarHeader span {
         @media (max-width : $mobile) {
+<<<<<<< HEAD
             font-size: 1.8rem;
+=======
+            font-size: 2.5rem;
+            line-height: 3.3rem;
+            
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         }
     }
 
     .searchBar span {
         font-size: 2rem;
         font-family: $pFont;
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         @media (max-width : $tablet) {
             font-size: 1.5rem;
         }
 
+<<<<<<< HEAD
         @media (max-width : $mobile) {
             font-size: 1.2rem;
             flex-basis: fit-content;
+=======
+        @media (max-width : $tablet) {
+            font-size: 1.6rem;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         }
     }
 
     .dropdown-toggle {
+<<<<<<< HEAD
         font-size: 1.1rem
     }
     
     // .mobilePSpace {
     //     visibility: hidden
     // }
+=======
+        font-size: 1.8rem
+    }
+
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     .searchBtn {
         border-radius: 1rem;
         border: 2px solid rgba(112, 112, 112, 0.2);
@@ -307,13 +392,17 @@ body {
         font-style: bold;
         font-family: $pFont;
         margin: 0;
+<<<<<<< HEAD
         
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
 
         @media (max-width : $tablet) {
             height: 7.2rem;
             width: 8.8rem;
             font-size: 2rem;
         }
+<<<<<<< HEAD
 
         
 
@@ -326,6 +415,8 @@ body {
 
             
         }
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     }
 
     .searchBtn:hover {
@@ -342,10 +433,13 @@ body {
         @media (max-width : $tablet) {
             font-size: 1.3rem;
         }
+<<<<<<< HEAD
 
         @media (max-width : $mobile) {
             font-size: 1rem;
         }
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     }
 
     .dropdown-item:hover {
@@ -371,7 +465,12 @@ body {
         }
 
         @media (max-width : $mobile) {
+<<<<<<< HEAD
             margin-left: -4rem
+=======
+            margin-left: -5rem
+           
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         }
     }
 
@@ -390,6 +489,7 @@ body {
     font-size: 1.8rem;
     font-family: $HeadingFont;
 
+<<<<<<< HEAD
     @media (max-width : $mobile) {
         transform: translate(0px, 1vh);
     }
@@ -404,6 +504,8 @@ body {
         }
     }
 
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     .st {
         margin-bottom: 1rem;
     }
@@ -413,10 +515,13 @@ body {
         font-size: 4rem;
         line-height: 5.3rem;
         color: #144D8A;
+<<<<<<< HEAD
 
         @media (max-width : $mobile) {
             font-size: 2rem;
         }
+=======
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     }
 
     .mdContainer {
@@ -592,11 +697,19 @@ body {
     font-family: $HeadingFont;
     font-style: normal;
     line-height: 53px;
+<<<<<<< HEAD
+=======
+    //border: 2px solid green;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     transform: translate(0px, 37vh);
     
 
     @media (max-width : $mobile) {
+<<<<<<< HEAD
         margin-top: -16rem;
+=======
+        margin-top: -5rem;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         margin-bottom: 20rem;
     }
     
@@ -618,8 +731,12 @@ body {
         text-align: center;
 
         @media (max-width : $mobile) {
+<<<<<<< HEAD
             font-size: 2rem;
             margin-bottom: 0rem;
+=======
+            font-size: 30px;
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         }
     }
 
@@ -662,10 +779,14 @@ body {
 
     @media (max-width : $mobile) {
         display: none
+<<<<<<< HEAD
     }
 
     @media (max-width : $tablet) {
         transform: translate(0px, 26vh);
+=======
+        
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     }
 
     

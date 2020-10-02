@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useContext } from "react";
 import { useSelector} from "react-redux";
 import { AuthContext } from '../../context/AuthContext';
@@ -13,6 +14,17 @@ const Calculator = () => {
   const { venue } = venueDetails;
   console.log(venue.price);
   const priceInArray = searchInfo1 ? searchInfo1.price.split('') : venue.price.split('');
+=======
+import React, { useState } from "react";
+import { useSelector} from "react-redux";
+// import {Link }from "react-router-dom"  
+
+const Calculator = () => {
+  const venueDetails = useSelector((state) => state.venueDetails);
+  const { venue } = venueDetails;
+  console.log(venue.price);
+  const priceInArray = venue.price.split('');
+>>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
   const removeNaira = priceInArray.splice(-6, 6);
   const priceNumberArray = priceInArray.map( Number );
   const priceInNumber = Number(priceNumberArray.join(''));
