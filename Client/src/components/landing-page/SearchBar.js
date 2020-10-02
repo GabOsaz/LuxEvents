@@ -9,6 +9,7 @@ const SearchBar = () => {
     const [state, setState] = useState('State');
     const [city, setCity] = useState('City');
     const [capacity, setCapacity] = useState('Capacity');
+    const [loading, setLoading] = useState(false);
     const [redirectOnSubmit, setRedirectOnSubmit] = useState(false);
 
     const handleParkingSpace = (e) => {
@@ -36,11 +37,14 @@ const SearchBar = () => {
 
     const submitHandler = async (e) => {
         try {
+            setLoading(true);
             const { data } = await publicFetch.get('gallery', credentials);
             console.log('gallery search data >>>', data);
             authContext.setGallerySearchData(data);
+            setLoading(false);
             setRedirectOnSubmit(true)
         } catch(error) {
+            setLoading(false);
             console.log('gallery search error', error);
             const { data } = error.response;
         }
@@ -100,10 +104,10 @@ const SearchBar = () => {
                                     <span onClick={handleParkingSpace} className="dropdown-item">800 spaces</span>
                                 </div>
                             </div>
-                            <button type="button" onClick={submitHandler} className="btn searchBtn mr-n4">Search</button>
+                            <button type="button" onClick={submitHandler} className="btn searchBtn mr-n4">{loading ? 'Searching...' : 'Search'}</button>
                         </div>
                         <div className='mob'> 
-                        <button type="button" onClick={submitHandler} className="searchBtnMob">Search</button>
+                        <button type="button" onClick={submitHandler} className="searchBtnMob"> {loading ? 'Searching...' : 'Search'} </button>
                         </div>
                     </div>
                 </div>
