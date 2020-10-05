@@ -19,11 +19,7 @@ const signin = (email, password) => async (dispatch) => {
 
   try {
     
-<<<<<<< HEAD
     const { data, } = await axios.post("https://lux-client-api.herokuapp.com/api/login", {
-=======
-    const { data, } = await axios.post("http://127.0.0.1:5050/api/login", {
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     email,password});
    
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
@@ -43,11 +39,7 @@ const logout = () => (dispatch) => {
 const signup = (firstName, lastName, email, password) => async (dispatch) => {
   dispatch({ type: USER_SIGNUP_REQUEST, payload: { firstName, lastName, email, password } });
   try {
-<<<<<<< HEAD
     const { data } = await axios.post("https://lux-client-api.herokuapp.com/api/signup", {firstName, lastName, email, password });
-=======
-    const { data } = await axios.post("http://127.0.0.1:5050/api/signup", {firstName, lastName, email, password });
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
     dispatch({ type: USER_SIGNUP_SUCCESS, payload: data });
     Cookie.set('userInfo', JSON.stringify(data));
   } catch (error) {

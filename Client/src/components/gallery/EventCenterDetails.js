@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector} from "react-redux";
 import { AuthContext } from '../../context/AuthContext';
 import ErrorPage from './../extras/ErrorPage';
-import EventCenterMap from "./EventCenterMap";
+import EventCenterMap from "./EventCenterMap"
 
 
 const EventCenterDetails = (props) => {

@@ -40,19 +40,11 @@ const requestReservation = (
 
   try {
     const { data } = await axios.post(
-<<<<<<< HEAD
       `https://lux-client-api.herokuapp.com/api/reserveVenue`,
       {
         userId,
         firstName,
   lastName,
-=======
-      `http://127.0.0.1:5050/api/reserveVenue`,
-      {
-        userId,
-        firstName,
-        lastName,
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
         name,
         location,
         email,
@@ -80,11 +72,7 @@ const listReservedVenues = (userId) => async (dispatch) => {
     dispatch({ type: RESERVED_VENUE_LIST_REQUEST, payload: userId});
     
 
-<<<<<<< HEAD
     const { data } = await axios.get(`https://lux-client-api.herokuapp.com/api/reserveVenue/reserved/${userId}`);
-=======
-    const { data } = await axios.get(`http://127.0.0.1:5050/api/reserveVenue/reserved/${userId}`);
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
 
     dispatch({ type: RESERVED_VENUE_LIST_SUCCESS, payload: data });
     

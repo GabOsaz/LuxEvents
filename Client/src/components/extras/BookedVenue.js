@@ -45,14 +45,6 @@ const BookedVenues = (props) => {
       <div className="gallery-body">
         <div className="container">
           <div className="gallery-heading ">
-<<<<<<< HEAD
-            <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading">
-            Your Booked Venues
-            </h4>
-            <h4 className="text-center mt-5 mb-5 heading-web d-none d-sm-block">
-              Your Booked Venues
-            </h4>
-=======
           {bookedVenues.length === 0 ? <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading"> Sorry You Have No Booked Venues </h4> :  <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading">
             Your Booked Venues
             </h4>}
@@ -62,7 +54,6 @@ const BookedVenues = (props) => {
             Your Booked Venues
             </h4>}
             
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
             
               
           </div>

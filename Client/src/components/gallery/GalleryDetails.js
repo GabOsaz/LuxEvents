@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsVenue } from "../../redux/actions/venueActions";
-import { AuthContext } from '../../context/AuthContext';
+// import { AuthContext } from '../../context/AuthContext';
 import ErrorPage from '../extras/ErrorPage';
 import EventCenterMap from "./EventCenterMap";
 import axios from "axios";
@@ -18,9 +18,9 @@ const GalleryDetails = (props) => {
   const [ theVenue, setVenue ] = useState([]);
   console.log(theVenue._id);
 
-  const authContext = useContext(AuthContext);
-  const { venueDetails } = authContext;
-  console.log('Clicked venue details >>>', venueDetails);
+  // const authContext = useContext(AuthContext);
+  // const { venueDetails } = authContext;
+  // console.log('Clicked venue details >>>', venueDetails);
 
   useEffect(() => {
     const fetchDet = async () => {

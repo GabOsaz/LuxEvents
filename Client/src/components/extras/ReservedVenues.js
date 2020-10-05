@@ -12,7 +12,6 @@ const ReservedVenues = (props) => {
 
   const  reservedVenueList = useSelector((state) => state. reservedVenueList);
   const {reservedVenues, loading, error } =  reservedVenueList;
-<<<<<<< HEAD
   console.log(reservedVenues, " reseved venues >>>");
 
 
@@ -22,13 +21,6 @@ const ReservedVenues = (props) => {
   // const {_id} = userSignIn;
    
 
-=======
- 
-
-  const dispatch = useDispatch();
-
- 
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
   const userId = props.match.params.id
 
   useEffect(() => {
@@ -53,18 +45,6 @@ const ReservedVenues = (props) => {
       <div className="gallery-body">
         <div className="container">
           <div className="gallery-heading ">
-<<<<<<< HEAD
-            <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading">
-            Your Reserved Venues
-            </h4>
-            <h4 className="text-center mt-5 mb-5 heading-web d-none d-sm-block">
-              Your Reserved Venues
-            </h4>
-            
-              
-          </div>
-          {reservedVenues.map((venue) => (
-=======
            
             {reservedVenues.length === 0 ? <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading"> Sorry You Have No Reserved Venues </h4> :  <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading">
             Your Reserved Venues
@@ -80,7 +60,6 @@ const ReservedVenues = (props) => {
           </div>
     {reservedVenues.map((venue) => (
             
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
             <div className="container mobile-gallery-body" key={venue._id}>
               <Row className="red">
                 <Col sm="6 mb-5">

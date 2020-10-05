@@ -3,10 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { logout } from "../redux/actions/userAction";
 import { useDispatch } from "react-redux";
-<<<<<<< HEAD
-=======
 import ActivePage from "./ActivePage";
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
 
 import {
   Collapse,
@@ -22,21 +19,13 @@ const Header = (props) => {
   const userSignIn = useSelector((state) => state.userSignIn);
 
   const { userInfo } = userSignIn;
-<<<<<<< HEAD
   
-=======
-
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
   console.log(userInfo, "userInfo header");
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   const dispatch = useDispatch();
-<<<<<<< HEAD
   
-=======
-
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
   const wrapper = React.createRef();
   // let location = useLocation();
 
@@ -56,13 +45,8 @@ const Header = (props) => {
     <Navbar className="gallery-header" expand="md">
       <NavbarBrand href="/" className="nav-left">
         <svg
-<<<<<<< HEAD
           width="68"
           height="25"
-=======
-          width="53"
-          height="10"
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
           viewBox="0 0 53 10"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -105,10 +89,7 @@ const Header = (props) => {
             <NavLink href="/" className="nav-text">
               Home
             </NavLink>
-<<<<<<< HEAD
-=======
             
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
           </NavItem>
           <NavItem>
             <NavLink href="/gallery" className="nav-text ">
@@ -123,19 +104,6 @@ const Header = (props) => {
           <NavItem>
             {/* <NavLink href="/SignIn" className="nav-text">Sign in</NavLink> */}
             {userInfo ? (
-<<<<<<< HEAD
-              <NavLink
-                href="/profile"
-                className="nav-text profile-icon"
-               
-              >
-                <img 
-                alt="header-icon"
-                className="header-icon-profile"
-                src="https://res.cloudinary.com/dsipecjov/image/upload/v1598451513/v6buqtwza3jqjvvtyr2n.svg" 
-                />
-               <p>{userInfo.firstName}</p>
-=======
               <NavLink href="/profile" className="nav-text profile-icon">
                 <img
                   alt="header-icon"
@@ -143,7 +111,6 @@ const Header = (props) => {
                   src="https://res.cloudinary.com/dsipecjov/image/upload/v1598451513/v6buqtwza3jqjvvtyr2n.svg"
                 />
                 <p>{userInfo.firstName}</p>
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
               </NavLink>
             ) : (
               <NavLink href="/SignIn" className="nav-text">
@@ -151,31 +118,6 @@ const Header = (props) => {
               </NavLink>
             )}
           </NavItem>
-<<<<<<< HEAD
-          <NavItem className={!userInfo ? "header-signup-button" : "profile-dropDown"}>
-            {userInfo ? (
-              
-              <div className="dropdown">
-                
-              <div className=" dropdown-toggle" style={{color:"black"}}  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               
-              </div>
-            
-              <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                <a className="dropdown-item" href="/messages">Messages</a>
-                <a className="dropdown-item" href={`/reservedVenues/` + userInfo._id} >Reserved Venues</a>
-                <a className="dropdown-item" href={`/bookedVenues/` + userInfo._id}>Booked Venues</a>
-                <a className="dropdown-item" href="/favourites">Favourites</a>
-                <a className="dropdown-item" href="/help">Help</a>
-                <a className="dropdown-item" href="/account-setting">Account Setting</a>
-                <a className="dropdown-item" href="/SignIn"  onClick={handleLogout}>Logout</a>
-              </div>
-            </div>
-            ) : (
-              <NavLink href="/SignUp" className="header-signup-text nav-text">
-              Sign up
-            </NavLink>
-=======
           <NavItem
             className={!userInfo ? "header-signup-button" : "profile-dropDown"}
           >
@@ -233,7 +175,6 @@ const Header = (props) => {
               style={{ color: "white" }}>
                 Sign up
               </NavLink>
->>>>>>> e936a133fd803183a5f0a136379b5b07cd3b30a7
             )}
           </NavItem>
         </Nav>
