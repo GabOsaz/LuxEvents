@@ -3,6 +3,8 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import {connect} from 'react-redux'
+import { sendDate } from "../../redux/actions/bookVenueAction";
+
 
 class Calendar extends React.Component {
   state = {
@@ -18,15 +20,32 @@ class Calendar extends React.Component {
   };
 
   componentDidMount = async () => {
-    const { data } = await axios.get('https://lux-client-api.herokuapp.com/api/bookedVenue');
-    const selectedVenueBookings = data.filter(venue => venue._id === this.props.venueId)
-    const bookedDatesOnly = [];
-    selectedVenueBookings.map(eachBooking => bookedDatesOnly.push(eachBooking.date));
+    const { data } = await axios.get('https://lux-client-api.herokuapp.com/api/bookVenue');
+    console.log(data);
+    console.log(typeof(data[0].date));
+
+
+    const bookedDatesOnly = []
+    const selectedVenueBookings = data.map(date => bookedDatesOnly.push(date.date))
     this.setState({
       bookedDatesOnly
     })
+
+ 
+    
+
+    console.log(bookedDatesOnly);
+
+    console.log(this.state.bookedDatesOnly);
   }
 
+ 
+ //FUNCTION TO SEND PUT THE ACTION OF DATE SELECTED
+  sendOutDate = (selectedDay) => {
+    this.props.sendDate(selectedDay)
+  }
+
+  
    
 
   weekdays = moment.weekdays(); //["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
@@ -115,6 +134,8 @@ class Calendar extends React.Component {
     this.setState({
       showMonthPopup: !this.state.showMonthPopup,
     });
+
+    
   };
 
   MonthNav = () => {
@@ -183,32 +204,16 @@ class Calendar extends React.Component {
     );
   };
 
-  // onDayClick = (e, day) => {
-
-   
-  //   this.setState(
-  //     {
-  //       selectedDay: day
-  //     },
-  //     () => {
-       
-  //       console.log("SELECTED DAY: ", this.state.selectedDay);
-  //     }
-  //   );
-
-  //   this.props.onDayClick && this.props.onDayClick(e, day);
-  // };
-
 
 onDayClick = (e, day) => {
-    const mo = this.state.dateContext.format("MMMM");
-    const ye = this.state.dateContext.format("Y");
+    const month = this.state.dateContext.format("MM");
+    const year = this.state.dateContext.format("YY");
     this.setState({
-        selectedDay : `${day} / ${mo} / ${ye}`
+        selectedDay : `${year}-${month}-${day}`
     },
     () => {
              
-            console.log("SELECTED DAY: ", this.state.selectedDay);
+            console.log("SELECTED DAY: ", console.log(this.state.selectedDay));
     }
     )
     // this.props.onDayClick && this.props.onDayClick(e, day);
@@ -218,7 +223,11 @@ onDayClick = (e, day) => {
   
   render() {
 
-   
+    //VENUE ID TO REDIRECT TO WHEN CLOSING THE CALENDER
+    const redirect  = this.props.match.params.id
+    
+
+    
     let weekdays = this.weekdaysShort.map((day) => {
       return (
         <td key={day} className="week-day">
@@ -239,11 +248,14 @@ onDayClick = (e, day) => {
     }
     let daysInMonth = [];
     for (let d = 1; d <= this.daysInMonth(); d++) {
+      const month = this.state.dateContext.format("MM");
+    const year = this.state.dateContext.format("YY");
       let className = d == this.currentDay() ? "current-day day " : "day";
-      let selectedClass = d === this.state.selectedDay ? "selected-day" : "";
-      let classNameBooking = this.state.bookedDatesOnly.find(bd => d === bd) ? "availability-icon-2-cal"  : "availability-icon-1-cal";
-      // let classNameBooking = this.state.booked === false  ? "availability-icon-2-cal"  : "availability-icon-1-cal";
+      let selectedClass = d === this.state.selectedDay ? "selected-day" : " ";
+      const monthArray = [`${year}-${month}-${d}`]
+      const classNameBooking = this.state.bookedDatesOnly.find(date => monthArray.includes(date)) ? "availability-icon-2-cal noselect"  : "availability-icon-1-cal";
 
+    
       daysInMonth.push(
         <td key={d} className={className + selectedClass}>
           <span
@@ -292,7 +304,8 @@ onDayClick = (e, day) => {
                   <p className="calender-align-availability">Available dates</p>
                 </div>
 
-                <Link to={`/galleryDetails/` + this.venueId } 
+                <Link to={`/galleryDetails/` + redirect }
+                onClick={this.sendOutDate(this.state.selectedDay)}
                 >
                   <i className="fa fa-times close-icon"></i>
                 </Link>
@@ -353,4 +366,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect (mapStateToProps) (Calendar);
+
+
+export default connect (mapStateToProps, {sendDate}) (Calendar)
+
+
