@@ -30,6 +30,8 @@ class Calendar extends React.Component {
     this.setState({
       bookedDatesOnly
     })
+
+ 
     
 
     console.log(bookedDatesOnly);
@@ -367,3 +369,5 @@ const mapStateToProps = (state) => {
 
 
 export default connect (mapStateToProps, {sendDate}) (Calendar)
+
+
