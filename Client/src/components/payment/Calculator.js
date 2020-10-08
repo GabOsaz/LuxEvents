@@ -1,18 +1,17 @@
 import React, { useState, useContext } from "react";
 import { useSelector} from "react-redux";
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext'; 
 
 const Calculator = () => {
-
   const authContext = useContext(AuthContext);
   const { searchInfo } = authContext;
-  const searchInfo1 = searchInfo[0];
-  console.log(searchInfo1);
+  // const searchInfo1 = searchInfo[0];
+  // console.log(searchInfo1);
 
   const venueDetails = useSelector((state) => state.venueDetails);
   const { venue } = venueDetails;
   console.log(venue.price);
-  const priceInArray = searchInfo1 ? searchInfo1.price.split('') : venue.price.split('');
+  const priceInArray = searchInfo ? searchInfo[0].price.split('') : venue.price.split('');
   const removeNaira = priceInArray.splice(-6, 6);
   const priceNumberArray = priceInArray.map( Number );
   const priceInNumber = Number(priceNumberArray.join(''));
