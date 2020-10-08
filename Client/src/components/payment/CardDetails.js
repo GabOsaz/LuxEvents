@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useSelector} from 'react-redux';
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const CardDetails = () => {
   const history = useHistory();
@@ -89,8 +89,10 @@ const CardDetails = () => {
             />
           </div>
         </div>
-        <button className="submit btn-block" onClick={onSubmit} type="submit">
+        <button className="submit btn-block" style={{color: "red"}} onClick={onSubmit} type="submit">
+        <Link to={`/bookingsuccessful`}>
           Pay
+        </Link>
         </button>
       </form>
     </div>
