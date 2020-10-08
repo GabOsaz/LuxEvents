@@ -82,7 +82,7 @@ const Gallery = (props) => {
             <h4 className="text-center mt-3 mb-2 d-block d-sm-none  mobile-gallery-heading">
               Our Venues
             </h4>
-            <h4 className="text-center mt-5 mb-5 heading-web d-none d-sm-block">
+            <h4 className="text-center mt-5 mb-5 gallery-heading-web d-none d-sm-block">
               Event Center Location
             </h4>
           </div>
@@ -139,7 +139,7 @@ const Gallery = (props) => {
                   >
                     <div className="gallery-body-image-text mt-1">
                       <div className="font-weight-bold mb-4">{venue.name}</div>
-                      <CardText className="text-secondary"
+                      <CardText className="text-secondary city"
                        style={{ textDecoration: "none" }}>
                         {venue.city}, {venue.state}.
                       </CardText>
