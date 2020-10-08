@@ -23,7 +23,9 @@ const CardDetails = () => {
     console.log(userCardDetails);
     if(!userInfo) {
       return history.push('/SignIn');
-     }
+    } else {
+      return history.push(`/bookingsuccessful`)
+    }
   };
 
   return (
@@ -90,9 +92,7 @@ const CardDetails = () => {
           </div>
         </div>
         <button className="submit btn-block" style={{color: "red"}} onClick={onSubmit} type="submit">
-        <Link to={`/bookingsuccessful`}>
           Pay
-        </Link>
         </button>
       </form>
     </div>
